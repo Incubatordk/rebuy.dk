@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vilkår og betingelser — Rebuy</title>
+  <meta name="description" content="Rebuys vilkår og betingelser.">
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .legal { max-width: 720px; margin: 0 auto; padding: var(--space-3xl) var(--space-lg); }
+    .legal h1 { font-size: var(--text-3xl); margin-bottom: var(--space-lg); }
+    .legal h2 { font-size: var(--text-xl); margin-top: var(--space-xl); margin-bottom: var(--space-sm); }
+    .legal p { color: var(--color-text-secondary); margin-bottom: var(--space-md); line-height: 1.7; }
+    .legal-updated { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-xl); }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="header-logo">
+        <img src="assets/logos/logo-no-background.svg" alt="Rebuy logo" width="36" height="37">
+        <span class="header-logo-text">Rebuy</span>
+      </a>
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">
+        <span data-i18n="lang.toggle">EN</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="legal">
+    <h1 data-i18n="terms.title">Vilkår og betingelser</h1>
+    <p class="legal-updated" data-i18n="terms.updated">Sidst opdateret: marts 2026</p>
+
+    <h2 data-i18n="terms.h1">1. Generelt</h2>
+    <p data-i18n="terms.p1">Disse vilkår gælder for din brug af Rebuy-appen og rebuy.dk. Ved at oprette en konto accepterer du disse vilkår.</p>
+
+    <h2 data-i18n="terms.h2">2. Tjenesten</h2>
+    <p data-i18n="terms.p2">Rebuy er en markedsplads, der forbinder købere og sælgere af brugte børneartikler. Rebuy er ikke part i transaktioner mellem brugere og er ikke ansvarlig for varer, der købes eller sælges via platformen.</p>
+
+    <h2 data-i18n="terms.h3">3. Brugerkrav</h2>
+    <p data-i18n="terms.p3">Du skal være mindst 18 år for at oprette en konto. Du er ansvarlig for at holde dine kontooplysninger sikre og for al aktivitet på din konto.</p>
+
+    <h2 data-i18n="terms.h4">4. Annoncer</h2>
+    <p data-i18n="terms.p4">Du er ansvarlig for indholdet af dine annoncer. Annoncer skal være sandfærdige og vedrøre børneartikler. Vi forbeholder os retten til at fjerne annoncer, der overtræder vores retningslinjer.</p>
+
+    <h2 data-i18n="terms.h5">5. Ansvar</h2>
+    <p data-i18n="terms.p5">Rebuy leverer platformen "som den er" og påtager sig ikke ansvar for transaktioner mellem brugere, herunder kvaliteten af varer eller betalingsforhold.</p>
+
+    <h2 data-i18n="terms.h6">6. Opsigelse</h2>
+    <p data-i18n="terms.p6">Du kan til enhver tid slette din konto. Vi kan lukke konti, der overtræder disse vilkår.</p>
+
+    <h2 data-i18n="terms.h7">7. Ændringer</h2>
+    <p data-i18n="terms.p7">Vi kan opdatere disse vilkår fra tid til anden. Ved væsentlige ændringer giver vi dig besked via appen eller e-mail.</p>
+
+    <h2 data-i18n="terms.h8">8. Kontakt</h2>
+    <p data-i18n="terms.p8">Har du spørgsmål til disse vilkår, kan du kontakte os på support@rebuy.dk.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="assets/logos/logo-no-background.svg" alt="Rebuy" width="24" height="25">
+        <span class="footer-logo-text">Rebuy</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="privacy.html" data-i18n="footer.privacy">Privatlivspolitik</a>
+        <a href="terms.html" data-i18n="footer.terms">Vilkår og betingelser</a>
+      </nav>
+      <span class="footer-copyright" data-i18n="footer.copyright">&copy; 2026 Rebuy. Alle rettigheder forbeholdes.</span>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script>
+    var lang = I18N.detect();
+    I18N.apply(lang);
+    var langBtn = document.getElementById("lang-toggle");
+    if (langBtn) {
+      langBtn.addEventListener("click", function () { I18N.toggle(); });
+    }
+  </script>
+</body>
+</html>
