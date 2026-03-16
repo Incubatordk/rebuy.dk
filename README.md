@@ -16,7 +16,33 @@ Pushes to `main` auto-deploy to GitHub Pages via GitHub Actions.
 
 ## Site Modes
 
-Edit `SITE_MODE` in `site.config.js`:
+The site has two modes: a pre-launch teaser and a post-launch app download page.
 
-- `"prelaunch"` — teaser page with email signup
-- `"launched"` — app download landing page
+### Switching from pre-launch to launched
+
+Open `site.config.js` and change `SITE_MODE` from `"prelaunch"` to `"launched"`:
+
+```js
+const SITE_CONFIG = {
+  SITE_MODE: "launched",  // was "prelaunch"
+  // ...
+};
+```
+
+Commit and push — the site will redeploy automatically.
+
+### Mode overview
+
+| Mode | What it shows |
+|------|---------------|
+| `"prelaunch"` | Teaser page with "Coming soon" badge and email signup form |
+| `"launched"` | App download page with App Store / Google Play buttons |
+
+### Testing both modes locally
+
+Add `?mode=prelaunch` or `?mode=launched` to the URL to override the config:
+
+```
+http://localhost:8000/?mode=prelaunch
+http://localhost:8000/?mode=launched
+```
