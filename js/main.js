@@ -20,8 +20,10 @@
   }
 
   // ---- Site mode switching ----
+  // URL param ?mode=launched or ?mode=prelaunch overrides config (for testing)
 
-  var mode = SITE_CONFIG.SITE_MODE;
+  var urlMode = new URLSearchParams(window.location.search).get("mode");
+  var mode = (urlMode === "launched" || urlMode === "prelaunch") ? urlMode : SITE_CONFIG.SITE_MODE;
   var prelaunchEl = document.getElementById("prelaunch-content");
   var launchedEl = document.getElementById("launched-content");
 
