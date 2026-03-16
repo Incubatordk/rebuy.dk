@@ -93,6 +93,8 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img,
@@ -309,7 +311,7 @@ a:hover {
 .signup {
   max-width: 500px;
   margin: 0 auto;
-  padding: var(--space-3xl) 0;
+  padding: var(--space-3xl) var(--space-lg);
   text-align: center;
 }
 
@@ -334,13 +336,14 @@ a:hover {
   flex: 1;
   padding: var(--space-sm) var(--space-md);
   font-family: var(--font-family);
-  font-size: var(--text-base);
+  font-size: 16px; /* Prevents iOS zoom on focus */
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-bg-card);
   color: var(--color-text);
   outline: none;
   transition: border-color var(--transition-fast);
+  min-height: 48px;
 }
 
 .signup-form input[type="email"]:focus {
@@ -385,6 +388,7 @@ a:hover {
   transition: all var(--transition-fast);
   text-decoration: none;
   line-height: 1.4;
+  min-height: 48px;
 }
 
 .btn-primary {
@@ -438,6 +442,7 @@ a:hover {
   font-weight: 500;
   transition: all var(--transition-fast);
   text-decoration: none;
+  min-height: 48px;
 }
 
 .store-btn:hover {
@@ -631,7 +636,27 @@ a:hover {
 }
 
 /* ==========================================================================
-   Responsive
+   Touch Devices — disable hover lift effects
+   ========================================================================== */
+
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+
+  .store-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .btn-primary:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Tablet (≤ 900px)
    ========================================================================== */
 
 @media (max-width: 900px) {
@@ -650,25 +675,56 @@ a:hover {
   }
 }
 
+/* ==========================================================================
+   Responsive — Mobile (≤ 640px)
+   ========================================================================== */
+
 @media (max-width: 640px) {
   .container {
     padding: 0 var(--space-md);
   }
 
   .hero {
-    padding: var(--space-3xl) 0 var(--space-2xl);
+    padding: var(--space-2xl) 0 var(--space-xl);
   }
 
   .hero h1 {
     font-size: var(--text-3xl);
+    padding: 0 var(--space-md);
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 
   .hero-subtitle {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    padding: 0 var(--space-md);
   }
 
   .hero-logo {
-    width: 140px;
+    width: 120px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-badge {
+    margin-bottom: var(--space-md);
+  }
+
+  .cards {
+    padding: var(--space-xl) 0;
+    gap: var(--space-md);
+  }
+
+  .card {
+    padding: var(--space-lg);
+  }
+
+  .signup {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .signup h2 {
+    font-size: var(--text-xl);
   }
 
   .signup-form {
@@ -679,24 +735,90 @@ a:hover {
     width: 100%;
   }
 
+  .store-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .store-btn {
+    justify-content: center;
+  }
+
+  .cta {
+    padding: var(--space-xl) var(--space-md);
+    border-radius: var(--radius-lg);
+    margin: var(--space-xl) 0;
+  }
+
+  .cta h2 {
+    font-size: var(--text-xl);
+  }
+
+  .cta p {
+    font-size: var(--text-base);
+  }
+
+  .footer {
+    padding: var(--space-lg) 0;
+  }
+
   .footer-inner {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-sm);
   }
 
   .footer-links {
     flex-wrap: wrap;
     justify-content: center;
+    gap: var(--space-md);
+  }
+}
+
+/* ==========================================================================
+   Responsive — Small Mobile (≤ 380px, iPhone SE)
+   ========================================================================== */
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 1.625rem;
   }
 
-  .cta {
-    padding: var(--space-2xl) var(--space-md);
-    border-radius: var(--radius-lg);
+  .hero-subtitle {
+    font-size: var(--text-sm);
   }
 
-  .store-buttons {
-    flex-direction: column;
-    align-items: center;
+  .hero-logo {
+    width: 100px;
+  }
+
+  .header-logo-text {
+    font-size: var(--text-base);
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .store-btn {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* ==========================================================================
+   Safe Area — Notched devices (iPhone X+)
+   ========================================================================== */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  .header {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .footer {
+    padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom));
   }
 }
 
