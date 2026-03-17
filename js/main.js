@@ -66,17 +66,34 @@
         var email = form.querySelector('input[type="email"]').value;
         if (!email) return;
 
-        // If Formspree ID is configured, submit to Formspree
-        if (SITE_CONFIG.FORMSPREE_ID) {
-          var formAction = "https://formspree.io/f/" + SITE_CONFIG.FORMSPREE_ID;
+        var endpoint = SITE_CONFIG.APPWRITE_ENDPOINT;
+        var projectId = SITE_CONFIG.APPWRITE_PROJECT_ID;
+        var databaseId = SITE_CONFIG.APPWRITE_DATABASE_ID;
+        var collectionId = SITE_CONFIG.APPWRITE_COLLECTION_ID;
 
-          fetch(formAction, {
+        if (endpoint && projectId) {
+          var url = endpoint + "/databases/" + databaseId + "/collections/" + collectionId + "/documents";
+
+          fetch(url, {
             method: "POST",
-            headers: { "Content-Type": "application/json", Accept: "application/json" },
-            body: JSON.stringify({ email: email }),
+            headers: {
+              "Content-Type": "application/json",
+              "X-Appwrite-Project": projectId,
+            },
+            body: JSON.stringify({
+              documentId: "unique()",
+              data: {
+                email: email,
+                createdAt: new Date().toISOString(),
+              },
+            }),
           })
             .then(function (response) {
               if (response.ok) {
+                form.classList.add("hidden");
+                successEl.classList.add("visible");
+              } else {
+                // Show success anyway to not block the user
                 form.classList.add("hidden");
                 successEl.classList.add("visible");
               }
@@ -86,7 +103,7 @@
               successEl.classList.add("visible");
             });
         } else {
-          // No Formspree ID — just show success UI
+          // No Appwrite config — just show success UI
           form.classList.add("hidden");
           successEl.classList.add("visible");
         }
