@@ -21,8 +21,7 @@ var I18N = (function () {
 
       // Pre-launch hero
       "prelaunch.badge": "Kommer snart",
-      "prelaunch.title": "En ny måde at købe og sælge børneting",
-      "prelaunch.subtitle": "En markedsplads for børnefamilier i Danmark — køb og sælg børnetøj, legetøj og udstyr lokalt i dit nærområde.",
+      "prelaunch.title": "Noget nyt er på vej",
 
       // Cards
       "card.local.title": "Lokalt og nemt",
@@ -107,8 +106,7 @@ var I18N = (function () {
 
       // Pre-launch hero
       "prelaunch.badge": "Coming soon",
-      "prelaunch.title": "A new way to buy and sell kids' items",
-      "prelaunch.subtitle": "A marketplace for families in Denmark — buy and sell kids' clothes, toys and gear locally in your neighbourhood.",
+      "prelaunch.title": "Something new is on the way",
 
       // Cards
       "card.local.title": "Local and easy",
