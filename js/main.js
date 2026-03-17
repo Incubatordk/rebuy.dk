@@ -94,7 +94,8 @@
               form.classList.add("hidden");
               successEl.classList.add("visible");
             })
-            .catch(function () {
+            .catch(function (err) {
+              console.error("Signup network error:", err);
               form.classList.add("hidden");
               successEl.classList.add("visible");
             });
