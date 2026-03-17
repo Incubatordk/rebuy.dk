@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rebuy — Køb og sælg børneting lokalt</title>
-  <meta name="description" content="Rebuy er en ny markedsplads for børnefamilier i Danmark. Køb og sælg børnetøj, legetøj og udstyr lokalt i dit nærområde.">
+  <meta name="description" content="Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.">
   <link rel="canonical" href="https://rebuy.dk/">
   <meta name="robots" content="index, follow">
   <meta name="keywords" content="børnetøj, legetøj, børneudstyr, køb og sælg, brugt, lokal markedsplads, Danmark, bæredygtigt, genbrugstøj børn, kids clothes, second hand">
@@ -14,7 +14,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Rebuy — Køb og sælg børneting lokalt">
-  <meta property="og:description" content="En ny markedsplads for børnefamilier i Danmark. Køb og sælg børnetøj, legetøj og udstyr lokalt i dit nærområde.">
+  <meta property="og:description" content="Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rebuy.dk/">
   <meta property="og:locale" content="da_DK">
@@ -28,7 +28,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rebuy — Køb og sælg børneting lokalt">
-  <meta name="twitter:description" content="En ny markedsplads for børnefamilier i Danmark. Køb og sælg børnetøj, legetøj og udstyr lokalt.">
+  <meta name="twitter:description" content="Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.">
   <meta name="twitter:image" content="https://rebuy.dk/assets/logos/og-image.png">
 
   <!-- Structured Data -->
@@ -38,7 +38,7 @@
     "@type": "WebApplication",
     "name": "Rebuy",
     "url": "https://rebuy.dk",
-    "description": "En markedsplads for børnefamilier i Danmark. Køb og sælg børnetøj, legetøj og udstyr lokalt i dit nærområde.",
+    "description": "Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.",
     "applicationCategory": "ShoppingApplication",
     "operatingSystem": "iOS, Android",
     "inLanguage": ["da", "en"],
@@ -62,12 +62,19 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/logos/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png">
+
+  <!-- i18n hreflang -->
+  <link rel="alternate" hreflang="da" href="https://rebuy.dk/">
+  <link rel="alternate" hreflang="en" href="https://rebuy.dk/">
+  <link rel="alternate" hreflang="x-default" href="https://rebuy.dk/">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
@@ -96,7 +103,7 @@
 
       <!-- Hero -->
       <div class="hero">
-        <img src="assets/logos/logo-animated.svg" alt="Rebuy — mor med barnevogn" class="hero-logo">
+        <img src="assets/logos/logo-animated.svg" alt="Rebuy — mor med barnevogn" class="hero-logo" width="180" height="134">
         <span class="hero-badge" data-i18n="prelaunch.badge">Kommer snart</span>
         <h1 data-i18n="prelaunch.title">En ny måde at købe og sælge børneting er på vej</h1>
       </div>
@@ -123,7 +130,7 @@
 
       <!-- Hero -->
       <div class="hero">
-        <img src="assets/logos/logo-animated.svg" alt="Rebuy — mor med barnevogn" class="hero-logo">
+        <img src="assets/logos/logo-animated.svg" alt="Rebuy — mor med barnevogn" class="hero-logo" width="180" height="134">
         <h1 data-i18n="launched.title">Køb og sælg børneting i dit nærområde</h1>
         <p class="hero-subtitle" data-i18n="launched.subtitle">
           Rebuy forbinder børnefamilier lokalt. Find gode tilbud på børnetøj, legetøj og udstyr — eller sælg det, dine børn er vokset fra.
@@ -218,8 +225,8 @@
     </div>
   </footer>
 
-  <script src="site.config.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+  <script defer src="site.config.js"></script>
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
 </body>
 </html>
