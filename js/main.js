@@ -84,19 +84,15 @@
               documentId: "unique()",
               data: {
                 email: email,
-                createdAt: new Date().toISOString(),
               },
             }),
           })
             .then(function (response) {
-              if (response.ok) {
-                form.classList.add("hidden");
-                successEl.classList.add("visible");
-              } else {
-                // Show success anyway to not block the user
-                form.classList.add("hidden");
-                successEl.classList.add("visible");
+              if (!response.ok) {
+                response.json().then(function (err) { console.error("Appwrite error:", err); });
               }
+              form.classList.add("hidden");
+              successEl.classList.add("visible");
             })
             .catch(function () {
               form.classList.add("hidden");
