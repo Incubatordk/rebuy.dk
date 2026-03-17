@@ -211,7 +211,7 @@ a:hover {
    ========================================================================== */
 
 .hero {
-  padding: var(--space-4xl) 0 var(--space-3xl);
+  padding: var(--space-4xl) 0 var(--space-lg);
   text-align: center;
 }
 
@@ -311,7 +311,7 @@ a:hover {
 .signup {
   max-width: 500px;
   margin: 0 auto;
-  padding: var(--space-3xl) var(--space-lg);
+  padding: var(--space-xl) var(--space-lg);
   text-align: center;
 }
 
