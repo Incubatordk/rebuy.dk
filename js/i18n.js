@@ -21,7 +21,7 @@ var I18N = (function () {
 
       // Pre-launch hero
       "prelaunch.badge": "Kommer snart",
-      "prelaunch.title": "En ny måde at købe og sælge børneting",
+      "prelaunch.title": "En ny måde at købe og sælge børneting er på vej",
 
       // Cards
       "card.local.title": "Lokalt og nemt",
@@ -106,7 +106,7 @@ var I18N = (function () {
 
       // Pre-launch hero
       "prelaunch.badge": "Coming soon",
-      "prelaunch.title": "A new way to buy and sell kids' items",
+      "prelaunch.title": "A new way to buy and sell kids' items is coming",
 
       // Cards
       "card.local.title": "Local and easy",
