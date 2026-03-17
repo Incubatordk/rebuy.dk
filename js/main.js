@@ -33,6 +33,10 @@
   } else {
     prelaunchEl.classList.remove("hidden");
     launchedEl.classList.add("hidden");
+
+    // Hide footer links (privacy/terms) in prelaunch mode
+    var footerLinks = document.querySelector(".footer-links");
+    if (footerLinks) footerLinks.classList.add("hidden");
   }
 
   // ---- Store button URLs (launched mode) ----
