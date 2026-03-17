@@ -16,7 +16,7 @@
 
   --color-text: #1A1A1A;
   --color-text-secondary: #6B6B6B;
-  --color-text-muted: #9A9A9A;
+  --color-text-muted: #707070;
 
   --color-border: #EBEBEB;
 
@@ -226,7 +226,7 @@ a:hover {
   display: inline-block;
   padding: var(--space-xs) var(--space-md);
   background: var(--color-primary-light);
-  color: #7A3333;
+  color: #5C2222;
   font-size: var(--text-sm);
   font-weight: 600;
   border-radius: var(--radius-full);
