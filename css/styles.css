@@ -242,6 +242,7 @@ a:hover {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 var(--space-lg);
 }
 
 .hero-subtitle {
@@ -330,6 +331,7 @@ a:hover {
 .signup-form {
   display: flex;
   gap: var(--space-sm);
+  justify-content: center;
 }
 
 .signup-form input[type="email"] {
