@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["9643M8PZU4.12f.rebuy-ios"],
+        "components": [
+          {
+            "/": "/auth/magic",
+            "comment": "Magic sign-in link"
+          }
+        ]
+      }
+    ]
+  }
+}
