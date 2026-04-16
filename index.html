@@ -731,7 +731,7 @@ input:focus-visible {
 outline: none;
 }
   </style>
-  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/styles.css?v=__VERSION__" media="print" onload="this.media='all'">
 </head>
 <body>
 
@@ -875,12 +875,53 @@ outline: none;
         <a href="/privacy-policy" data-i18n="footer.privacy">Privatlivspolitik</a>
         <a href="terms.html" data-i18n="footer.terms">Vilkår og betingelser</a>
       </nav>
+      <button type="button" class="footer-contact-btn" id="contact-open"
+              data-i18n="contact.openLink"
+              data-i18n-aria="contact.openAria"
+              aria-label="Åbn kontaktformular">Kontakt</button>
       <span class="footer-copyright" data-i18n="footer.copyright">&copy; 2026 Rebuy. Alle rettigheder forbeholdes.</span>
     </div>
   </footer>
 
-  <script defer src="site.config.js"></script>
-  <script defer src="js/i18n.js"></script>
-  <script defer src="js/main.js"></script>
+  <!-- Contact modal -->
+  <div id="contact-modal" class="modal" hidden aria-hidden="true"
+       role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog" role="document">
+      <button type="button" class="modal-close" data-modal-close
+              data-i18n-aria="contact.close" aria-label="Luk">&times;</button>
+      <h2 id="contact-modal-title" data-i18n="contact.title">Kontakt os</h2>
+      <p data-i18n="contact.text">Har du spørgsmål? Send os en besked.</p>
+
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="name" required maxlength="200"
+               placeholder="Dit navn"
+               data-i18n-placeholder="contact.namePlaceholder"
+               data-i18n-aria="contact.nameLabel" aria-label="Navn">
+        <input type="email" name="email" required maxlength="320"
+               placeholder="Din e-mail"
+               data-i18n-placeholder="contact.emailPlaceholder"
+               data-i18n-aria="contact.emailLabel" aria-label="E-mail">
+        <input type="text" name="subject" required maxlength="200"
+               placeholder="Hvad handler det om?"
+               data-i18n-placeholder="contact.subjectPlaceholder"
+               data-i18n-aria="contact.subjectLabel" aria-label="Emne">
+        <textarea name="message" required maxlength="5000" rows="5"
+                  placeholder="Skriv din besked"
+                  data-i18n-placeholder="contact.messagePlaceholder"
+                  data-i18n-aria="contact.messageLabel" aria-label="Besked"></textarea>
+        <button type="submit" class="btn btn-primary" data-i18n="contact.submit">Send besked</button>
+      </form>
+
+      <div id="contact-success" class="contact-success"
+           data-i18n="contact.success">Tak! Vi vender tilbage så hurtigt som muligt.</div>
+      <div id="contact-error" class="contact-error" hidden
+           data-i18n="contact.error">Noget gik galt. Prøv igen eller skriv til support@rebuy.dk.</div>
+    </div>
+  </div>
+
+  <script defer src="site.config.js?v=__VERSION__"></script>
+  <script defer src="js/i18n.js?v=__VERSION__"></script>
+  <script defer src="js/main.js?v=__VERSION__"></script>
 </body>
 </html>
