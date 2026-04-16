@@ -57,6 +57,24 @@ var I18N = (function () {
       "footer.terms": "Vilkår og betingelser",
       "footer.copyright": "© 2026 Rebuy. Alle rettigheder forbeholdes.",
 
+      // Contact form
+      "contact.openLink": "Kontakt",
+      "contact.openAria": "Åbn kontaktformular",
+      "contact.title": "Kontakt os",
+      "contact.text": "Har du spørgsmål? Send os en besked.",
+      "contact.close": "Luk",
+      "contact.nameLabel": "Navn",
+      "contact.namePlaceholder": "Dit navn",
+      "contact.emailLabel": "E-mail",
+      "contact.emailPlaceholder": "Din e-mail",
+      "contact.subjectLabel": "Emne",
+      "contact.subjectPlaceholder": "Hvad handler det om?",
+      "contact.messageLabel": "Besked",
+      "contact.messagePlaceholder": "Skriv din besked",
+      "contact.submit": "Send besked",
+      "contact.success": "Tak! Vi vender tilbage så hurtigt som muligt.",
+      "contact.error": "Noget gik galt. Prøv igen eller skriv til support@rebuy.dk.",
+
       // Privacy page
       "privacy.title": "Privatlivspolitik",
       "privacy.updated": "Sidst opdateret: marts 2026",
@@ -141,6 +159,24 @@ var I18N = (function () {
       "footer.privacy": "Privacy Policy",
       "footer.terms": "Terms & Conditions",
       "footer.copyright": "© 2026 Rebuy. All rights reserved.",
+
+      // Contact form
+      "contact.openLink": "Contact",
+      "contact.openAria": "Open contact form",
+      "contact.title": "Get in touch",
+      "contact.text": "Got a question? Send us a message.",
+      "contact.close": "Close",
+      "contact.nameLabel": "Name",
+      "contact.namePlaceholder": "Your name",
+      "contact.emailLabel": "Email",
+      "contact.emailPlaceholder": "Your email",
+      "contact.subjectLabel": "Subject",
+      "contact.subjectPlaceholder": "What's it about?",
+      "contact.messageLabel": "Message",
+      "contact.messagePlaceholder": "Write your message",
+      "contact.submit": "Send message",
+      "contact.success": "Thanks! We'll get back to you as soon as possible.",
+      "contact.error": "Something went wrong. Please try again or email support@rebuy.dk.",
 
       // Privacy page
       "privacy.title": "Privacy Policy",

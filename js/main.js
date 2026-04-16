@@ -108,6 +108,90 @@
     }
   }
 
+  // ---- Contact form modal (both prelaunch and launched modes) ----
+
+  var contactModal = document.getElementById("contact-modal");
+  var contactOpen = document.getElementById("contact-open");
+  var contactForm = document.getElementById("contact-form");
+  var contactSuccess = document.getElementById("contact-success");
+  var contactError = document.getElementById("contact-error");
+  var lastFocused = null;
+
+  function openContactModal() {
+    if (!contactModal) return;
+    lastFocused = document.activeElement;
+    contactModal.hidden = false;
+    contactModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    var firstInput = contactModal.querySelector("input, textarea");
+    if (firstInput) firstInput.focus();
+  }
+
+  function closeContactModal() {
+    if (!contactModal) return;
+    contactModal.hidden = true;
+    contactModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  if (contactOpen && contactModal) {
+    contactOpen.addEventListener("click", openContactModal);
+
+    contactModal.addEventListener("click", function (e) {
+      if (e.target.hasAttribute("data-modal-close")) closeContactModal();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !contactModal.hidden) closeContactModal();
+    });
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var data = {
+        name: contactForm.elements.name.value.trim(),
+        email: contactForm.elements.email.value.trim(),
+        subject: contactForm.elements.subject.value.trim(),
+        message: contactForm.elements.message.value.trim(),
+      };
+      if (!data.name || !data.email || !data.subject || !data.message) return;
+
+      var endpoint = SITE_CONFIG.APPWRITE_APP_ENDPOINT;
+      var projectId = SITE_CONFIG.APPWRITE_APP_PROJECT_ID;
+      var databaseId = SITE_CONFIG.APPWRITE_DATABASE_ID;
+      var collectionId = SITE_CONFIG.APPWRITE_CONTACT_COLLECTION_ID;
+      if (!endpoint || !projectId) return;
+
+      var url = endpoint + "/databases/" + databaseId + "/collections/" + collectionId + "/documents";
+
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Appwrite-Project": projectId,
+        },
+        body: JSON.stringify({ documentId: "unique()", data: data }),
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            return response.json().then(function (err) {
+              throw new Error(err && err.message ? err.message : "HTTP " + response.status);
+            });
+          }
+          contactForm.classList.add("hidden");
+          contactError.hidden = true;
+          contactSuccess.classList.add("visible");
+        })
+        .catch(function (err) {
+          console.error("Contact submit failed:", err);
+          contactError.hidden = false;
+        });
+    });
+  }
+
   // ---- Header scroll effect ----
 
   var header = document.querySelector(".header");
