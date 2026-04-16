@@ -22,6 +22,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Replace __VERSION__ with commit SHA (cache bust)
+        run: |
+          VERSION="${GITHUB_SHA::7}"
+          echo "Stamping assets with VERSION=$VERSION"
+          grep -rl '__VERSION__' --include='*.html' . | xargs sed -i "s/__VERSION__/$VERSION/g"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
