@@ -22,17 +22,7 @@
     .legal p { color: var(--color-text-secondary); margin-bottom: var(--space-md); line-height: 1.7; }
     .legal ul { color: var(--color-text-secondary); margin: 0 0 var(--space-md) var(--space-lg); line-height: 1.7; }
     .legal ul li { margin-bottom: var(--space-xs); }
-    .legal-updated { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-md); }
-    .legal-draft {
-      display: inline-block;
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      background: rgba(245, 169, 169, 0.15);
-      border: 1px solid rgba(245, 169, 169, 0.4);
-      padding: var(--space-xs) var(--space-sm);
-      border-radius: 6px;
-      margin-bottom: var(--space-xl);
-    }
+    .legal-updated { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-xl); }
     .legal a { color: var(--color-primary, #E88888); }
   </style>
 </head>
@@ -52,8 +42,7 @@
 
   <main class="legal">
     <h1 data-i18n="privacy.title">Privatlivspolitik</h1>
-    <p class="legal-updated" data-i18n="privacy.updated">Sidst opdateret: april 2026</p>
-    <p class="legal-draft" data-i18n="privacy.draft_notice">Udkast — endelig version udgives inden lancering.</p>
+    <p class="legal-updated" data-i18n="privacy.updated">Sidst opdateret: 16. april 2026</p>
 
     <p data-i18n="privacy.intro">Rebuy er en lokal markedsplads, hvor familier kan købe og sælge brugte børneting. Vi tager din databeskyttelse alvorligt, og denne politik beskriver, hvilke personoplysninger vi indsamler, hvorfor vi gør det, og hvilke rettigheder du har.</p>
 
@@ -63,11 +52,14 @@
     <h2 data-i18n="privacy.s2_title">2. Hvilke oplysninger indsamler vi</h2>
     <p data-i18n="privacy.s2_intro">Vi indsamler kun de oplysninger, der er nødvendige for at levere og forbedre tjenesten:</p>
     <ul>
-      <li data-i18n="privacy.s2_li1">Kontooplysninger: navn, e-mailadresse og valgfrit profilbillede.</li>
-      <li data-i18n="privacy.s2_li2">Annonceindhold: titel, beskrivelse, pris, billeder og kategori for de annoncer, du opretter.</li>
-      <li data-i18n="privacy.s2_li3">Lokation: din omtrentlige geografiske placering (typisk postnummer), så vi kan vise annoncer i dit nærområde.</li>
-      <li data-i18n="privacy.s2_li4">Kommunikation: beskeder, som du sender til andre brugere via chatten i appen.</li>
-      <li data-i18n="privacy.s2_li5">Teknisk information: enhedstype, operativsystem, app-version og anonymiseret brugsstatistik.</li>
+      <li data-i18n="privacy.s2_li1">Kontooplysninger: dit navn, din e-mailadresse og valgfrit profilbillede. Hvis du logger ind med Apple eller Google, modtager vi også et brugerident og din e-mail fra udbyderen.</li>
+      <li data-i18n="privacy.s2_li2">Annonceindhold: titel, beskrivelse, pris, billeder, kategori, stand og placering for de annoncer, du opretter.</li>
+      <li data-i18n="privacy.s2_li3">Lokation: din nøjagtige geografiske placering, så vi kan vise annoncer i nærheden og hjælpe købere med at finde dine. Andre brugere ser kun byen eller området — aldrig præcise koordinater.</li>
+      <li data-i18n="privacy.s2_li4">Billeder: fotos, du tager med kameraet eller vælger fra dit billedbibliotek, når du opretter en annonce eller opdaterer dit profilbillede.</li>
+      <li data-i18n="privacy.s2_li5">Beskeder: indholdet af de chats, du sender til andre brugere via appen.</li>
+      <li data-i18n="privacy.s2_li6">Notifikationer: en enheds-token (APNs), så vi kan sende dig push-notifikationer om beskeder og annoncer.</li>
+      <li data-i18n="privacy.s2_li7">Feedback: hvis du bruger "Send feedback" i appen, modtager vi din besked, din e-mail og teknisk metadata (app-version, iOS-version, enhedstype, sprog).</li>
+      <li data-i18n="privacy.s2_li8">Teknisk information: enhedstype, operativsystem og app-version til fejlsøgning og support.</li>
     </ul>
 
     <h2 data-i18n="privacy.s3_title">3. Formål og retsgrundlag</h2>
