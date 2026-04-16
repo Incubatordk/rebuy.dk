@@ -373,6 +373,171 @@ a:hover {
 }
 
 /* ==========================================================================
+   Contact modal
+   ========================================================================== */
+
+.footer-contact-btn {
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-contact-btn:hover,
+.footer-contact-btn:focus-visible {
+  color: var(--color-text);
+  outline: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+
+.modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--space-xl);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+  background: var(--color-bg-warm);
+  color: var(--color-text);
+  outline: none;
+}
+
+.modal-dialog h2 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+  padding-right: var(--space-xl);
+}
+
+.modal-dialog > p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-family);
+  font-size: 16px; /* Prevents iOS zoom on focus */
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--transition-fast);
+  min-height: 48px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.5;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(245, 169, 169, 0.2);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.contact-form .btn {
+  margin-top: var(--space-xs);
+  width: 100%;
+}
+
+.contact-form.hidden {
+  display: none;
+}
+
+.contact-success {
+  display: none;
+  padding: var(--space-md);
+  background: rgba(52, 199, 89, 0.1);
+  border: 1px solid rgba(52, 199, 89, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.contact-success.visible {
+  display: block;
+}
+
+.contact-error {
+  margin-top: var(--space-sm);
+  padding: var(--space-md);
+  background: rgba(255, 59, 48, 0.08);
+  border: 1px solid rgba(255, 59, 48, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+/* ==========================================================================
    Buttons
    ========================================================================== */
 
@@ -777,6 +942,14 @@ a:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-md);
+  }
+
+  .modal-dialog {
+    padding: var(--space-lg);
+  }
+
+  .modal-dialog h2 {
+    font-size: var(--text-xl);
   }
 }
 
