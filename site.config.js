@@ -4,7 +4,7 @@ const SITE_CONFIG = {
   SITE_MODE: "prelaunch",
 
   // Appwrite config for email signup (pre-launch mode only)
-  APPWRITE_ENDPOINT: "https://base.12f.dk/v1",
+  APPWRITE_ENDPOINT: "https://base.anchorit.dk/v1",
   APPWRITE_PROJECT_ID: "69b9195d00185a0c3d84",
   APPWRITE_DATABASE_ID: "rebuy",
   APPWRITE_COLLECTION_ID: "signups",
