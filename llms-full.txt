@@ -16,16 +16,58 @@ Rebuy is offered as a mobile app for iOS and Android. The site rebuy.dk is the m
 
 # Blog
 
-## The Secondhand Shop at the End of Your Street
+## Genbrugsbutikken for enden af din gade / The Secondhand Shop at the End of Your Street
 
 - URL: https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/
 - Published: 2026-04-19
 - Author: Rebuy
-- Language: English
+- Languages: Danish and English
 
-**Dek:** Why local, in-person trades make more sense for families than shipping-first apps — and how we're building something around that idea.
+**Danish dek:** Hvorfor lokale handler ansigt til ansigt giver mere mening for børnefamilier end apps, der starter med fragt.
+
+**English dek:** Why local, in-person trades make more sense for families than shipping-first apps — and how we're building something around that idea.
 
 ---
+
+### Danish version
+
+Du er på vej hjem fra legepladsen med barnevognen. Dit barn er faldet i søvn, og telefonen summer. To gader væk sælger en anden familie et trætog — præcis den slags, dit barn har peget på i vuggestuen i ugevis. Det koster 40 kroner. Du går forbi på vejen hjem, betaler med MobilePay, vinker tak og er hjemme igen få minutter senere.
+
+Det lyder som en lille ting. Men det er også en ret anden måde at købe brugte børneting på.
+
+#### Når fragt bliver en omvej
+
+Mange genbrugsapps er bygget op omkring forsendelse. Man finder noget, betaler, venter og håber, at pakken svarer til billederne. Det fungerer ofte fint, men med børneting kan ventetiden og fragten hurtigt gøre en god handel mindre god.
+
+Børn mangler sjældent regnbukser "på et tidspunkt". De mangler dem på fredag. En brugt løbecykel kan se perfekt ud på billeder, men det er rart at kunne se højden, dækkene og ridserne, før man tager den med hjem.
+
+#### Hvad der ændrer sig, når varen er tæt på
+
+Når noget ligger tre gader væk, bliver handlen mere enkel. Du kan kigge på varen, mærke kvaliteten og vurdere standen med det samme. Du kan skrive: "Jeg går forbi efter afhentning, passer det?" og så er handlen klaret på et minut.
+
+Det lokale gør også handlen mere afslappet. Ingen pakkelabels, ingen tracking, ingen returproces. Bare en kort besked, en hurtig overlevering og måske et lille hej til en nabo, du ikke kendte endnu.
+
+#### Hvorfor børneting passer særligt godt til lokalt genbrug
+
+Børn vokser hurtigt. Pludselig ligger der en hel bunke tøj, som kun blev brugt i få måneder. Et puslespil, der var et hit sidste vinter, er blevet for nemt. Bøgerne, du kan udenad, er stadig nye for barnet i opgangen ved siden af.
+
+Det er en af de mest naturlige former for genbrug: den ene families "vi er færdige med det" er den næste families "det mangler vi lige nu".
+
+- Flyverdragten fra sidste sæson kan blive en anden families løsning til november.
+- Trætoget, der ikke længere bliver brugt, kan blive dagens store fund to gader væk.
+- Stakken af billedbøger kan få et nyt liv uden at blive pakket i en papkasse.
+
+#### Det bygger vi Rebuy til
+
+Rebuy er en lokal markedsplads for børnetøj, legetøj og bøger. Tanken er at gøre det nemt at købe og sælge de ting, børn vokser fra, uden at gøre hver eneste handel til et lille fragtprojekt.
+
+Du lægger flyverdragten op. En forælder i nærheden ser den. I aftaler et tidspunkt, mødes kort, og tøjet får en ny vinter. Hurtigt, praktisk og uden unødvendig afstand.
+
+Rebuy handler om at lukke den lille løkke mellem familien, der har noget til overs, og familien i nærheden, der lige står og mangler det.
+
+---
+
+### English version
 
 You're pushing the stroller home from the playground. Your three-year-old just passed peak exhaustion and is drifting off. Your phone buzzes. Someone two streets over is selling a wooden train set — the exact one your kid has been pointing at in daycare for weeks. It's 40 kroner. You swing by on the way home. The seller is on the porch, the box is on a chair, you wave, you pay with MobilePay. You're home in under ten minutes with a new favorite toy, and your kid is still asleep.
 

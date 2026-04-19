@@ -3,8 +3,8 @@
   <channel>
     <title>Rebuy Blog</title>
     <link>https://rebuy.dk/blog/</link>
-    <description>Notes from Rebuy about local secondhand shopping, family life, and the small loops that make reuse easier.</description>
-    <language>en-gb</language>
+    <description>Noter fra Rebuy om lokalt genbrug, familieliv og de små kredsløb, der gør det lettere at sende børneting videre.</description>
+    <language>da-dk</language>
     <copyright>Copyright 2026 Rebuy</copyright>
     <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rebuy.dk/blog/feed.xml" rel="self" type="application/rss+xml" />
@@ -14,12 +14,12 @@
       <link>https://rebuy.dk/blog/</link>
     </image>
     <item>
-      <title>The Secondhand Shop at the End of Your Street</title>
+      <title>Genbrugsbutikken for enden af din gade</title>
       <link>https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/</link>
       <guid isPermaLink="true">https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/</guid>
       <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       <author>support@rebuy.dk (Rebuy)</author>
-      <description>Why local, in-person trades make more sense for families than shipping-first apps — and how we're building something around that idea.</description>
+      <description>Hvorfor lokalt genbrug ofte giver mere mening end fragt, når børnetøj, legetøj og bøger skal videre til næste familie.</description>
     </item>
   </channel>
 </rss>
