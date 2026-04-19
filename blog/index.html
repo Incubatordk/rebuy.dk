@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — Rebuy</title>
-  <meta name="description" content="Stories and practical notes from Rebuy about local secondhand shopping for families.">
+  <meta name="description" content="Fortællinger og praktiske noter fra Rebuy om lokalt genbrug for børnefamilier.">
   <link rel="canonical" href="https://rebuy.dk/blog/">
   <meta name="robots" content="index, follow">
   <script defer src="https://umami.robert-jensen.dk/script.js" data-website-id="ab067f06-e505-4511-97f9-28536a14614b"></script>
   <meta property="og:title" content="Blog — Rebuy">
-  <meta property="og:description" content="Stories and practical notes from Rebuy about local secondhand shopping for families.">
+  <meta property="og:description" content="Fortællinger og praktiske noter fra Rebuy om lokalt genbrug for børnefamilier.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rebuy.dk/blog/">
   <meta property="og:site_name" content="Rebuy">
-  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale" content="da_DK">
   <meta property="og:image" content="https://rebuy.dk/assets/blog/rebuy-blog.jpg">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="1051">
-  <meta property="og:image:alt" content="Parent with stroller discovering a secondhand wooden train set nearby in a Danish neighborhood">
+  <meta property="og:image:alt" content="Forælder med barnevogn finder et brugt trætog tæt på i et dansk nabolag">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Blog — Rebuy">
-  <meta name="twitter:description" content="Stories and practical notes from Rebuy about local secondhand shopping for families.">
+  <meta name="twitter:description" content="Fortællinger og praktiske noter fra Rebuy om lokalt genbrug for børnefamilier.">
   <meta name="twitter:image" content="https://rebuy.dk/assets/blog/rebuy-blog.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Rebuy Blog",
-    "description": "Stories and practical notes from Rebuy about local secondhand shopping for families.",
+    "description": "Fortællinger og praktiske noter fra Rebuy om lokalt genbrug for børnefamilier.",
     "url": "https://rebuy.dk/blog/",
-    "inLanguage": "en",
+    "inLanguage": ["da", "en"],
     "publisher": {
       "@type": "Organization",
       "name": "Rebuy",
@@ -41,7 +41,8 @@
     "blogPost": [
       {
         "@type": "BlogPosting",
-        "headline": "The Secondhand Shop at the End of Your Street",
+        "headline": "Genbrugsbutikken for enden af din gade",
+        "alternativeHeadline": "The Secondhand Shop at the End of Your Street",
         "url": "https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/",
         "datePublished": "2026-04-19",
         "author": {
@@ -62,39 +63,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="../css/styles.css?v=__VERSION__">
+  <script defer src="../js/blog-i18n.js?v=__VERSION__"></script>
 </head>
-<body>
+<body data-blog-page="index">
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="header-logo">
         <img src="/assets/logos/color-icon-left-layout.svg?v=20260419" alt="Rebuy" width="188" height="40">
       </a>
       <nav class="header-nav" aria-label="Primary navigation">
-        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/blog/" aria-current="page" data-blog-i18n="nav.blog">Blog</a>
       </nav>
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">
+        <span data-blog-i18n="lang.toggle">EN</span>
+      </button>
     </div>
   </header>
 
   <main>
     <section class="blog-hero">
       <div class="container">
-        <p class="eyebrow">Blog</p>
-        <h1>Notes from the neighborhood</h1>
-        <p>Stories about local secondhand shopping, family life, and the small loops that make reuse easier.</p>
+        <p class="eyebrow" data-blog-i18n="blog.index.eyebrow">Blog</p>
+        <h1 data-blog-i18n="blog.index.title">Noter fra nabolaget</h1>
+        <p data-blog-i18n="blog.index.text">Fortællinger om lokalt genbrug, familieliv og de små kredsløb, der gør det lettere at sende børneting videre.</p>
       </div>
     </section>
 
     <section class="blog-list-section">
       <div class="container">
         <article class="blog-card">
-          <a href="/blog/the-secondhand-shop-at-the-end-of-your-street/" class="blog-card-image" aria-label="Read The Secondhand Shop at the End of Your Street">
-            <img src="../assets/blog/rebuy-blog.jpg" alt="Parent with stroller discovering a secondhand wooden train set nearby in a Danish neighborhood" width="1024" height="1051">
+          <a href="/blog/the-secondhand-shop-at-the-end-of-your-street/" class="blog-card-image" aria-label="Læs Genbrugsbutikken for enden af din gade" data-blog-i18n-aria="blog.card.aria">
+            <img src="../assets/blog/rebuy-blog.jpg" alt="Forælder med barnevogn finder et brugt trætog tæt på i et dansk nabolag" data-blog-i18n-alt="blog.image.alt" width="1024" height="1051">
           </a>
           <div class="blog-card-body">
-            <p class="post-meta">April 19, 2026 · Rebuy</p>
-            <h2><a href="/blog/the-secondhand-shop-at-the-end-of-your-street/">The Secondhand Shop at the End of Your Street</a></h2>
-            <p>Why local, in-person trades make more sense for families than shipping-first apps.</p>
-            <a href="/blog/the-secondhand-shop-at-the-end-of-your-street/" class="read-more">Read the article</a>
+            <p class="post-meta" data-blog-i18n="blog.post.date">19. april 2026 · Rebuy</p>
+            <h2><a href="/blog/the-secondhand-shop-at-the-end-of-your-street/" data-blog-i18n="blog.post.title">Genbrugsbutikken for enden af din gade</a></h2>
+            <p data-blog-i18n="blog.post.excerpt">Hvorfor lokalt genbrug ofte giver mere mening end fragt, når børnetøj, legetøj og bøger skal videre.</p>
+            <a href="/blog/the-secondhand-shop-at-the-end-of-your-street/" class="read-more" data-blog-i18n="blog.read">Læs artiklen</a>
           </div>
         </article>
       </div>
@@ -108,11 +113,11 @@
         <span class="footer-logo-text">Rebuy</span>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/blog/">Blog</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms.html">Terms & Conditions</a>
+        <a href="/blog/" data-blog-i18n="nav.blog">Blog</a>
+        <a href="/privacy-policy" data-blog-i18n="footer.privacy">Privatlivspolitik</a>
+        <a href="/terms.html" data-blog-i18n="footer.terms">Vilkår og betingelser</a>
       </nav>
-      <span class="footer-copyright">&copy; 2026 Rebuy. All rights reserved.</span>
+      <span class="footer-copyright" data-blog-i18n="footer.copyright">&copy; 2026 Rebuy. Alle rettigheder forbeholdes.</span>
     </div>
   </footer>
 </body>

@@ -4,7 +4,7 @@
 
 Rebuy is built for the ordinary rhythm of family life: pickups on the way home from daycare, quick handovers at the playground, and the box of outgrown clothes that's been sitting in the hallway for weeks. The product lives primarily as a mobile app (iOS and Android). The site at rebuy.dk is the marketing and information site for the product and company.
 
-Rebuy operates in Denmark. The marketing site is available in Danish (default) and English. The blog is currently English-only.
+Rebuy operates in Denmark. The marketing site is available in Danish (default) and English. The blog supports Danish and English, following the user's language preference.
 
 ## Key pages
 
@@ -15,7 +15,7 @@ Rebuy operates in Denmark. The marketing site is available in Danish (default) a
 
 ## Blog posts
 
-- [The Secondhand Shop at the End of Your Street](https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/): Why local, in-person trades make more sense for families than shipping-first apps — and the case for neighborhood-scale reuse of kids' clothes, toys, and books.
+- [Genbrugsbutikken for enden af din gade / The Secondhand Shop at the End of Your Street](https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/): Why local, in-person trades make more sense than shipping-first apps for families — and the case for neighborhood-scale reuse of kids' clothes, toys, and books.
 
 ## For LLMs and AI assistants
 
