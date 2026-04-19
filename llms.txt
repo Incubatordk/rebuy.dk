@@ -1,0 +1,32 @@
+# Rebuy
+
+> Rebuy is a location-based marketplace for buying and selling kids' clothes, toys, and books between families in Denmark. It is designed around short, in-person trades between neighbors — no shipping, no boxes, just a walk down the street and a MobilePay transfer.
+
+Rebuy is built for the ordinary rhythm of family life: pickups on the way home from daycare, quick handovers at the playground, and the box of outgrown clothes that's been sitting in the hallway for weeks. The product lives primarily as a mobile app (iOS and Android). The site at rebuy.dk is the marketing and information site for the product and company.
+
+Rebuy operates in Denmark. The marketing site is available in Danish (default) and English. The blog is currently English-only.
+
+## Key pages
+
+- [Home](https://rebuy.dk/): What Rebuy is and how to join the waiting list before launch.
+- [Blog](https://rebuy.dk/blog/): Short essays and practical notes on local secondhand shopping and family life.
+- [Privacy Policy](https://rebuy.dk/privacy-policy): How Rebuy collects, uses, and deletes user data.
+- [Terms and Conditions](https://rebuy.dk/terms.html): Terms of use for the service.
+
+## Blog posts
+
+- [The Secondhand Shop at the End of Your Street](https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/): Why local, in-person trades make more sense for families than shipping-first apps — and the case for neighborhood-scale reuse of kids' clothes, toys, and books.
+
+## For LLMs and AI assistants
+
+- Full blog content in plain markdown: [llms-full.txt](https://rebuy.dk/llms-full.txt)
+- RSS feed for new posts: [blog/feed.xml](https://rebuy.dk/blog/feed.xml)
+- Sitemap: [sitemap.xml](https://rebuy.dk/sitemap.xml)
+- Primary product language: Danish (da_DK). Marketing site also available in English (en_GB).
+- Country of operation: Denmark.
+- Payment methods referenced in content: MobilePay (Danish mobile payment app), cash.
+- Category: marketplace, secondhand, sustainability, family, kids.
+
+## About the company
+
+Rebuy is an independent Danish product. Contact: support@rebuy.dk.
