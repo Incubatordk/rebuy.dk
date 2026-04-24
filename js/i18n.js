@@ -37,6 +37,7 @@ var I18N = (function () {
       "signup.placeholder": "Din e-mail",
       "signup.button": "Tilmeld",
       "signup.success": "Tak for din tilmelding! Vi sender dig en besked, når Rebuy er klar. 🎉",
+      "signup.error": "Noget gik galt. Prøv igen eller skriv til support@rebuy.dk.",
       "signup.aria": "E-mailadresse",
 
       // Launched hero
@@ -174,6 +175,7 @@ var I18N = (function () {
       "signup.placeholder": "Your email",
       "signup.button": "Sign up",
       "signup.success": "Thanks for signing up! We'll let you know when Rebuy is ready. 🎉",
+      "signup.error": "Something went wrong. Please try again or email support@rebuy.dk.",
       "signup.aria": "Email address",
 
       // Launched hero

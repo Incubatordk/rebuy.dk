@@ -58,6 +58,7 @@
   if (mode === "prelaunch") {
     var form = document.getElementById("signup-form");
     var successEl = document.getElementById("signup-success");
+    var errorEl = document.getElementById("signup-error");
 
     if (form) {
       form.addEventListener("submit", function (e) {
@@ -66,44 +67,36 @@
         var email = form.querySelector('input[type="email"]').value;
         if (!email) return;
 
-        var endpoint = SITE_CONFIG.APPWRITE_ENDPOINT;
-        var projectId = SITE_CONFIG.APPWRITE_PROJECT_ID;
-        var databaseId = SITE_CONFIG.APPWRITE_DATABASE_ID;
-        var collectionId = SITE_CONFIG.APPWRITE_COLLECTION_ID;
+        var url = SITE_CONFIG.APPWRITE_ENDPOINT
+          + "/databases/" + SITE_CONFIG.APPWRITE_DATABASE_ID
+          + "/collections/" + SITE_CONFIG.APPWRITE_COLLECTION_ID
+          + "/documents";
 
-        if (endpoint && projectId) {
-          var url = endpoint + "/databases/" + databaseId + "/collections/" + collectionId + "/documents";
-
-          fetch(url, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "X-Appwrite-Project": projectId,
-            },
-            body: JSON.stringify({
-              documentId: "unique()",
-              data: {
-                email: email,
-              },
-            }),
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Appwrite-Project": SITE_CONFIG.APPWRITE_PROJECT_ID,
+          },
+          body: JSON.stringify({
+            documentId: "unique()",
+            data: { email: email },
+          }),
+        })
+          .then(function (response) {
+            if (!response.ok) {
+              return response.json().then(function (err) {
+                throw new Error(err && err.message ? err.message : "HTTP " + response.status);
+              });
+            }
+            form.classList.add("hidden");
+            if (errorEl) errorEl.hidden = true;
+            successEl.classList.add("visible");
           })
-            .then(function (response) {
-              if (!response.ok) {
-                response.json().then(function (err) { console.error("Appwrite error:", err); });
-              }
-              form.classList.add("hidden");
-              successEl.classList.add("visible");
-            })
-            .catch(function (err) {
-              console.error("Signup network error:", err);
-              form.classList.add("hidden");
-              successEl.classList.add("visible");
-            });
-        } else {
-          // No Appwrite config — just show success UI
-          form.classList.add("hidden");
-          successEl.classList.add("visible");
-        }
+          .catch(function (err) {
+            console.error("Signup failed:", err);
+            if (errorEl) errorEl.hidden = false;
+          });
       });
     }
   }
