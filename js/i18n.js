@@ -44,6 +44,20 @@ var I18N = (function () {
       "launched.title": "Køb og sælg børneting i dit nærområde",
       "launched.subtitle": "Rebuy forbinder børnefamilier lokalt. Find gode tilbud på børnetøj, legetøj og udstyr — eller sælg det, dine børn er vokset fra.",
 
+      // App Showcase
+      "showcase.title": "Tag et kig i appen",
+      "showcase.subtitle": "Fra første swipe til afhentning — alt det vigtigste på fem skærme.",
+      "showcase.feed.title": "Find tilbud i nærheden",
+      "showcase.feed.text": "Se annoncer i dit lokalområde med ét swipe.",
+      "showcase.detail.title": "Se alle detaljer",
+      "showcase.detail.text": "Pris, stand, billeder og afstand — samlet ét sted.",
+      "showcase.messages.title": "Chat med sælger",
+      "showcase.messages.text": "Aftal pris og afhentning direkte i appen.",
+      "showcase.post.title": "Sælg på få sekunder",
+      "showcase.post.text": "Tag et billede, sæt en pris, og du er online.",
+      "showcase.profile.title": "Hold styr på det hele",
+      "showcase.profile.text": "Dine annoncer, favoritter og indstillinger samlet ét sted.",
+
       // Store buttons
       "store.download": "Download fra",
       "store.appstore": "App Store",
@@ -181,6 +195,20 @@ var I18N = (function () {
       // Launched hero
       "launched.title": "Buy and sell kids' items in your neighbourhood",
       "launched.subtitle": "Rebuy connects families locally. Find great deals on kids' clothes, toys and gear — or sell what your kids have outgrown.",
+
+      // App Showcase
+      "showcase.title": "Take a look inside",
+      "showcase.subtitle": "From first swipe to pick-up — everything that matters, in five screens.",
+      "showcase.feed.title": "Find deals nearby",
+      "showcase.feed.text": "Browse listings in your neighbourhood with a single swipe.",
+      "showcase.detail.title": "See every detail",
+      "showcase.detail.text": "Price, condition, photos and distance — all in one place.",
+      "showcase.messages.title": "Chat with the seller",
+      "showcase.messages.text": "Agree on price and pick-up directly in the app.",
+      "showcase.post.title": "Sell in seconds",
+      "showcase.post.text": "Snap a photo, set a price, and you're live.",
+      "showcase.profile.title": "Stay on top of it all",
+      "showcase.profile.text": "Your listings, favourites and settings, neatly together.",
 
       // Store buttons
       "store.download": "Download on",
