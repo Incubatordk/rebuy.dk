@@ -25,12 +25,14 @@ python3 -m http.server 8000
 # Then visit http://localhost:8000
 ```
 
-## Design Tokens
+## Design System
 
-CSS custom properties in `css/styles.css` match the iOS app theme:
+**`DESIGN.md` (repo root) is the source of truth for the visual identity** — colors, typography, spacing, radii, elevation, components, and the brand do's & don'ts. It follows Google's [DESIGN.md format](https://github.com/google-labs-code/design.md) (YAML front-matter tokens + Markdown rationale). Read `DESIGN.md` before any UI / CSS / copy change so you stay on-system, and update it whenever a token, component, or rule is added, renamed, or removed in `css/styles.css`. The CSS custom properties in `css/styles.css` are the runtime mirror of those tokens and must stay in sync.
+
+Quick reference (full detail in `DESIGN.md`):
 
 - **Primary color:** `#F5A9A9` (Rebuy pink)
-- **Gradient:** `#FBCECE` → `#F5A9A9`
+- **Gradient:** `#FBCECE` → `#F5A9A9` at 135°
 - **Hover/Pressed:** `#E88888`
 - **Font:** Instrument Sans (Google Fonts)
 - **Background:** `#FAFAF9` (warm off-white)
