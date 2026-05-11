@@ -142,6 +142,26 @@ var I18N = (function () {
       "privacy.s12_title": "Kontakt",
       "privacy.s12_p": "Har du spørgsmål til denne privatlivspolitik, kan du skrive til support@rebuy.dk.",
 
+      // Account deletion page
+      "delete.title": "Sletning af konto",
+      "delete.updated": "Sidst opdateret: 11. maj 2026",
+      "delete.intro": "Rebuy drives af Anchorit ApS. Du kan til enhver tid bede om at få din Rebuy-konto og dine tilhørende data slettet. Denne side beskriver, hvordan du gør det, og hvad der sker med dine data bagefter.",
+      "delete.s1_title": "1. Sådan beder du om sletning",
+      "delete.s1_intro": "I appen:",
+      "delete.s1_step1": "Åbn Rebuy-appen og log ind.",
+      "delete.s1_step2": "Gå til Profil → Slet konto.",
+      "delete.s1_step3": "Tryk på Anmod om sletning og bekræft.",
+      "delete.s1_email": "Hvis du ikke har adgang til appen, kan du skrive til support@rebuy.dk fra den e-mailadresse, der er knyttet til din konto, med emnet \"Slet min konto\". Vi behandler anmodningen inden for 30 dage.",
+      "delete.s2_title": "2. Hvad sker der med dine data",
+      "delete.s2_li1": "Din profil skjules med det samme. Dine annoncer forsvinder fra søgning, og købere kan ikke længere skrive til dig.",
+      "delete.s2_li2": "Du har 30 dage til at logge ind og fortryde sletningen. Ved at logge ind genaktiveres din konto.",
+      "delete.s2_li3": "Efter 30 dage slettes følgende permanent: din profil (navn, e-mail, telefon, profilbillede), dine annoncer og annoncebilleder, dine beskeder, dine gemte varer og dine favoritter.",
+      "delete.s3_title": "3. Hvad vi opbevarer",
+      "delete.s3_li1": "Aggregerede, ikke-identificerbare logfiler kan opbevares i op til 12 måneder af hensyn til sikkerhed og forebyggelse af misbrug.",
+      "delete.s3_li2": "Oplysninger, som vi efter dansk lovgivning er forpligtet til at gemme (f.eks. bogføringsmateriale efter bogføringsloven), opbevares i den lovpligtige periode.",
+      "delete.s4_title": "4. Kontakt",
+      "delete.s4_p": "Spørgsmål eller behov for hjælp? Skriv til support@rebuy.dk.",
+
       // Terms page
       "terms.title": "Vilkår og betingelser",
       "terms.updated": "Sidst opdateret: marts 2026",
@@ -397,6 +417,26 @@ var I18N = (function () {
       "privacy.s11_p": "You have the right to lodge a complaint with the Danish Data Protection Agency (Datatilsynet) if you believe we process your personal data in breach of data protection law. Contact information is available at datatilsynet.dk.",
       "privacy.s12_title": "Contact",
       "privacy.s12_p": "If you have questions about this privacy policy, you can write to us at support@rebuy.dk.",
+
+      // Account deletion page
+      "delete.title": "Account deletion",
+      "delete.updated": "Last updated: 11 May 2026",
+      "delete.intro": "Rebuy is operated by Anchorit ApS. You can request that your Rebuy account and associated data be deleted at any time. This page explains how to do it and what happens to your data afterwards.",
+      "delete.s1_title": "1. How to request deletion",
+      "delete.s1_intro": "In the app:",
+      "delete.s1_step1": "Open the Rebuy app and sign in.",
+      "delete.s1_step2": "Go to Profile → Delete account.",
+      "delete.s1_step3": "Tap Request deletion and confirm.",
+      "delete.s1_email": "If you can't access the app, write to support@rebuy.dk from the email address on your account, with the subject \"Delete my account\". We process the request within 30 days.",
+      "delete.s2_title": "2. What happens to your data",
+      "delete.s2_li1": "Your profile is hidden immediately. Your listings disappear from search and buyers can no longer message you.",
+      "delete.s2_li2": "You have 30 days to sign in and cancel the deletion. Signing in restores your account.",
+      "delete.s2_li3": "After 30 days the following are permanently deleted: your profile (name, email, phone, profile picture), your listings and listing photos, your messages, your saved items and your favourites.",
+      "delete.s3_title": "3. What we retain",
+      "delete.s3_li1": "Aggregated, non-identifying log data may be retained for up to 12 months for security and abuse prevention.",
+      "delete.s3_li2": "Information we are required to retain under Danish law (e.g. accounting records under the Danish Bookkeeping Act) is kept for the statutory period.",
+      "delete.s4_title": "4. Contact",
+      "delete.s4_p": "Questions or need help? Write to support@rebuy.dk.",
 
       // Terms page
       "terms.title": "Terms & Conditions",
