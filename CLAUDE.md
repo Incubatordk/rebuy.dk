@@ -45,6 +45,19 @@ Logo files in `assets/logos/` are sourced from `rebuy-core/brand/logos/`. The an
 
 Push to `main` triggers `.github/workflows/deploy.yml` which deploys the root directory to GitHub Pages. The `CNAME` file configures the custom domain.
 
+## Blog & RSS feed
+
+Posts live at `blog/<slug>/index.html`. `blog/feed.xml` is **generated** by `scripts/build-feed.js` during deploy — do not hand-edit it. The generator scans every `blog/*/index.html`, extracts metadata, rewrites relative URLs to absolute, and emits RSS 2.0 with `<content:encoded>` (full Danish body) and `<media:content>` / `<media:thumbnail>` / `<enclosure>` for the cover image. Run locally with `node scripts/build-feed.js`.
+
+For a new post to appear in the feed, its HTML must declare:
+
+- `<link rel="canonical" href="https://rebuy.dk/blog/<slug>/">`
+- `<meta property="og:title" content="…">` (the " — Rebuy" suffix is stripped automatically)
+- `<meta name="description" content="…">`
+- `<meta property="article:published_time" content="YYYY-MM-DD">`
+- `<meta property="og:image" content="https://rebuy.dk/assets/blog/…">` plus `og:image:width`, `og:image:height`, `og:image:alt`
+- Body wrapped in `<div class="post-content" data-blog-lang="da">…</div>` (the EN sibling is ignored by the feed)
+
 ## Related Repos
 
 - `rebuy-core` — Design system, tokens, brand assets

@@ -27,6 +27,8 @@ jobs:
           VERSION="${GITHUB_SHA::7}"
           echo "Stamping assets with VERSION=$VERSION"
           grep -rl '__VERSION__' --include='*.html' . | xargs sed -i "s/__VERSION__/$VERSION/g"
+      - name: Build blog RSS feed
+        run: node scripts/build-feed.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
