@@ -45,6 +45,31 @@ Logo files in `assets/logos/` are sourced from `rebuy-core/brand/logos/`. The an
 
 Push to `main` triggers `.github/workflows/deploy.yml` which deploys the root directory to GitHub Pages. The `CNAME` file configures the custom domain.
 
+## Blog & RSS feeds
+
+Posts live at `blog/<slug>/index.html`. Two feeds are **generated** by `scripts/build-feed.js` during deploy — do not hand-edit them:
+
+- `blog/feed.xml` — Danish (`<language>da-dk</language>`)
+- `blog/en/feed.xml` — English (`<language>en</language>`)
+
+The generator scans every `blog/*/index.html` (excluding `blog/en/`), extracts metadata, rewrites relative URLs to absolute, and emits RSS 2.0 with `<content:encoded>` (full per-language body) plus `<media:content>` / `<media:thumbnail>` / `<enclosure>` for the cover image. Run locally with `node scripts/build-feed.js`.
+
+**Required per-post markup (Danish):**
+
+- `<link rel="canonical" href="https://rebuy.dk/blog/<slug>/">`
+- `<meta property="og:title" content="…">` (the " — Rebuy" suffix is stripped automatically)
+- `<meta name="description" content="…">`
+- `<meta property="article:published_time" content="YYYY-MM-DD">`
+- `<meta property="og:image" content="https://rebuy.dk/assets/blog/…">` plus `og:image:width`, `og:image:height`, `og:image:alt`
+- Body wrapped in `<div class="post-content" data-blog-lang="da">…</div>`
+
+**Optional English overrides** (the English feed falls back to the Danish values if these are missing):
+
+- `<meta name="rebuy:title:en" content="…">`
+- `<meta name="rebuy:description:en" content="…">`
+- `<meta name="rebuy:image:alt:en" content="…">`
+- Sibling body wrapped in `<div class="post-content" data-blog-lang="en">…</div>`
+
 ## Related Repos
 
 - `rebuy-core` — Design system, tokens, brand assets

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Rebuy Blog</title>
     <link>https://rebuy.dk/blog/</link>
@@ -8,6 +12,7 @@
     <copyright>Copyright 2026 Rebuy</copyright>
     <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rebuy.dk/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rebuy.dk/blog/en/feed.xml" rel="alternate" type="application/rss+xml" hreflang="en" title="Rebuy Blog (en)" />
     <image>
       <url>https://rebuy.dk/assets/logos/og-image.png</url>
       <title>Rebuy Blog</title>
@@ -19,7 +24,50 @@
       <guid isPermaLink="true">https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/</guid>
       <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       <author>support@rebuy.dk (Rebuy)</author>
+      <dc:creator>Rebuy</dc:creator>
       <description>Hvorfor lokalt genbrug ofte giver mere mening end fragt, når børnetøj, legetøj og bøger skal videre til næste familie.</description>
+      <media:content url="https://rebuy.dk/assets/blog/rebuy-blog.jpg" medium="image" type="image/jpeg" width="1024" height="1051">
+        <media:title type="plain">Forælder med barnevogn finder et brugt trætog tæt på i et dansk nabolag</media:title>
+      </media:content>
+      <media:thumbnail url="https://rebuy.dk/assets/blog/rebuy-blog.jpg" width="1024" height="1051" />
+      <enclosure url="https://rebuy.dk/assets/blog/rebuy-blog.jpg" type="image/jpeg" length="0" />
+      <content:encoded><![CDATA[<figure><img src="https://rebuy.dk/assets/blog/rebuy-blog.jpg" alt="Forælder med barnevogn finder et brugt trætog tæt på i et dansk nabolag" width="1024" height="1051" /></figure>
+<p>Du er på vej hjem fra legepladsen med barnevognen. Dit barn er faldet i søvn, og telefonen summer. To gader væk sælger en anden familie et trætog — præcis den slags, dit barn har peget på i vuggestuen i ugevis. Det koster 40 kroner. Du går forbi på vejen hjem, betaler med MobilePay, vinker tak og er hjemme igen få minutter senere.</p>
+        <p>Det lyder som en lille ting. Men det er også en ret anden måde at købe brugte børneting på.</p>
+
+        <h2>Når fragt bliver en omvej</h2>
+        <p>Mange genbrugsapps er bygget op omkring forsendelse. Man finder noget, betaler, venter og håber, at pakken svarer til billederne. Det fungerer ofte fint, men med børneting kan ventetiden og fragten hurtigt gøre en god handel mindre god.</p>
+        <p>Børn mangler sjældent regnbukser "på et tidspunkt". De mangler dem på fredag. En brugt løbecykel kan se perfekt ud på billeder, men det er rart at kunne se højden, dækkene og ridserne, før man tager den med hjem. Og hvis en bog mangler sider, eller støvlerne ikke passer, er det meget lettere at opdage det, når varen står lige foran dig.</p>
+        <p>Der er også noget lidt skævt i, at brugte børneting skal køres tværs gennem landet for at få et nyt liv. En flyverdragt, en bunke bøger eller et trætog behøver sjældent 200 kilometer på landevejen. Ofte skal det bare videre til den næste familie i nærheden.</p>
+
+        <h2>Hvad der ændrer sig, når varen er tæt på</h2>
+        <p>Når noget ligger tre gader væk, bliver handlen mere enkel. Du kan kigge på varen, mærke kvaliteten og vurdere standen med det samme. Du kan skrive: "Jeg går forbi efter afhentning, passer det?" og så er handlen klaret på et minut.</p>
+        <p>Det lokale gør også handlen mere afslappet. Ingen pakkelabels, ingen tracking, ingen returproces. Bare en kort besked, en hurtig overlevering og måske et lille hej til en nabo, du ikke kendte endnu.</p>
+        <p>For børnefamilier passer det godt til hverdagen. De fleste har allerede nok logistik. Det hjælper, når genbrug kan ske på vej hjem fra daginstitution, på vej til bageren eller mellem lur og aftensmad.</p>
+
+        <h2>Hvorfor børneting passer særligt godt til lokalt genbrug</h2>
+        <p>Børn vokser hurtigt. Pludselig ligger der en hel bunke tøj i størrelse 86, som kun blev brugt i få måneder. Et puslespil, der var et hit sidste vinter, er blevet for nemt. Bøgerne, du kan udenad, er stadig nye for barnet i opgangen ved siden af.</p>
+        <p>Det er en af de mest naturlige former for genbrug: den ene families "vi er færdige med det" er den næste families "det mangler vi lige nu". Det sker allerede mellem venner, kusiner, naboer og forældre fra samme institution. Det, der mangler, er en enkel måde at finde de familier i nærheden, man ikke allerede kender.</p>
+        <ul>
+          <li>Flyverdragten fra sidste sæson kan blive en anden families løsning til november.</li>
+          <li>Trætoget, der ikke længere bliver brugt, kan blive dagens store fund to gader væk.</li>
+          <li>Stakken af billedbøger kan få et nyt liv uden at blive pakket i en papkasse.</li>
+        </ul>
+
+        <h2>Det bygger vi Rebuy til</h2>
+        <p>Rebuy er en lokal markedsplads for børnetøj, legetøj og bøger. Tanken er at gøre det nemt at købe og sælge de ting, børn vokser fra, uden at gøre hver eneste handel til et lille fragtprojekt.</p>
+        <p>Du lægger flyverdragten op. En forælder i nærheden ser den. I aftaler et tidspunkt, mødes kort, og tøjet får en ny vinter. Hurtigt, praktisk og uden unødvendig afstand.</p>
+        <p>Det handler ikke om, at alle skal være perfekte genbrugsforkæmpere. Det handler om, at lokalt ofte bare er nemmere: billigere, hurtigere og mere konkret. Man kan se varen, hente den, betale og komme videre med dagen.</p>
+
+        <h2>Den oplagte lille løkke</h2>
+        <p>Et sted i dit nabolag står der en kasse med godt børnetøj, som ingen helt har fået gjort noget ved. Lidt længere væk er der en familie, der godt kunne bruge det. Måske går I allerede forbi hinanden på vej til bageren.</p>
+        <p>Rebuy handler om at lukke den lille løkke. Mindre afstand. Mindre emballage. Flere ting, der får et nyt liv tæt på. Og på en god dag: et trætog, der når hjem, før barnet vågner fra lur.</p>
+
+        <section class="post-cta" aria-labelledby="post-cta-title-da">
+          <h2 id="post-cta-title-da">Vær med fra start</h2>
+          <p>Rebuy lancerer snart i Danmark. Hvis du vil være blandt de første familier, der kan købe og sælge børneting lokalt — uden fragt, uden bøvl og med naboer i nærheden — kan du skrive dig på ventelisten.</p>
+          <a href="https://rebuy.dk/#signup-form" class="btn btn-primary">Skriv dig på ventelisten</a>
+        </section>]]></content:encoded>
     </item>
   </channel>
 </rss>
