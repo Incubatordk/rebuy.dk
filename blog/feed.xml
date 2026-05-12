@@ -12,6 +12,7 @@
     <copyright>Copyright 2026 Rebuy</copyright>
     <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rebuy.dk/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rebuy.dk/blog/en/feed.xml" rel="alternate" type="application/rss+xml" hreflang="en" title="Rebuy Blog (en)" />
     <image>
       <url>https://rebuy.dk/assets/logos/og-image.png</url>
       <title>Rebuy Blog</title>
