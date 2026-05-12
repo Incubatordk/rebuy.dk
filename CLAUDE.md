@@ -70,6 +70,24 @@ The generator scans every `blog/*/index.html` (excluding `blog/en/`), extracts m
 - `<meta name="rebuy:image:alt:en" content="…">`
 - Sibling body wrapped in `<div class="post-content" data-blog-lang="en">…</div>`
 
+## Legal RSS feeds
+
+The privacy policy and terms of use are also published as single-item RSS feeds so the iOS and Android apps can fetch and render the text directly. Feeds are **generated** by `scripts/build-legal-feeds.js` during deploy — do not hand-edit them:
+
+- `privacy-policy/feed.xml` — Danish
+- `privacy-policy/en/feed.xml` — English
+- `terms-of-use/feed.xml` — Danish
+- `terms-of-use/en/feed.xml` — English
+
+The generator loads `js/i18n.js` in a Node `vm` context, reads each legal page's `<main class="legal">` block, and for every element carrying `data-i18n="key"` it swaps in the translated string — mirroring what `i18n.js` does at runtime. Each feed emits one `<item>` whose `<content:encoded>` is the rendered HTML body. Run locally with `node scripts/build-legal-feeds.js`.
+
+**Required per-page markup:**
+
+- `<meta property="article:published_time" content="YYYY-MM-DD">` (drives `<pubDate>` / `<lastBuildDate>`)
+- `<main class="legal">…</main>` body wrapper, with every translatable node carrying a `data-i18n` key that exists in both `da` and `en` dictionaries in `js/i18n.js`
+
+To update the "last updated" date shown both on-page and in the feed, bump both the `privacy.updated` / `tou.updated` strings in `js/i18n.js` and the `article:published_time` meta in the HTML.
+
 ## Related Repos
 
 - `rebuy-core` — Design system, tokens, brand assets

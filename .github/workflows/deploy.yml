@@ -29,6 +29,8 @@ jobs:
           grep -rl '__VERSION__' --include='*.html' . | xargs sed -i "s/__VERSION__/$VERSION/g"
       - name: Build blog RSS feed
         run: node scripts/build-feed.js
+      - name: Build legal RSS feeds
+        run: node scripts/build-legal-feeds.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .

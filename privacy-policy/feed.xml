@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Rebuy — Privatlivspolitik</title>
+    <link>https://rebuy.dk/privacy-policy</link>
+    <description>Rebuys privatlivspolitik. Sådan behandler vi dine personoplysninger.</description>
+    <language>da-dk</language>
+    <copyright>Copyright 2026 Rebuy</copyright>
+    <lastBuildDate>Thu, 16 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rebuy.dk/privacy-policy/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rebuy.dk/privacy-policy/en/feed.xml" rel="alternate" type="application/rss+xml" hreflang="en" title="Rebuy — Privacy Policy" />
+    <image>
+      <url>https://rebuy.dk/assets/logos/og-image.png</url>
+      <title>Rebuy — Privatlivspolitik</title>
+      <link>https://rebuy.dk/privacy-policy</link>
+    </image>
+    <item>
+      <title>Rebuy — Privatlivspolitik</title>
+      <link>https://rebuy.dk/privacy-policy</link>
+      <guid isPermaLink="false">https://rebuy.dk/privacy-policy#da</guid>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
+      <author>support@rebuy.dk (Rebuy)</author>
+      <dc:creator>Rebuy</dc:creator>
+      <description>Rebuys privatlivspolitik. Sådan behandler vi dine personoplysninger.</description>
+      <content:encoded><![CDATA[<h1>Privatlivspolitik</h1>
+    <p class="legal-updated">Sidst opdateret: 16. april 2026</p>
+
+    <p>Rebuy er en lokal markedsplads, hvor familier kan købe og sælge brugte børneting. Vi tager din databeskyttelse alvorligt, og denne politik beskriver, hvilke personoplysninger vi indsamler, hvorfor vi gør det, og hvilke rettigheder du har.</p>
+
+    <h2>1. Dataansvarlig</h2>
+    <p>Rebuy er dataansvarlig for behandlingen af de personoplysninger, vi modtager om dig via rebuy.dk og Rebuy-appen. Har du spørgsmål til denne politik eller ønsker at udøve dine rettigheder, kan du kontakte os på support@rebuy.dk.</p>
+
+    <h2>2. Hvilke oplysninger indsamler vi</h2>
+    <p>Vi indsamler kun de oplysninger, der er nødvendige for at levere og forbedre tjenesten:</p>
+    <ul>
+      <li>Kontooplysninger: dit navn, din e-mailadresse og valgfrit profilbillede. Hvis du logger ind med Apple eller Google, modtager vi også et brugerident og din e-mail fra udbyderen.</li>
+      <li>Annonceindhold: titel, beskrivelse, pris, billeder, kategori, stand og placering for de annoncer, du opretter.</li>
+      <li>Lokation: din nøjagtige geografiske placering, så vi kan vise annoncer i nærheden og hjælpe købere med at finde dine. Andre brugere ser kun byen eller området — aldrig præcise koordinater.</li>
+      <li>Billeder: fotos, du tager med kameraet eller vælger fra dit billedbibliotek, når du opretter en annonce eller opdaterer dit profilbillede.</li>
+      <li>Beskeder: indholdet af de chats, du sender til andre brugere via appen.</li>
+      <li>Notifikationer: en enheds-token (APNs), så vi kan sende dig push-notifikationer om beskeder og annoncer.</li>
+      <li>Feedback: hvis du bruger "Send feedback" i appen, modtager vi din besked, din e-mail og teknisk metadata (app-version, iOS-version, enhedstype, sprog).</li>
+      <li>Teknisk information: enhedstype, operativsystem og app-version til fejlsøgning og support.</li>
+    </ul>
+
+    <h2>3. Formål og retsgrundlag</h2>
+    <p>Vi behandler dine personoplysninger med følgende formål:</p>
+    <ul>
+      <li>At levere og vedligeholde Rebuy-tjenesten (retsgrundlag: opfyldelse af aftale, GDPR art. 6, stk. 1, litra b).</li>
+      <li>At vise annoncer i dit nærområde og muliggøre kontakt mellem købere og sælgere (opfyldelse af aftale).</li>
+      <li>At sende push-notifikationer og service-beskeder om nye chats og annoncer (opfyldelse af aftale / legitim interesse).</li>
+      <li>At forebygge svindel og misbrug samt holde platformen sikker (legitim interesse, art. 6, stk. 1, litra f).</li>
+      <li>At overholde gældende lovgivning (retlig forpligtelse, art. 6, stk. 1, litra c).</li>
+    </ul>
+
+    <h2>4. Deling af oplysninger</h2>
+    <p>Vi sælger aldrig dine personoplysninger. Vi videregiver kun oplysninger til:</p>
+    <ul>
+      <li>Vores backend-leverandør Appwrite, som hoster din konto, beskeder, billeder og annoncer på vores egne servere. Apple (APNs) for at levere push-notifikationer. Google og Apple, hvis du vælger at logge ind via en af deres konti. Vi bruger ingen tredjeparts analyse- eller annonce-leverandører.</li>
+      <li>Andre brugere i det omfang, du selv vælger at dele oplysninger — f.eks. dit fornavn og omtrentlig placering i dine annoncer.</li>
+      <li>Offentlige myndigheder, hvis vi er retligt forpligtet til det.</li>
+    </ul>
+
+    <h2>5. Opbevaring</h2>
+    <p>Vi opbevarer dine personoplysninger, så længe din konto er aktiv. Du kan til enhver tid slette din konto inde i appen via Profil → Slet konto, hvilket straks fjerner din konto, annoncer, beskeder og billeder fra vores systemer. Eventuelle kopier i krypterede sikkerhedskopier slettes inden for 30 dage. Visse oplysninger kan gemmes længere, hvis lovgivningen kræver det (f.eks. bogføringsloven).</p>
+
+    <h2>6. Dine rettigheder</h2>
+    <p>Efter databeskyttelsesforordningen (GDPR) har du ret til:</p>
+    <ul>
+      <li>Indsigt i de oplysninger, vi behandler om dig.</li>
+      <li>Berigtigelse af forkerte eller ufuldstændige oplysninger.</li>
+      <li>Sletning af dine personoplysninger ("retten til at blive glemt").</li>
+      <li>Begrænsning af behandlingen.</li>
+      <li>Dataportabilitet — at modtage dine data i et struktureret, maskinlæsbart format.</li>
+      <li>At gøre indsigelse mod behandlingen.</li>
+    </ul>
+    <p>Du kan udøve dine rettigheder ved at kontakte os på support@rebuy.dk.</p>
+
+    <h2>7. Cookies og sporing</h2>
+    <p>rebuy.dk bruger kun teknisk nødvendige cookies samt anonym besøgsstatistik via Umami (selvhostet, uden cookies og uden personhenførbare data). Vi placerer ikke reklame- eller tracking-cookies. Rebuy-appen indeholder ingen tredjeparts analyse- eller sporings-værktøjer.</p>
+
+    <h2>8. Børn</h2>
+    <p>Rebuy er ikke beregnet til børn under 13 år. Vi indsamler ikke bevidst personoplysninger fra børn. Hvis du mener, at et barn har afgivet oplysninger til os, bedes du kontakte support@rebuy.dk, så vi kan slette dem.</p>
+
+    <h2>9. Sikkerhed</h2>
+    <p>Vi træffer passende tekniske og organisatoriske foranstaltninger for at beskytte dine personoplysninger mod uautoriseret adgang, tab eller ændring — herunder kryptering under transport (TLS), adgangskontrol og regelmæssige sikkerhedsgennemgange.</p>
+
+    <h2>10. Ændringer til denne politik</h2>
+    <p>Vi kan opdatere denne privatlivspolitik fra tid til anden. Ved væsentlige ændringer informerer vi dig via e-mail eller en notifikation i appen. Den seneste opdateringsdato fremgår øverst på siden.</p>
+
+    <h2>11. Klager</h2>
+    <p>Du har ret til at klage til Datatilsynet, hvis du mener, at vi behandler dine personoplysninger i strid med databeskyttelseslovgivningen. Du finder Datatilsynets kontaktoplysninger på datatilsynet.dk.</p>
+
+    <h2>Kontakt</h2>
+    <p>Har du spørgsmål til denne privatlivspolitik, kan du skrive til support@rebuy.dk.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
