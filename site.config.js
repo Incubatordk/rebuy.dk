@@ -15,7 +15,7 @@ const SITE_CONFIG = {
   APPWRITE_CONTACT_COLLECTION_ID: "website_contact",
 
   // App store URLs (launched mode only)
-  APP_STORE_URL: "https://apps.apple.com/dk/app/rebuy/id000000000",
+  APP_STORE_URL: "https://apps.apple.com/us/app/rebuy-local-secondhand/id6762342818",
   PLAY_STORE_URL: "https://play.google.com/store/apps/details?id=dk.rebuy.app",
 
   // Contact
