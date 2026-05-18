@@ -2,11 +2,15 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["9643M8PZU4.12f.rebuy-ios"],
+        "appIDs": ["D6CHGZ6P5P.rebuy.anchorit.dk"],
         "components": [
           {
-            "/": "/auth/magic",
+            "/": "/auth/magic*",
             "comment": "Magic sign-in link"
+          },
+          {
+            "/": "/auth/verify-email*",
+            "comment": "Email verification link"
           }
         ]
       }
