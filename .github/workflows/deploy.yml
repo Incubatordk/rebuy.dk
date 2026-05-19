@@ -22,6 +22,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full git history so scripts/build-sitemap.js can read each file's
+          # last commit date via `git log -1 --format=%cI`.
+          fetch-depth: 0
       - name: Replace __VERSION__ with commit SHA (cache bust)
         run: |
           VERSION="${GITHUB_SHA::7}"
@@ -31,6 +35,8 @@ jobs:
         run: node scripts/build-feed.js
       - name: Build legal RSS feeds
         run: node scripts/build-legal-feeds.js
+      - name: Build sitemap
+        run: node scripts/build-sitemap.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .

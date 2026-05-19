@@ -31,27 +31,121 @@
   <meta name="twitter:description" content="Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.">
   <meta name="twitter:image" content="https://rebuy.dk/assets/logos/og-image.png">
 
-  <!-- Structured Data -->
+  <!-- Structured Data
+       Single @graph bundles Organization, WebSite, WebApplication and FAQPage
+       so crawlers and AI search agents see a coherent entity description.
+       FAQ answers below MUST stay in sync with the visible FAQ section in <main>. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Rebuy",
-    "url": "https://rebuy.dk",
-    "description": "Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.",
-    "applicationCategory": "ShoppingApplication",
-    "operatingSystem": "iOS, Android",
-    "inLanguage": ["da", "en"],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "DKK"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Rebuy",
-      "url": "https://rebuy.dk"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://rebuy.dk/#organization",
+        "name": "Rebuy",
+        "url": "https://rebuy.dk/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rebuy.dk/assets/logos/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Denmark"
+        },
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@rebuy.dk",
+          "availableLanguage": ["da", "en"]
+        }]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rebuy.dk/#website",
+        "name": "Rebuy",
+        "url": "https://rebuy.dk/",
+        "inLanguage": ["da", "en"],
+        "publisher": { "@id": "https://rebuy.dk/#organization" }
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Rebuy",
+        "url": "https://rebuy.dk/",
+        "description": "Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.",
+        "applicationCategory": "ShoppingApplication",
+        "operatingSystem": "iOS, Android",
+        "inLanguage": ["da", "en"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "DKK"
+        },
+        "publisher": { "@id": "https://rebuy.dk/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hvad er Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rebuy bliver en ny dansk markedsplads, hvor børnefamilier nemt kan købe og sælge brugt børnetøj, legetøj og udstyr lokalt. Vi forbinder forældre i samme nabolag, så handlerne kan ske ansigt til ansigt — uden forsendelse, gebyrer eller besvær."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvornår lancerer Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rebuy lanceres i 2026. Tilmeld dig ventelisten på denne side, så er du blandt de første, der får besked, når appen er klar til download."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvad kan jeg købe og sælge på Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Brugt børnetøj og babytøj i alle størrelser, legetøj, bøger, sko, overtøj, barnevogne, autostole, babyudstyr og andet, som danske børnefamilier har brug for. Hvis det vedrører børn, hører det hjemme på Rebuy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvad koster det at bruge Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rebuy er gratis at bruge. Der er ingen gebyrer for at oprette annoncer, chatte med en sælger eller gennemføre en handel. Vi tager heller ikke en del af salgsprisen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvor i Danmark virker Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rebuy lanceres i hele Danmark. Appen finder annoncer og købere i dit nærområde — uanset om du bor i København, Aarhus, Odense, Aalborg eller en mindre by."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvordan tilmelder jeg mig ventelisten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Skriv din e-mailadresse i tilmeldingsfeltet øverst på siden. Vi sender dig en besked, så snart Rebuy er klar til download — og du får tidlig adgang før den brede lancering."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvordan adskiller Rebuy sig fra andre genbrugsapps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rebuy er bygget specifikt til danske børnefamilier og lokal handel ansigt til ansigt. Ingen forsendelse, ingen tredjeparts betaling — bare et nemt værktøj til at finde og afhænde børneting i dit eget nabolag."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -64,9 +158,13 @@
   <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
   <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png">
 
-  <!-- i18n hreflang -->
+  <!-- i18n hreflang.
+       English is served from the same URL via in-page language toggle (js/i18n.js).
+       We intentionally do NOT declare a separate hreflang="en" alternate
+       until a dedicated /en/ URL exists — declaring two languages on the
+       same canonical URL is invalid hreflang and worse than omitting it.
+       See https://github.com/Incubatordk/rebuy.dk/issues/34 -->
   <link rel="alternate" hreflang="da" href="https://rebuy.dk/">
-  <link rel="alternate" hreflang="en" href="https://rebuy.dk/">
   <link rel="alternate" hreflang="x-default" href="https://rebuy.dk/">
 
   <!-- Fonts -->
@@ -780,6 +878,43 @@ outline: none;
         </div>
       </div>
 
+      <!-- FAQ — answers must stay in sync with FAQPage JSON-LD in <head>. -->
+      <section class="faq" aria-labelledby="faq-title" data-animate>
+        <div class="container">
+          <h2 id="faq-title" data-i18n="faq.title">Ofte stillede spørgsmål</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary data-i18n="faq.q1">Hvad er Rebuy?</summary>
+              <p data-i18n="faq.a1">Rebuy bliver en ny dansk markedsplads, hvor børnefamilier nemt kan købe og sælge brugt børnetøj, legetøj og udstyr lokalt. Vi forbinder forældre i samme nabolag, så handlerne kan ske ansigt til ansigt — uden forsendelse, gebyrer eller besvær.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q2">Hvornår lancerer Rebuy?</summary>
+              <p data-i18n="faq.a2">Rebuy lanceres i 2026. Tilmeld dig ventelisten på denne side, så er du blandt de første, der får besked, når appen er klar til download.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q3">Hvad kan jeg købe og sælge på Rebuy?</summary>
+              <p data-i18n="faq.a3">Brugt børnetøj og babytøj i alle størrelser, legetøj, bøger, sko, overtøj, barnevogne, autostole, babyudstyr og andet, som danske børnefamilier har brug for. Hvis det vedrører børn, hører det hjemme på Rebuy.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q4">Hvad koster det at bruge Rebuy?</summary>
+              <p data-i18n="faq.a4">Rebuy er gratis at bruge. Der er ingen gebyrer for at oprette annoncer, chatte med en sælger eller gennemføre en handel. Vi tager heller ikke en del af salgsprisen.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q5">Hvor i Danmark virker Rebuy?</summary>
+              <p data-i18n="faq.a5">Rebuy lanceres i hele Danmark. Appen finder annoncer og købere i dit nærområde — uanset om du bor i København, Aarhus, Odense, Aalborg eller en mindre by.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q6">Hvordan tilmelder jeg mig ventelisten?</summary>
+              <p data-i18n="faq.a6">Skriv din e-mailadresse i tilmeldingsfeltet øverst på siden. Vi sender dig en besked, så snart Rebuy er klar til download — og du får tidlig adgang før den brede lancering.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q7">Hvordan adskiller Rebuy sig fra andre genbrugsapps?</summary>
+              <p data-i18n="faq.a7">Rebuy er bygget specifikt til danske børnefamilier og lokal handel ansigt til ansigt. Ingen forsendelse, ingen tredjeparts betaling — bare et nemt værktøj til at finde og afhænde børneting i dit eget nabolag.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
     </section>
 
     <!-- ============================================================
@@ -1004,8 +1139,8 @@ outline: none;
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="/blog/">Blog</a>
-        <a href="/privacy-policy" data-i18n="footer.privacy">Privatlivspolitik</a>
-        <a href="/terms-of-use" data-i18n="footer.terms">Vilkår og betingelser</a>
+        <a href="/privacy-policy/" data-i18n="footer.privacy">Privatlivspolitik</a>
+        <a href="/terms-of-use/" data-i18n="footer.terms">Vilkår og betingelser</a>
       </nav>
       <button type="button" class="footer-contact-btn" id="contact-open"
               data-i18n="contact.openLink"
