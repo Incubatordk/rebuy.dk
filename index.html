@@ -33,11 +33,10 @@
   <meta name="twitter:image" content="https://rebuy.dk/assets/logos/og-image.png">
 
   <!-- Structured Data
-       @graph bundles Organization, WebSite, and WebApplication so crawlers
-       and AI search agents see a coherent entity description.
-       NOTE: FAQPage was removed because the visible FAQ section it described
-       lives on the post-launch page (tracked separately). Re-add when the
-       launched FAQ ships. -->
+       @graph bundles Organization, WebSite, WebApplication and FAQPage so
+       crawlers and AI search agents see a coherent entity description.
+       FAQ answers MUST stay in sync with the visible FAQ section inside
+       #launched-content in <main>. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -86,6 +85,67 @@
           "priceCurrency": "DKK"
         },
         "publisher": { "@id": "https://rebuy.dk/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hvad er Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rebuy er en dansk markedsplads, hvor børnefamilier nemt kan købe og sælge brugt børnetøj, legetøj og udstyr lokalt. Vi forbinder forældre i samme nabolag, så handlerne kan ske ansigt til ansigt — uden forsendelse, gebyrer eller besvær."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvordan kommer jeg i gang?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hent Rebuy gratis i App Store eller Google Play, opret en konto, og du er klar til at finde annoncer i dit nærområde eller sælge det, dine børn er vokset fra."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvad kan jeg købe og sælge på Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Brugt børnetøj og babytøj i alle størrelser, legetøj, bøger, sko, overtøj, barnevogne, autostole, babyudstyr og andet, som danske børnefamilier har brug for. Hvis det vedrører børn, hører det hjemme på Rebuy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvad koster det at bruge Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rebuy er gratis at bruge. Der er ingen gebyrer for at oprette annoncer, chatte med en sælger eller gennemføre en handel. Vi tager heller ikke en del af salgsprisen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvor i Danmark virker Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rebuy virker i hele Danmark. Appen finder annoncer og købere i dit nærområde — uanset om du bor i København, Aarhus, Odense, Aalborg eller en mindre by."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Er det sikkert at handle på Rebuy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Al kommunikation foregår i appen, så du chatter direkte med en anden forælder og aftaler altid et lokalt mødested. Vi anbefaler at mødes på et offentligt sted, og du kan altid blokere eller anmelde en bruger."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvordan adskiller Rebuy sig fra andre genbrugsapps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rebuy er bygget specifikt til danske børnefamilier og lokal handel ansigt til ansigt. Ingen forsendelse, ingen tredjeparts betaling — bare et nemt værktøj til at finde og afhænde børneting i dit eget nabolag."
+            }
+          }
+        ]
       }
     ]
   }
@@ -1015,6 +1075,43 @@ outline: none;
           </div>
         </div>
       </div>
+
+      <!-- FAQ — answers must stay in sync with FAQPage JSON-LD in <head>. -->
+      <section class="faq" aria-labelledby="faq-title" data-animate>
+        <div class="container">
+          <h2 id="faq-title" data-i18n="faq.title">Ofte stillede spørgsmål</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary data-i18n="faq.q1">Hvad er Rebuy?</summary>
+              <p data-i18n="faq.a1">Rebuy er en dansk markedsplads, hvor børnefamilier nemt kan købe og sælge brugt børnetøj, legetøj og udstyr lokalt. Vi forbinder forældre i samme nabolag, så handlerne kan ske ansigt til ansigt — uden forsendelse, gebyrer eller besvær.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q2">Hvordan kommer jeg i gang?</summary>
+              <p data-i18n="faq.a2">Hent Rebuy gratis i App Store eller Google Play, opret en konto, og du er klar til at finde annoncer i dit nærområde eller sælge det, dine børn er vokset fra.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q3">Hvad kan jeg købe og sælge på Rebuy?</summary>
+              <p data-i18n="faq.a3">Brugt børnetøj og babytøj i alle størrelser, legetøj, bøger, sko, overtøj, barnevogne, autostole, babyudstyr og andet, som danske børnefamilier har brug for. Hvis det vedrører børn, hører det hjemme på Rebuy.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q4">Hvad koster det at bruge Rebuy?</summary>
+              <p data-i18n="faq.a4">Rebuy er gratis at bruge. Der er ingen gebyrer for at oprette annoncer, chatte med en sælger eller gennemføre en handel. Vi tager heller ikke en del af salgsprisen.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q5">Hvor i Danmark virker Rebuy?</summary>
+              <p data-i18n="faq.a5">Rebuy virker i hele Danmark. Appen finder annoncer og købere i dit nærområde — uanset om du bor i København, Aarhus, Odense, Aalborg eller en mindre by.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q6">Er det sikkert at handle på Rebuy?</summary>
+              <p data-i18n="faq.a6">Ja. Al kommunikation foregår i appen, så du chatter direkte med en anden forælder og aftaler altid et lokalt mødested. Vi anbefaler at mødes på et offentligt sted, og du kan altid blokere eller anmelde en bruger.</p>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq.q7">Hvordan adskiller Rebuy sig fra andre genbrugsapps?</summary>
+              <p data-i18n="faq.a7">Rebuy er bygget specifikt til danske børnefamilier og lokal handel ansigt til ansigt. Ingen forsendelse, ingen tredjeparts betaling — bare et nemt værktøj til at finde og afhænde børneting i dit eget nabolag.</p>
+            </details>
+          </div>
+        </div>
+      </section>
 
       <!-- CTA Section -->
       <div class="container" data-animate>
