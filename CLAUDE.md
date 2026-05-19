@@ -18,6 +18,12 @@ The site operates in two modes, controlled by `site.config.js`:
 
 To switch modes, edit `site.config.js` and change `SITE_MODE`.
 
+### Build-time mode stripping
+
+`index.html` contains both the `#prelaunch-content` and `#launched-content` sections — wrapped in HTML build markers (`<!--build:mode-prelaunch:start-->` / `<!--build:mode-launched:start-->`). `scripts/build-modes.js` runs during CI deploy and **strips the inactive block** from the deployed HTML so crawlers only ever see one narrative (one `<h1>`, one meta-description-matching body).
+
+Locally, both sections stay in the source so dev can preview either via the `?mode=launched` / `?mode=prelaunch` URL params. Run `make modes` to test the stripped output — it mutates `index.html` in place, so `git checkout index.html` after.
+
 ## Local Development
 
 ```bash

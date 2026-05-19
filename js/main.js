@@ -47,7 +47,11 @@
   }
 
   // ---- Site mode switching ----
-  // URL param ?mode=launched or ?mode=prelaunch overrides config (for testing)
+  // URL param ?mode=launched or ?mode=prelaunch overrides config (for testing
+  // in local dev, where both sections are still present in the DOM). In
+  // production scripts/build-modes.js strips the inactive section at build
+  // time, so one of these getElementById lookups will return null — every
+  // toggle below is null-guarded for that reason.
 
   var urlMode = new URLSearchParams(window.location.search).get("mode");
   var mode = (urlMode === "launched" || urlMode === "prelaunch") ? urlMode : SITE_CONFIG.SITE_MODE;
@@ -55,11 +59,11 @@
   var launchedEl = document.getElementById("launched-content");
 
   if (mode === "launched") {
-    prelaunchEl.classList.add("hidden");
-    launchedEl.classList.remove("hidden");
+    if (prelaunchEl) prelaunchEl.classList.add("hidden");
+    if (launchedEl) launchedEl.classList.remove("hidden");
   } else {
-    prelaunchEl.classList.remove("hidden");
-    launchedEl.classList.add("hidden");
+    if (prelaunchEl) prelaunchEl.classList.remove("hidden");
+    if (launchedEl) launchedEl.classList.add("hidden");
 
     // Hide footer links (privacy/terms) in prelaunch mode
     var footerLinks = document.querySelector(".footer-links");
