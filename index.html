@@ -33,9 +33,11 @@
   <meta name="twitter:image" content="https://rebuy.dk/assets/logos/og-image.png">
 
   <!-- Structured Data
-       Single @graph bundles Organization, WebSite, WebApplication and FAQPage
-       so crawlers and AI search agents see a coherent entity description.
-       FAQ answers below MUST stay in sync with the visible FAQ section in <main>. -->
+       @graph bundles Organization, WebSite, and WebApplication so crawlers
+       and AI search agents see a coherent entity description.
+       NOTE: FAQPage was removed because the visible FAQ section it described
+       lives on the post-launch page (tracked separately). Re-add when the
+       launched FAQ ships. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -84,67 +86,6 @@
           "priceCurrency": "DKK"
         },
         "publisher": { "@id": "https://rebuy.dk/#organization" }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Hvad er Rebuy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Rebuy bliver en ny dansk markedsplads, hvor børnefamilier nemt kan købe og sælge brugt børnetøj, legetøj og udstyr lokalt. Vi forbinder forældre i samme nabolag, så handlerne kan ske ansigt til ansigt — uden forsendelse, gebyrer eller besvær."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvornår lancerer Rebuy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Rebuy lanceres i 2026. Tilmeld dig ventelisten på denne side, så er du blandt de første, der får besked, når appen er klar til download."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvad kan jeg købe og sælge på Rebuy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Brugt børnetøj og babytøj i alle størrelser, legetøj, bøger, sko, overtøj, barnevogne, autostole, babyudstyr og andet, som danske børnefamilier har brug for. Hvis det vedrører børn, hører det hjemme på Rebuy."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvad koster det at bruge Rebuy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Rebuy er gratis at bruge. Der er ingen gebyrer for at oprette annoncer, chatte med en sælger eller gennemføre en handel. Vi tager heller ikke en del af salgsprisen."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvor i Danmark virker Rebuy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Rebuy lanceres i hele Danmark. Appen finder annoncer og købere i dit nærområde — uanset om du bor i København, Aarhus, Odense, Aalborg eller en mindre by."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvordan tilmelder jeg mig ventelisten?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Skriv din e-mailadresse i tilmeldingsfeltet øverst på siden. Vi sender dig en besked, så snart Rebuy er klar til download — og du får tidlig adgang før den brede lancering."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvordan adskiller Rebuy sig fra andre genbrugsapps?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Rebuy er bygget specifikt til danske børnefamilier og lokal handel ansigt til ansigt. Ingen forsendelse, ingen tredjeparts betaling — bare et nemt værktøj til at finde og afhænde børneting i dit eget nabolag."
-            }
-          }
-        ]
       }
     ]
   }
@@ -868,20 +809,12 @@ outline: none;
              class="hero-logo" width="180" height="134">
         <span class="hero-badge" data-i18n="prelaunch.badge">Kommer snart</span>
         <h1 data-i18n="prelaunch.title">En ny måde at købe og sælge børneting er på vej</h1>
-        <p class="hero-subtitle" data-i18n="prelaunch.subtitle">Børnetøjet de er vokset fra fortjener et nyt hjem. Sparepengene fortjener du. Rebuy bliver Danmarks nye markedsplads for børnefamilier — kun lokalt, kun ansigt til ansigt.</p>
       </div>
 
       <!-- Email Signup -->
       <div class="signup" data-animate>
         <h2 data-i18n="signup.title">Bliv den første til at høre nyt</h2>
         <p data-i18n="signup.text">Tilmeld dig og få besked, når Rebuy er klar til download.</p>
-        <!-- Live signup counter — populated by js/main.js when Appwrite count
-             is >= the MIN_DISPLAY threshold. Hidden when unavailable. -->
-        <p id="signup-counter" class="signup-counter" hidden>
-          <span data-i18n="signup.counterPrefix">Allerede</span>
-          <strong id="signup-counter-value">—</strong>
-          <span data-i18n="signup.counterSuffix">danske familier står på ventelisten</span>
-        </p>
         <form id="signup-form" class="signup-form">
           <input type="email" name="email" placeholder="Din e-mail" required data-i18n-placeholder="signup.placeholder" data-i18n-aria="signup.aria" aria-label="E-mailadresse">
           <button type="submit" class="btn btn-primary" data-i18n="signup.button">Tilmeld</button>
@@ -894,67 +827,6 @@ outline: none;
           <button type="button" class="signup-error-link" id="signup-error-contact" data-i18n="signup.errorCta">kontakt os via formularen</button>.
         </p>
       </div>
-
-      <!-- Why join the waitlist -->
-      <section class="waitlist-benefits" aria-labelledby="waitlist-benefits-title" data-animate>
-        <div class="container">
-          <h2 id="waitlist-benefits-title" data-i18n="waitlist.title">Hvorfor tilmelde sig?</h2>
-          <ul class="waitlist-benefits-list">
-            <li>
-              <span class="waitlist-benefit-icon" aria-hidden="true">🚀</span>
-              <h3 data-i18n="waitlist.benefit1Title">Tidlig adgang</h3>
-              <p data-i18n="waitlist.benefit1Text">Du får appen før den brede lancering, så du allerede er i gang, når dit nabolag opdager Rebuy.</p>
-            </li>
-            <li>
-              <span class="waitlist-benefit-icon" aria-hidden="true">🎁</span>
-              <h3 data-i18n="waitlist.benefit2Title">Lanceringstilbud</h3>
-              <p data-i18n="waitlist.benefit2Text">Som tilmeldt får du som de første besked om gratis funktioner og bonusser, vi gemmer til ventelisten.</p>
-            </li>
-            <li>
-              <span class="waitlist-benefit-icon" aria-hidden="true">📬</span>
-              <h3 data-i18n="waitlist.benefit3Title">Ingen spam</h3>
-              <p data-i18n="waitlist.benefit3Text">Vi skriver kun, når vi har noget at fortælle — og du kan altid afmelde med ét klik.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- FAQ — answers must stay in sync with FAQPage JSON-LD in <head>. -->
-      <section class="faq" aria-labelledby="faq-title" data-animate>
-        <div class="container">
-          <h2 id="faq-title" data-i18n="faq.title">Ofte stillede spørgsmål</h2>
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary data-i18n="faq.q1">Hvad er Rebuy?</summary>
-              <p data-i18n="faq.a1">Rebuy bliver en ny dansk markedsplads, hvor børnefamilier nemt kan købe og sælge brugt børnetøj, legetøj og udstyr lokalt. Vi forbinder forældre i samme nabolag, så handlerne kan ske ansigt til ansigt — uden forsendelse, gebyrer eller besvær.</p>
-            </details>
-            <details class="faq-item">
-              <summary data-i18n="faq.q2">Hvornår lancerer Rebuy?</summary>
-              <p data-i18n="faq.a2">Rebuy lanceres i 2026. Tilmeld dig ventelisten på denne side, så er du blandt de første, der får besked, når appen er klar til download.</p>
-            </details>
-            <details class="faq-item">
-              <summary data-i18n="faq.q3">Hvad kan jeg købe og sælge på Rebuy?</summary>
-              <p data-i18n="faq.a3">Brugt børnetøj og babytøj i alle størrelser, legetøj, bøger, sko, overtøj, barnevogne, autostole, babyudstyr og andet, som danske børnefamilier har brug for. Hvis det vedrører børn, hører det hjemme på Rebuy.</p>
-            </details>
-            <details class="faq-item">
-              <summary data-i18n="faq.q4">Hvad koster det at bruge Rebuy?</summary>
-              <p data-i18n="faq.a4">Rebuy er gratis at bruge. Der er ingen gebyrer for at oprette annoncer, chatte med en sælger eller gennemføre en handel. Vi tager heller ikke en del af salgsprisen.</p>
-            </details>
-            <details class="faq-item">
-              <summary data-i18n="faq.q5">Hvor i Danmark virker Rebuy?</summary>
-              <p data-i18n="faq.a5">Rebuy lanceres i hele Danmark. Appen finder annoncer og købere i dit nærområde — uanset om du bor i København, Aarhus, Odense, Aalborg eller en mindre by.</p>
-            </details>
-            <details class="faq-item">
-              <summary data-i18n="faq.q6">Hvordan tilmelder jeg mig ventelisten?</summary>
-              <p data-i18n="faq.a6">Skriv din e-mailadresse i tilmeldingsfeltet øverst på siden. Vi sender dig en besked, så snart Rebuy er klar til download — og du får tidlig adgang før den brede lancering.</p>
-            </details>
-            <details class="faq-item">
-              <summary data-i18n="faq.q7">Hvordan adskiller Rebuy sig fra andre genbrugsapps?</summary>
-              <p data-i18n="faq.a7">Rebuy er bygget specifikt til danske børnefamilier og lokal handel ansigt til ansigt. Ingen forsendelse, ingen tredjeparts betaling — bare et nemt værktøj til at finde og afhænde børneting i dit eget nabolag.</p>
-            </details>
-          </div>
-        </div>
-      </section>
 
     </section>
 
