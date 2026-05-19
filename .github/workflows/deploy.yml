@@ -31,6 +31,8 @@ jobs:
           VERSION="${GITHUB_SHA::7}"
           echo "Stamping assets with VERSION=$VERSION"
           grep -rl '__VERSION__' --include='*.html' . | xargs sed -i "s/__VERSION__/$VERSION/g"
+      - name: Strip inactive mode block from index.html
+        run: node scripts/build-modes.js
       - name: Build blog RSS feed
         run: node scripts/build-feed.js
       - name: Build legal RSS feeds

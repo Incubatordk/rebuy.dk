@@ -10,6 +10,7 @@
   <meta name="keywords" content="børnetøj, legetøj, børneudstyr, køb og sælg, brugt, lokal markedsplads, Danmark, bæredygtigt, genbrugstøj børn, kids clothes, second hand">
 
   <!-- Analytics -->
+  <link rel="preconnect" href="https://umami.robert-jensen.dk">
   <script defer src="https://umami.robert-jensen.dk/script.js" data-website-id="ab067f06-e505-4511-97f9-28536a14614b"></script>
 
   <!-- Open Graph -->
@@ -853,7 +854,10 @@ outline: none;
 
     <!-- ============================================================
          PRE-LAUNCH CONTENT
+         Stripped from the deployed HTML when SITE_MODE = "launched"
+         by scripts/build-modes.js. See CLAUDE.md → "Site modes".
          ============================================================ -->
+    <!--build:mode-prelaunch:start-->
     <section id="prelaunch-content">
 
       <!-- Hero -->
@@ -954,9 +958,14 @@ outline: none;
 
     </section>
 
+    <!--build:mode-prelaunch:end-->
+
     <!-- ============================================================
          LAUNCHED CONTENT
+         Stripped from the deployed HTML when SITE_MODE = "prelaunch"
+         by scripts/build-modes.js. See CLAUDE.md → "Site modes".
          ============================================================ -->
+    <!--build:mode-launched:start-->
     <section id="launched-content" class="hidden">
 
       <!-- Hero -->
@@ -1019,7 +1028,7 @@ outline: none;
         <div class="phone-gallery" id="phone-gallery-ios" role="list" data-platform="ios">
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--ios">
-              <img data-img="01-feed" alt="" decoding="async">
+              <img data-img="01-feed" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.feed.title">Find tilbud i nærheden</h3>
@@ -1028,7 +1037,7 @@ outline: none;
           </figure>
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--ios">
-              <img data-img="02-detail" alt="" decoding="async">
+              <img data-img="02-detail" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.detail.title">Se alle detaljer</h3>
@@ -1037,7 +1046,7 @@ outline: none;
           </figure>
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--ios">
-              <img data-img="03-messages" alt="" decoding="async">
+              <img data-img="03-messages" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.messages.title">Chat med sælger</h3>
@@ -1046,7 +1055,7 @@ outline: none;
           </figure>
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--ios">
-              <img data-img="04-post" alt="" decoding="async">
+              <img data-img="04-post" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.post.title">Sælg på få sekunder</h3>
@@ -1055,7 +1064,7 @@ outline: none;
           </figure>
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--ios">
-              <img data-img="05-profile" alt="" decoding="async">
+              <img data-img="05-profile" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.profile.title">Hold styr på det hele</h3>
@@ -1068,7 +1077,7 @@ outline: none;
         <div class="phone-gallery" id="phone-gallery-android" role="list" data-platform="android" hidden>
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--android">
-              <img data-img="01-feed" alt="" decoding="async">
+              <img data-img="01-feed" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.feed.title">Find tilbud i nærheden</h3>
@@ -1077,7 +1086,7 @@ outline: none;
           </figure>
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--android">
-              <img data-img="02-detail" alt="" decoding="async">
+              <img data-img="02-detail" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.detail.title">Se alle detaljer</h3>
@@ -1086,7 +1095,7 @@ outline: none;
           </figure>
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--android">
-              <img data-img="03-messages" alt="" decoding="async">
+              <img data-img="03-messages" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.messages.title">Chat med sælger</h3>
@@ -1095,7 +1104,7 @@ outline: none;
           </figure>
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--android">
-              <img data-img="04-post" alt="" decoding="async">
+              <img data-img="04-post" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.post.title">Sælg på få sekunder</h3>
@@ -1104,7 +1113,7 @@ outline: none;
           </figure>
           <figure class="phone-card" role="listitem">
             <div class="phone-frame phone-frame--android">
-              <img data-img="05-profile" alt="" decoding="async">
+              <img data-img="05-profile" alt="" width="360" height="780" loading="lazy" decoding="async">
             </div>
             <figcaption>
               <h3 data-i18n="showcase.profile.title">Hold styr på det hele</h3>
@@ -1164,6 +1173,7 @@ outline: none;
       </div>
 
     </section>
+    <!--build:mode-launched:end-->
 
   </main>
 

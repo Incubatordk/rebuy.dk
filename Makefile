@@ -1,4 +1,4 @@
-.PHONY: screenshots serve feeds sitemap
+.PHONY: screenshots serve feeds sitemap modes
 
 # Pull raw fastlane screenshots from rebuy-ios + rebuy-android,
 # resize, encode WebP @1x/@2x, write to assets/screenshots/<platform>/<lang>/.
@@ -13,6 +13,12 @@ feeds:
 # Regenerate sitemap.xml from filesystem + git history.
 sitemap:
 	node scripts/build-sitemap.js
+
+# Strip the inactive mode block (prelaunch/launched) from index.html.
+# WARNING: mutates index.html in place — typically only run in CI.
+# Locally, use ?mode=launched / ?mode=prelaunch URL params to preview instead.
+modes:
+	node scripts/build-modes.js
 
 # Local dev server on http://localhost:8000
 serve:
