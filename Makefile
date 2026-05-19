@@ -1,4 +1,4 @@
-.PHONY: screenshots serve feeds
+.PHONY: screenshots serve feeds sitemap
 
 # Pull raw fastlane screenshots from rebuy-ios + rebuy-android,
 # resize, encode WebP @1x/@2x, write to assets/screenshots/<platform>/<lang>/.
@@ -9,6 +9,10 @@ screenshots:
 feeds:
 	node scripts/build-feed.js
 	node scripts/build-legal-feeds.js
+
+# Regenerate sitemap.xml from filesystem + git history.
+sitemap:
+	node scripts/build-sitemap.js
 
 # Local dev server on http://localhost:8000
 serve:

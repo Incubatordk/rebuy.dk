@@ -110,6 +110,30 @@ The generator loads `js/i18n.js` in a Node `vm` context, reads each legal page's
 
 To update the "last updated" date shown both on-page and in the feed, bump both the `privacy.updated` / `tou.updated` strings in `js/i18n.js` and the `article:published_time` meta in the HTML.
 
+## Sitemap
+
+`sitemap.xml` is **generated** by `scripts/build-sitemap.js` during deploy — do not hand-edit it. Run locally with `make sitemap` or `node scripts/build-sitemap.js`.
+
+What it does:
+
+1. Lists every public URL (home, blog index, legal pages, account deletion) plus every blog post discovered under `blog/<slug>/` (excluding `blog/en/`, which only hosts the English RSS feed).
+2. Reads `<lastmod>` from `git log -1 --format=%cI -- <file>`. **Not** `fs.statSync().mtime` — CI checkouts rewrite mtime to checkout time, which makes Google ignore the field entirely (June 2023 lastmod guidance).
+3. Emits trailing-slash URLs (`/blog/`, `/privacy-policy/`) because GitHub Pages 301-redirects no-slash → slash for directories; a sitemap entry that redirects is a soft error in Search Console.
+
+To add a new sitemapped route, edit `STATIC_ROUTES` in `scripts/build-sitemap.js`. New blog posts are picked up automatically.
+
+The deploy workflow uses `actions/checkout@v4` with `fetch-depth: 0` so the script can read full git history.
+
+After deploy, sanity-check with:
+
+```bash
+for url in $(xmllint --xpath '//*[local-name()="loc"]/text()' sitemap.xml); do
+  curl -sI -o /dev/null -w "%{http_code} %{url_effective}\n" "$url"
+done
+```
+
+Every line should be `200 <same URL>` — no `301` and no redirected `url_effective`.
+
 ## Related Repos
 
 - `rebuy-core` — Design system, tokens, brand assets
