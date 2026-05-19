@@ -75,6 +75,8 @@ Push to `main` triggers `.github/workflows/deploy.yml` which deploys the root di
 
 ## Blog & RSS feeds
 
+Pre-launch content plan and post-by-post workflow live in **`BLOG-CONTENT-CALENDAR.md`** (16-post plan for building topical authority before launch).
+
 Posts live at `blog/<slug>/index.html`. Two feeds are **generated** by `scripts/build-feed.js` during deploy — do not hand-edit them:
 
 - `blog/feed.xml` — Danish (`<language>da-dk</language>`)
