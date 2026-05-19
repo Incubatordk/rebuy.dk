@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rebuy — Køb og sælg børneting lokalt</title>
-  <meta name="description" content="Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.">
+  <title>Rebuy — Køb og sælg brugt børnetøj og babyudstyr lokalt | Kommer snart</title>
+  <meta name="description" content="Rebuy er den nye app for danske børnefamilier — køb og sælg brugt børnetøj, babyudstyr og legetøj lokalt. Kommer snart. Tilmeld dig ventelisten og vær først.">
   <link rel="canonical" href="https://rebuy.dk/">
   <meta name="robots" content="index, follow">
   <meta name="keywords" content="børnetøj, legetøj, børneudstyr, køb og sælg, brugt, lokal markedsplads, Danmark, bæredygtigt, genbrugstøj børn, kids clothes, second hand">
@@ -13,8 +13,8 @@
   <script defer src="https://umami.robert-jensen.dk/script.js" data-website-id="ab067f06-e505-4511-97f9-28536a14614b"></script>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Rebuy — Køb og sælg børneting lokalt">
-  <meta property="og:description" content="Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.">
+  <meta property="og:title" content="Rebuy — Køb og sælg brugt børnetøj og babyudstyr lokalt | Kommer snart">
+  <meta property="og:description" content="Rebuy er den nye app for danske børnefamilier — køb og sælg brugt børnetøj, babyudstyr og legetøj lokalt. Kommer snart. Tilmeld dig ventelisten og vær først.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rebuy.dk/">
   <meta property="og:locale" content="da_DK">
@@ -23,12 +23,12 @@
   <meta property="og:image" content="https://rebuy.dk/assets/logos/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Rebuy — Køb og sælg børneting lokalt">
+  <meta property="og:image:alt" content="Rebuy — Køb og sælg brugt børnetøj og babyudstyr lokalt">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rebuy — Køb og sælg børneting lokalt">
-  <meta name="twitter:description" content="Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.">
+  <meta name="twitter:title" content="Rebuy — Køb og sælg brugt børnetøj og babyudstyr lokalt | Kommer snart">
+  <meta name="twitter:description" content="Rebuy er den nye app for danske børnefamilier — køb og sælg brugt børnetøj, babyudstyr og legetøj lokalt. Kommer snart. Tilmeld dig ventelisten og vær først.">
   <meta name="twitter:image" content="https://rebuy.dk/assets/logos/og-image.png">
 
   <!-- Structured Data
@@ -73,7 +73,7 @@
         "@type": "WebApplication",
         "name": "Rebuy",
         "url": "https://rebuy.dk/",
-        "description": "Rebuy kommer snart! Tilmeld dig og vær den første til at få besked når vi lancerer.",
+        "description": "Rebuy er den nye app for danske børnefamilier — køb og sælg brugt børnetøj, babyudstyr og legetøj lokalt. Kommer snart.",
         "applicationCategory": "ShoppingApplication",
         "operatingSystem": "iOS, Android",
         "inLanguage": ["da", "en"],
@@ -154,9 +154,10 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-  <!-- Favicon -->
+  <!-- Favicon + PWA manifest -->
   <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
   <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
 
   <!-- i18n hreflang.
        English is served from the same URL via in-page language toggle (js/i18n.js).
@@ -857,15 +858,26 @@ outline: none;
 
       <!-- Hero -->
       <div class="hero">
-        <img src="assets/logos/logo-animated.svg" alt="Rebuy — mor med barnevogn" class="hero-logo" width="180" height="134">
+        <img src="assets/logos/logo-animated.svg"
+             alt="Rebuy — mor med barnevogn der køber og sælger brugt børnetøj lokalt"
+             data-i18n-alt="hero.logoAlt"
+             class="hero-logo" width="180" height="134">
         <span class="hero-badge" data-i18n="prelaunch.badge">Kommer snart</span>
         <h1 data-i18n="prelaunch.title">En ny måde at købe og sælge børneting er på vej</h1>
+        <p class="hero-subtitle" data-i18n="prelaunch.subtitle">Børnetøjet de er vokset fra fortjener et nyt hjem. Sparepengene fortjener du. Rebuy bliver Danmarks nye markedsplads for børnefamilier — kun lokalt, kun ansigt til ansigt.</p>
       </div>
 
       <!-- Email Signup -->
       <div class="signup" data-animate>
         <h2 data-i18n="signup.title">Bliv den første til at høre nyt</h2>
         <p data-i18n="signup.text">Tilmeld dig og få besked, når Rebuy er klar til download.</p>
+        <!-- Live signup counter — populated by js/main.js when Appwrite count
+             is >= the MIN_DISPLAY threshold. Hidden when unavailable. -->
+        <p id="signup-counter" class="signup-counter" hidden>
+          <span data-i18n="signup.counterPrefix">Allerede</span>
+          <strong id="signup-counter-value">—</strong>
+          <span data-i18n="signup.counterSuffix">danske familier står på ventelisten</span>
+        </p>
         <form id="signup-form" class="signup-form">
           <input type="email" name="email" placeholder="Din e-mail" required data-i18n-placeholder="signup.placeholder" data-i18n-aria="signup.aria" aria-label="E-mailadresse">
           <button type="submit" class="btn btn-primary" data-i18n="signup.button">Tilmeld</button>
@@ -873,10 +885,35 @@ outline: none;
         <div id="signup-success" class="signup-success" data-i18n="signup.success">
           Tak for din tilmelding! Vi sender dig en besked, når Rebuy er klar. 🎉
         </div>
-        <div id="signup-error" class="signup-error" hidden data-i18n="signup.error">
-          Noget gik galt. Prøv igen eller skriv til support@rebuy.dk.
-        </div>
+        <p id="signup-error" class="signup-error" hidden>
+          <span data-i18n="signup.error">Noget gik galt. Prøv igen, eller</span>
+          <button type="button" class="signup-error-link" id="signup-error-contact" data-i18n="signup.errorCta">kontakt os via formularen</button>.
+        </p>
       </div>
+
+      <!-- Why join the waitlist -->
+      <section class="waitlist-benefits" aria-labelledby="waitlist-benefits-title" data-animate>
+        <div class="container">
+          <h2 id="waitlist-benefits-title" data-i18n="waitlist.title">Hvorfor tilmelde sig?</h2>
+          <ul class="waitlist-benefits-list">
+            <li>
+              <span class="waitlist-benefit-icon" aria-hidden="true">🚀</span>
+              <h3 data-i18n="waitlist.benefit1Title">Tidlig adgang</h3>
+              <p data-i18n="waitlist.benefit1Text">Du får appen før den brede lancering, så du allerede er i gang, når dit nabolag opdager Rebuy.</p>
+            </li>
+            <li>
+              <span class="waitlist-benefit-icon" aria-hidden="true">🎁</span>
+              <h3 data-i18n="waitlist.benefit2Title">Lanceringstilbud</h3>
+              <p data-i18n="waitlist.benefit2Text">Som tilmeldt får du som de første besked om gratis funktioner og bonusser, vi gemmer til ventelisten.</p>
+            </li>
+            <li>
+              <span class="waitlist-benefit-icon" aria-hidden="true">📬</span>
+              <h3 data-i18n="waitlist.benefit3Title">Ingen spam</h3>
+              <p data-i18n="waitlist.benefit3Text">Vi skriver kun, når vi har noget at fortælle — og du kan altid afmelde med ét klik.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <!-- FAQ — answers must stay in sync with FAQPage JSON-LD in <head>. -->
       <section class="faq" aria-labelledby="faq-title" data-animate>

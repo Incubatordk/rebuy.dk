@@ -12,9 +12,12 @@ var I18N = (function () {
 
   var translations = {
     da: {
-      // Meta
-      "meta.title": "Rebuy — Køb og sælg børneting lokalt",
-      "meta.description": "Rebuy er en ny markedsplads for børnefamilier i Danmark. Køb og sælg børnetøj, legetøj og udstyr lokalt.",
+      // Meta. Kept in sync with the static HEAD in index.html.
+      "meta.title": "Rebuy — Køb og sælg brugt børnetøj og babyudstyr lokalt | Kommer snart",
+      "meta.description": "Rebuy er den nye app for danske børnefamilier — køb og sælg brugt børnetøj, babyudstyr og legetøj lokalt. Kommer snart. Tilmeld dig ventelisten og vær først.",
+
+      // Hero logo alt (in sync with index.html data-i18n-alt)
+      "hero.logoAlt": "Rebuy — mor med barnevogn der køber og sælger brugt børnetøj lokalt",
 
       // Header
       "lang.toggle": "EN",
@@ -22,6 +25,16 @@ var I18N = (function () {
       // Pre-launch hero
       "prelaunch.badge": "Kommer snart",
       "prelaunch.title": "En ny måde at købe og sælge børneting er på vej",
+      "prelaunch.subtitle": "Børnetøjet de er vokset fra fortjener et nyt hjem. Sparepengene fortjener du. Rebuy bliver Danmarks nye markedsplads for børnefamilier — kun lokalt, kun ansigt til ansigt.",
+
+      // Waitlist benefits (prelaunch)
+      "waitlist.title": "Hvorfor tilmelde sig?",
+      "waitlist.benefit1Title": "Tidlig adgang",
+      "waitlist.benefit1Text": "Du får appen før den brede lancering, så du allerede er i gang, når dit nabolag opdager Rebuy.",
+      "waitlist.benefit2Title": "Lanceringstilbud",
+      "waitlist.benefit2Text": "Som tilmeldt får du som de første besked om gratis funktioner og bonusser, vi gemmer til ventelisten.",
+      "waitlist.benefit3Title": "Ingen spam",
+      "waitlist.benefit3Text": "Vi skriver kun, når vi har noget at fortælle — og du kan altid afmelde med ét klik.",
 
       // Cards
       "card.local.title": "Lokalt og nemt",
@@ -37,8 +50,11 @@ var I18N = (function () {
       "signup.placeholder": "Din e-mail",
       "signup.button": "Tilmeld",
       "signup.success": "Tak for din tilmelding! Vi sender dig en besked, når Rebuy er klar. 🎉",
-      "signup.error": "Noget gik galt. Prøv igen eller skriv til support@rebuy.dk.",
+      "signup.error": "Noget gik galt. Prøv igen, eller",
+      "signup.errorCta": "kontakt os via formularen",
       "signup.aria": "E-mailadresse",
+      "signup.counterPrefix": "Allerede",
+      "signup.counterSuffix": "danske familier står på ventelisten",
 
       // FAQ (prelaunch). Keep in sync with FAQPage JSON-LD in index.html <head>.
       "faq.title": "Ofte stillede spørgsmål",
@@ -105,7 +121,7 @@ var I18N = (function () {
       "contact.messagePlaceholder": "Skriv din besked",
       "contact.submit": "Send besked",
       "contact.success": "Tak! Vi vender tilbage så hurtigt som muligt.",
-      "contact.error": "Noget gik galt. Prøv igen eller skriv til support@rebuy.dk.",
+      "contact.error": "Noget gik galt. Prøv venligst igen om lidt.",
 
       // Privacy page
       "privacy.title": "Privatlivspolitik",
@@ -305,9 +321,12 @@ var I18N = (function () {
     },
 
     en: {
-      // Meta
-      "meta.title": "Rebuy — Buy and sell kids' items locally",
-      "meta.description": "Rebuy is a new marketplace for families in Denmark. Buy and sell kids' clothes, toys and gear locally.",
+      // Meta. Kept in sync with the static HEAD in index.html.
+      "meta.title": "Rebuy — Buy and sell used kids' clothes and baby gear locally | Coming soon",
+      "meta.description": "Rebuy is the new app for Danish families — buy and sell used kids' clothes, baby gear, and toys locally. Coming soon. Join the waitlist and be first.",
+
+      // Hero logo alt
+      "hero.logoAlt": "Rebuy — mom with stroller buying and selling used kids' items locally",
 
       // Header
       "lang.toggle": "DA",
@@ -315,6 +334,16 @@ var I18N = (function () {
       // Pre-launch hero
       "prelaunch.badge": "Coming soon",
       "prelaunch.title": "A new way to buy and sell kids' items is coming",
+      "prelaunch.subtitle": "The clothes they've outgrown deserve a new home. The savings deserve you. Rebuy is a new marketplace for families across Denmark — local only, face-to-face only.",
+
+      // Waitlist benefits (prelaunch)
+      "waitlist.title": "Why join?",
+      "waitlist.benefit1Title": "Early access",
+      "waitlist.benefit1Text": "You get the app before the wider launch, so you're already up and running when your neighbourhood discovers Rebuy.",
+      "waitlist.benefit2Title": "Launch perks",
+      "waitlist.benefit2Text": "Waitlist members hear first about free features and bonuses we reserve for early supporters.",
+      "waitlist.benefit3Title": "No spam",
+      "waitlist.benefit3Text": "We only write when we have something to say — and you can unsubscribe with a single click.",
 
       // Cards
       "card.local.title": "Local and easy",
@@ -330,8 +359,11 @@ var I18N = (function () {
       "signup.placeholder": "Your email",
       "signup.button": "Sign up",
       "signup.success": "Thanks for signing up! We'll let you know when Rebuy is ready. 🎉",
-      "signup.error": "Something went wrong. Please try again or email support@rebuy.dk.",
+      "signup.error": "Something went wrong. Please try again, or",
+      "signup.errorCta": "contact us via the form",
       "signup.aria": "Email address",
+      "signup.counterPrefix": "Already",
+      "signup.counterSuffix": "Danish families on the waitlist",
 
       // FAQ (prelaunch). Visible text only — JSON-LD stays in Danish (default).
       "faq.title": "Frequently asked questions",
@@ -398,7 +430,7 @@ var I18N = (function () {
       "contact.messagePlaceholder": "Write your message",
       "contact.submit": "Send message",
       "contact.success": "Thanks! We'll get back to you as soon as possible.",
-      "contact.error": "Something went wrong. Please try again or email support@rebuy.dk.",
+      "contact.error": "Something went wrong. Please try again in a moment.",
 
       // Privacy page
       "privacy.title": "Privacy Policy",
@@ -647,6 +679,13 @@ var I18N = (function () {
     arias.forEach(function (el) {
       var key = el.getAttribute("data-i18n-aria");
       el.setAttribute("aria-label", t(key, lang));
+    });
+
+    // Update all [data-i18n-alt] elements (image alt text)
+    var alts = document.querySelectorAll("[data-i18n-alt]");
+    alts.forEach(function (el) {
+      var key = el.getAttribute("data-i18n-alt");
+      el.setAttribute("alt", t(key, lang));
     });
 
     // Save preference
