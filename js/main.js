@@ -58,6 +58,13 @@
   var prelaunchEl = document.getElementById("prelaunch-content");
   var launchedEl = document.getElementById("launched-content");
 
+  // If the caller asks (via ?mode=…) for a section that was stripped at build
+  // time, fall back to whichever section survived. Without this fallback,
+  // ?mode=launched in production (where launched-content is stripped) hides
+  // the prelaunch section and renders a blank page.
+  if (mode === "launched" && !launchedEl) mode = "prelaunch";
+  if (mode === "prelaunch" && !prelaunchEl) mode = "launched";
+
   if (mode === "launched") {
     if (prelaunchEl) prelaunchEl.classList.add("hidden");
     if (launchedEl) launchedEl.classList.remove("hidden");
@@ -162,35 +169,6 @@
             if (errorEl) errorEl.hidden = false;
           });
       });
-    }
-
-    // ---- Live signup counter (prelaunch social proof) ----
-    // Reads the current waitlist total from Appwrite and renders it when
-    // count >= MIN_DISPLAY. Rounded down to the nearest 10. Silently hides
-    // on any error (e.g. anonymous reads not permitted on the collection)
-    // so the page never shows a broken counter — the team can enable read
-    // permission later without a code change.
-
-    var counterEl = document.getElementById("signup-counter");
-    var counterValueEl = document.getElementById("signup-counter-value");
-    if (counterEl && counterValueEl) {
-      var MIN_DISPLAY = 25;
-      var listUrl = SITE_CONFIG.APPWRITE_ENDPOINT
-        + "/databases/" + SITE_CONFIG.APPWRITE_DATABASE_ID
-        + "/collections/" + SITE_CONFIG.APPWRITE_COLLECTION_ID
-        + "/documents?queries[]=" + encodeURIComponent("limit(1)");
-      fetch(listUrl, {
-        headers: { "X-Appwrite-Project": SITE_CONFIG.APPWRITE_PROJECT_ID },
-      })
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (data) {
-          var total = data && typeof data.total === "number" ? data.total : 0;
-          if (total >= MIN_DISPLAY) {
-            counterValueEl.textContent = Math.floor(total / 10) * 10;
-            counterEl.hidden = false;
-          }
-        })
-        .catch(function () { /* fail silently — counter stays hidden */ });
     }
 
     // ---- Signup error CTA opens the contact modal ----
