@@ -68,8 +68,6 @@ var I18N = (function () {
       "faq.a4": "Rebuy er gratis at bruge. Der er ingen gebyrer for at oprette annoncer, chatte med en sælger eller gennemføre en handel. Vi tager heller ikke en del af salgsprisen.",
       "faq.q5": "Hvor i Danmark virker Rebuy?",
       "faq.a5": "Rebuy virker i hele Danmark. Appen finder annoncer og købere i dit nærområde — uanset om du bor i København, Aarhus, Odense, Aalborg eller en mindre by.",
-      "faq.q6": "Er det sikkert at handle på Rebuy?",
-      "faq.a6": "Ja. Du chatter direkte med en anden forælder i appen, og I aftaler selv pris, mødested og betaling. Vi anbefaler at mødes på et offentligt sted i dagslys. Du kan til enhver tid blokere eller anmelde en bruger, og vi gennemgår anmeldelser inden for 24 timer.",
       "faq.q7": "Hvordan adskiller Rebuy sig fra andre genbrugsapps?",
       "faq.a7": "Rebuy er bygget specifikt til danske børnefamilier og lokal handel ansigt til ansigt. Ingen forsendelse, ingen tredjeparts betaling — bare et nemt værktøj til at finde og afhænde børneting i dit eget nabolag.",
 
@@ -377,8 +375,6 @@ var I18N = (function () {
       "faq.a4": "Rebuy is free to use. There are no fees for posting listings, chatting with a seller, or completing a trade. We don't take a cut of the sale price either.",
       "faq.q5": "Where in Denmark does Rebuy work?",
       "faq.a5": "Rebuy works across Denmark. The app finds listings and buyers in your local area — whether you live in Copenhagen, Aarhus, Odense, Aalborg, or a smaller town.",
-      "faq.q6": "Is it safe to trade on Rebuy?",
-      "faq.a6": "Yes. You chat directly with another parent inside the app, and the two of you agree on price, meet-up spot, and payment yourselves. We recommend meeting in a public place in daylight. You can block or report any user at any time, and we review reports within 24 hours.",
       "faq.q7": "How is Rebuy different from other secondhand apps?",
       "faq.a7": "Rebuy is built specifically for Danish families and local, face-to-face trading. No shipping, no third-party payments — just a simple tool for finding and passing on kids' items in your own neighbourhood.",
 
