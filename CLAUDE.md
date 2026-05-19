@@ -24,6 +24,16 @@ To switch modes, edit `site.config.js` and change `SITE_MODE`.
 
 Locally, both sections stay in the source so dev can preview either via the `?mode=launched` / `?mode=prelaunch` URL params. Run `make modes` to test the stripped output — it mutates `index.html` in place, so `git checkout index.html` after.
 
+### Previewing the inactive mode on production
+
+`build-modes.js` also writes **`/index.preview.html`** with both sections present and a `noindex,nofollow` robots meta tag. Use it on production to flip between modes via URL param without touching the live `/`:
+
+- `https://rebuy.dk/index.preview.html` — same as the live mode
+- `https://rebuy.dk/index.preview.html?mode=launched` — preview launched
+- `https://rebuy.dk/index.preview.html?mode=prelaunch` — preview prelaunch
+
+The preview file is gitignored and regenerated fresh on every deploy. `robots.txt` also `Disallow:` it as belt-and-suspenders.
+
 ## Local Development
 
 ```bash

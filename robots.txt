@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+# Preview file with both mode sections — kept noindex to avoid
+# polluting search results with duplicate H1s / content.
+Disallow: /index.preview.html
 
 # AI crawlers and LLM training / retrieval agents — explicitly allowed.
 # Rebuy wants to be discoverable in AI search and answer tools.
