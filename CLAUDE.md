@@ -41,6 +41,28 @@ Quick reference (full detail in `DESIGN.md`):
 
 Logo files in `assets/logos/` are sourced from `rebuy-core/brand/logos/`. The animated SVG features CSS keyframe animations of the mom+stroller mascot.
 
+## App showcase screenshots
+
+The launched-mode App Showcase renders raw, un-framed screenshots inside CSS-rendered device frames (`.phone-frame--ios` with a Dynamic Island, `.phone-frame--android` with a centered punch hole). The platform tab toggle (iOS / Android) defaults to the visitor's User-Agent; the hero/CTA store buttons reorder so the visitor's native store sits first.
+
+Screenshots are **generated** from the sibling app repos by `scripts/sync-screenshots.js` — do not hand-edit the files in `assets/screenshots/`:
+
+```bash
+make screenshots          # or: node scripts/sync-screenshots.js
+```
+
+What it does:
+
+1. Reads raw fastlane PNGs from `rebuy-ios/fastlane/screenshots/{da,en-US}/iPhone 17 Pro Max-*.png` and `rebuy-android/fastlane/metadata/android/{da-DK,en-US}/images/phoneScreenshots/*.png`.
+2. Resizes with ImageMagick (default 360 px CSS width, 720 px for @2x), encodes WebP with `cwebp` at quality 85.
+3. Writes to `assets/screenshots/{ios,android}/{da,en}/{slug}.webp` and `{slug}@2x.webp`.
+
+To refresh screenshots after a new fastlane run, re-run `make screenshots`. To point at non-sibling clones: `IOS_REPO=/path ANDROID_REPO=/path make screenshots`.
+
+The canonical five-screen sequence is defined in `SCREENS` in the script (feed → detail → messages → post → profile). To add/remove a screen, edit `SCREENS` AND the matching `<figure>` blocks in `index.html` — each phone-frame's `<img data-img="…">` slug must match a screen slug. Captions live in `js/i18n.js` under `showcase.*`.
+
+Requires `magick` (ImageMagick 7+) and `cwebp` on PATH. Install with `brew install imagemagick webp` on macOS.
+
 ## Deployment
 
 Push to `main` triggers `.github/workflows/deploy.yml` which deploys the root directory to GitHub Pages. The `CNAME` file configures the custom domain.

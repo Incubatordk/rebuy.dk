@@ -725,18 +725,72 @@ a:hover {
   text-align: center;
 }
 
-.phone-card picture,
-.phone-card img {
+/* CSS-rendered device frame. The same .phone-frame shell works for both
+   platforms — the cutout (Dynamic Island vs Pixel punch-hole) is rendered
+   via the inner ::before so it sits on top of the screenshot. */
+.phone-frame {
+  --phone-bezel: 8px;
+  --phone-radius-outer: 36px;
+  --phone-radius-inner: 28px;
+  position: relative;
   width: 100%;
-  height: auto;
-  aspect-ratio: 720 / 1389;
-  border-radius: var(--radius-lg);
-  filter: drop-shadow(0 18px 32px rgba(26, 26, 26, 0.12));
-  transition: transform var(--transition-base);
+  aspect-ratio: 9 / 19.5;
+  padding: var(--phone-bezel);
+  background: #111111;
+  border-radius: var(--phone-radius-outer);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6) inset,
+    0 0 0 2px rgba(255, 255, 255, 0.04) inset,
+    0 18px 36px rgba(26, 26, 26, 0.18),
+    0 4px 10px rgba(26, 26, 26, 0.08);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.phone-card:hover img {
+.phone-frame picture,
+.phone-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--phone-radius-inner);
+  background: var(--color-bg);
+}
+
+/* iOS — Dynamic Island */
+.phone-frame--ios::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--phone-bezel) + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32%;
+  height: 22px;
+  background: #000;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+/* Android — centered punch-hole camera */
+.phone-frame--android::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--phone-bezel) + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.phone-card:hover .phone-frame {
   transform: translateY(-6px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6) inset,
+    0 0 0 2px rgba(255, 255, 255, 0.04) inset,
+    0 24px 44px rgba(26, 26, 26, 0.22),
+    0 6px 14px rgba(26, 26, 26, 0.1);
 }
 
 .phone-card figcaption {
@@ -758,9 +812,59 @@ a:hover {
 }
 
 @media (hover: none) {
-  .phone-card:hover img {
+  .phone-card:hover .phone-frame {
     transform: none;
   }
+}
+
+/* Platform tabs sit above the gallery and toggle which platform's
+   gallery is visible. Auto-default is set in JS from the User-Agent. */
+.platform-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  padding: var(--space-xxs);
+  margin: 0 auto var(--space-2xl);
+  background: var(--color-bg-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+.platform-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 40px;
+}
+
+.platform-tab svg {
+  width: 16px;
+  height: 16px;
+}
+
+.platform-tab:hover {
+  color: var(--color-text);
+}
+
+.platform-tab[aria-selected="true"] {
+  background: var(--color-text);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(26, 26, 26, 0.18);
+}
+
+.phone-gallery[hidden] {
+  display: none;
 }
 
 /* ==========================================================================

@@ -10,12 +10,39 @@
   var lang = I18N.detect();
   I18N.apply(lang);
 
+  // ---- Platform detection (for the launched-mode showcase + store buttons) ----
+
+  function detectPlatform() {
+    var ua = (navigator.userAgent || "").toLowerCase();
+    if (/android/.test(ua)) return "android";
+    if (/iphone|ipad|ipod/.test(ua)) return "ios";
+    if (/mac os x/.test(ua) && navigator.maxTouchPoints > 1) return "ios"; // iPad on modern Safari
+    return "ios"; // sensible default — App Store has broader reach today
+  }
+
+  // ---- Showcase: per-platform, per-language screenshot sources ----
+
+  function updateScreenshotSources() {
+    var currentLang = document.documentElement.lang || "da";
+    var imgs = document.querySelectorAll("img[data-img]");
+    imgs.forEach(function (img) {
+      var gallery = img.closest("[data-platform]");
+      if (!gallery) return;
+      var platform = gallery.getAttribute("data-platform");
+      var slug = img.getAttribute("data-img");
+      var base = "assets/screenshots/" + platform + "/" + currentLang + "/" + slug;
+      img.src = base + ".webp";
+      img.srcset = base + ".webp 1x, " + base + "@2x.webp 2x";
+    });
+  }
+
   // ---- Language toggle button ----
 
   var langBtn = document.getElementById("lang-toggle");
   if (langBtn) {
     langBtn.addEventListener("click", function () {
       I18N.toggle();
+      updateScreenshotSources();
     });
   }
 
@@ -39,7 +66,7 @@
     if (footerLinks) footerLinks.classList.add("hidden");
   }
 
-  // ---- Store button URLs (launched mode) ----
+  // ---- Store button URLs + platform-aware ordering (launched mode) ----
 
   if (mode === "launched") {
     var appStoreBtn = document.getElementById("app-store-btn");
@@ -51,6 +78,39 @@
     if (playStoreBtn) playStoreBtn.href = SITE_CONFIG.PLAY_STORE_URL;
     if (appStoreBtnCta) appStoreBtnCta.href = SITE_CONFIG.APP_STORE_URL;
     if (playStoreBtnCta) playStoreBtnCta.href = SITE_CONFIG.PLAY_STORE_URL;
+
+    var platform = detectPlatform();
+
+    // Put the visitor's native store first; CSS `order` keeps DOM stable.
+    [appStoreBtn, appStoreBtnCta].forEach(function (el) {
+      if (el) el.style.order = platform === "ios" ? "0" : "1";
+    });
+    [playStoreBtn, playStoreBtnCta].forEach(function (el) {
+      if (el) el.style.order = platform === "android" ? "0" : "1";
+    });
+
+    // ---- Showcase: select the visitor's platform tab by default, wire up toggle.
+
+    var galleries = document.querySelectorAll(".phone-gallery[data-platform]");
+    var tabs = document.querySelectorAll(".platform-tab[data-platform]");
+
+    function selectPlatform(next) {
+      tabs.forEach(function (tab) {
+        tab.setAttribute("aria-selected", tab.getAttribute("data-platform") === next ? "true" : "false");
+      });
+      galleries.forEach(function (g) {
+        g.hidden = g.getAttribute("data-platform") !== next;
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        selectPlatform(tab.getAttribute("data-platform"));
+      });
+    });
+
+    selectPlatform(platform);
+    updateScreenshotSources();
   }
 
   // ---- Email signup form (prelaunch mode) ----
