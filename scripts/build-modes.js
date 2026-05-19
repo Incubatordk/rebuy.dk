@@ -18,6 +18,7 @@ const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
 const HTML_PATH = path.join(ROOT, 'index.html');
+const PREVIEW_HTML_PATH = path.join(ROOT, 'index.preview.html');
 const CONFIG_PATH = path.join(ROOT, 'site.config.js');
 
 function readSiteMode() {
@@ -58,10 +59,29 @@ function unhideLaunched(html) {
   );
 }
 
+function buildPreview(source) {
+  // Preview file keeps BOTH mode sections so the team can flip between them
+  // on production via ?mode=launched / ?mode=prelaunch. Crawlers must not
+  // index this file (defeats the whole point of stripping the main page),
+  // so we force `robots` to noindex,nofollow. robots.txt also disallows the
+  // path as belt-and-suspenders for older bots.
+  const preview = source.replace(
+    /<meta name="robots" content="[^"]*">/,
+    '<meta name="robots" content="noindex, nofollow">'
+  );
+  fs.writeFileSync(PREVIEW_HTML_PATH, preview);
+  console.log('build-modes: wrote index.preview.html (both sections, noindex)');
+}
+
 function build() {
   const mode = readSiteMode();
-  let html = fs.readFileSync(HTML_PATH, 'utf8');
+  const source = fs.readFileSync(HTML_PATH, 'utf8');
 
+  // Generate the preview first — it intentionally has both sections.
+  buildPreview(source);
+
+  // Then strip the inactive block from the production HTML.
+  let html = source;
   if (mode === 'prelaunch') {
     html = stripBlock(html, 'launched');
   } else {
