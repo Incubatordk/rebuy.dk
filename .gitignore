@@ -3,3 +3,7 @@
 .vscode/
 .idea/
 .claude/
+
+# Generated fresh on every deploy by scripts/build-modes.js (both mode
+# sections + noindex). Never committed — see CLAUDE.md.
+index.preview.html
