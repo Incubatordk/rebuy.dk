@@ -409,6 +409,10 @@ The hero logo and the pink-glow shadow visually round the silhouette of the page
 - **`{components.hero-badge}`** — pre-launch teaser pill above the hero h1. Pink-light fill, deep burgundy `{colors.on-primary-light}` text (#5C2222 — chosen specifically because ink at #1A1A1A on #FBCECE is too low-contrast).
 - **`{components.lang-toggle}`** — DA / EN pill in the header. White fill, 1.5px border, secondary text, 48×48 minimum hit area (despite being visually smaller). Hover swaps to warm peach fill, primary-dark text, primary border. Press scales to 0.96.
 
+### Segmented Tabs & Step Strip (launched mode)
+- **Segmented pill-tabs** — the showcase platform toggle (`.platform-tabs`, iPhone / Android) and the "Sådan virker det" flow toggle (`.flow-tabs`, Køb / Sælg) share one pattern: an inline-flex `{colors.bg-card}` track with a 1.5px `{colors.border}` outline and `{rounded.full}` radius, holding pill tabs that read `{colors.text-secondary}` at rest and flip to an ink fill with white text plus a soft ink shadow when `aria-selected="true"`. Both are real ARIA tablists driving `hidden` tabpanels.
+- **How-it-works step** — each step in the 3-up strip (`.step-card`) layers onto the shared `{components.card-glass}` surface: a head row pairs the gradient `{components.card-icon}` tile (emoji glyph) with a large pink decorative numeral (`.step-card-num`, `{typography.display-lg}`-scale in `{colors.primary}`), above a `{typography.title-sm}` headline and a `{typography.body-sm}` line. The `<ol>` stays a semantic ordered list — the visible numeral is `aria-hidden`. The grid is 3-column on desktop and collapses to one column ≤900px, mirroring the feature-card grid.
+
 ### Animation
 - **Hero logo float** — 4s `float` keyframe (`translateY(0)` → `-10px` → `0`) on `.hero-logo`, infinite. Suppressed under reduced-motion.
 - **Scroll-in fade-up** — elements with `[data-animate]` start at `opacity: 0; transform: translateY(20px)` and animate to `opacity: 1; transform: translateY(0)` over `--transition-slow` (400ms). Stagger is via `[data-animate-delay="1|2|3"]` (100 / 200 / 300ms).

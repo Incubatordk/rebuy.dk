@@ -89,6 +89,25 @@ var I18N = (function () {
       "showcase.profile.title": "Hold styr på det hele",
       "showcase.profile.text": "Dine annoncer, favoritter og indstillinger samlet ét sted.",
 
+      // How it works
+      "howit.title": "Sådan virker det",
+      "howit.subtitle": "Tre trin — uanset om du køber eller sælger.",
+      "howit.tablist": "Vælg køb eller salg",
+      "howit.tab.buy": "Køb",
+      "howit.tab.sell": "Sælg",
+      "howit.buy.1.title": "Find",
+      "howit.buy.1.text": "Browse annoncer i dit nærområde.",
+      "howit.buy.2.title": "Chat",
+      "howit.buy.2.text": "Aftal pris og afhentning med sælger.",
+      "howit.buy.3.title": "Mød op",
+      "howit.buy.3.text": "Handl ansigt til ansigt med en anden familie.",
+      "howit.sell.1.title": "Tag billede",
+      "howit.sell.1.text": "Snap et foto af det, dine børn er vokset fra.",
+      "howit.sell.2.title": "Sæt pris",
+      "howit.sell.2.text": "Vælg en fair pris, og din annonce er online.",
+      "howit.sell.3.title": "Aftal afhentning",
+      "howit.sell.3.text": "Chat med køberen og aftal et lokalt møde.",
+
       // Store buttons
       "store.download": "Download fra",
       "store.appstore": "App Store",
@@ -395,6 +414,25 @@ var I18N = (function () {
       "showcase.post.text": "Snap a photo, set a price, and you're live.",
       "showcase.profile.title": "Stay on top of it all",
       "showcase.profile.text": "Your listings, favourites and settings, neatly together.",
+
+      // How it works
+      "howit.title": "How it works",
+      "howit.subtitle": "Three steps — whether you're buying or selling.",
+      "howit.tablist": "Choose buying or selling",
+      "howit.tab.buy": "Buy",
+      "howit.tab.sell": "Sell",
+      "howit.buy.1.title": "Find",
+      "howit.buy.1.text": "Browse listings in your neighbourhood.",
+      "howit.buy.2.title": "Chat",
+      "howit.buy.2.text": "Agree on price and pick-up with the seller.",
+      "howit.buy.3.title": "Meet up",
+      "howit.buy.3.text": "Trade face to face with another family.",
+      "howit.sell.1.title": "Snap a photo",
+      "howit.sell.1.text": "Take a picture of what your kids outgrew.",
+      "howit.sell.2.title": "Set a price",
+      "howit.sell.2.text": "Pick a fair price and your listing goes live.",
+      "howit.sell.3.title": "Arrange pick-up",
+      "howit.sell.3.text": "Chat with the buyer and meet up locally.",
 
       // Store buttons
       "store.download": "Download on",

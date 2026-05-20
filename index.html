@@ -959,6 +959,86 @@ outline: none;
         </div>
       </div>
 
+      <!-- How it works -->
+      <section class="howitworks" aria-labelledby="howitworks-title">
+        <div class="container">
+          <h2 id="howitworks-title" data-i18n="howit.title">Sådan virker det</h2>
+          <p class="howitworks-subtitle" data-i18n="howit.subtitle">Tre trin — uanset om du køber eller sælger.</p>
+
+          <!-- Buy / Sell flow toggle (segmented control) -->
+          <div class="flow-tabs" role="tablist" aria-label="Vælg flow" data-i18n-aria="howit.tablist">
+            <button type="button" class="flow-tab" id="flow-tab-buy"
+                    role="tab" aria-controls="flow-panel-buy" aria-selected="true"
+                    data-flow="buy" data-i18n="howit.tab.buy">Køb</button>
+            <button type="button" class="flow-tab" id="flow-tab-sell"
+                    role="tab" aria-controls="flow-panel-sell" aria-selected="false"
+                    data-flow="sell" data-i18n="howit.tab.sell">Sælg</button>
+          </div>
+
+          <!-- Buy flow -->
+          <div class="flow-panel" id="flow-panel-buy" role="tabpanel"
+               aria-labelledby="flow-tab-buy" data-flow="buy">
+            <ol class="howitworks-steps">
+              <li class="step-card card" data-animate data-animate-delay="1">
+                <div class="step-card-head">
+                  <div class="card-icon" aria-hidden="true">🔍</div>
+                  <span class="step-card-num" aria-hidden="true">1</span>
+                </div>
+                <h3 data-i18n="howit.buy.1.title">Find</h3>
+                <p data-i18n="howit.buy.1.text">Browse annoncer i dit nærområde.</p>
+              </li>
+              <li class="step-card card" data-animate data-animate-delay="2">
+                <div class="step-card-head">
+                  <div class="card-icon" aria-hidden="true">💬</div>
+                  <span class="step-card-num" aria-hidden="true">2</span>
+                </div>
+                <h3 data-i18n="howit.buy.2.title">Chat</h3>
+                <p data-i18n="howit.buy.2.text">Aftal pris og afhentning med sælger.</p>
+              </li>
+              <li class="step-card card" data-animate data-animate-delay="3">
+                <div class="step-card-head">
+                  <div class="card-icon" aria-hidden="true">🤝</div>
+                  <span class="step-card-num" aria-hidden="true">3</span>
+                </div>
+                <h3 data-i18n="howit.buy.3.title">Mød op</h3>
+                <p data-i18n="howit.buy.3.text">Handl ansigt til ansigt med en anden familie.</p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Sell flow -->
+          <div class="flow-panel" id="flow-panel-sell" role="tabpanel"
+               aria-labelledby="flow-tab-sell" data-flow="sell" hidden>
+            <ol class="howitworks-steps">
+              <li class="step-card card">
+                <div class="step-card-head">
+                  <div class="card-icon" aria-hidden="true">📸</div>
+                  <span class="step-card-num" aria-hidden="true">1</span>
+                </div>
+                <h3 data-i18n="howit.sell.1.title">Tag billede</h3>
+                <p data-i18n="howit.sell.1.text">Snap et foto af det, dine børn er vokset fra.</p>
+              </li>
+              <li class="step-card card">
+                <div class="step-card-head">
+                  <div class="card-icon" aria-hidden="true">🏷️</div>
+                  <span class="step-card-num" aria-hidden="true">2</span>
+                </div>
+                <h3 data-i18n="howit.sell.2.title">Sæt pris</h3>
+                <p data-i18n="howit.sell.2.text">Vælg en fair pris, og din annonce er online.</p>
+              </li>
+              <li class="step-card card">
+                <div class="step-card-head">
+                  <div class="card-icon" aria-hidden="true">📦</div>
+                  <span class="step-card-num" aria-hidden="true">3</span>
+                </div>
+                <h3 data-i18n="howit.sell.3.title">Aftal afhentning</h3>
+                <p data-i18n="howit.sell.3.text">Chat med køberen og aftal et lokalt møde.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
       <!-- App Showcase -->
       <section class="showcase" aria-labelledby="showcase-title">
         <div class="container">
