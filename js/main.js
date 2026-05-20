@@ -122,6 +122,27 @@
 
     selectPlatform(platform);
     updateScreenshotSources();
+
+    // ---- How-it-works: buy/sell flow toggle ----
+    // Mirrors the platform tablist. The buy panel is the default in the
+    // static HTML (aria-selected + visible); this just wires the toggle.
+    var flowTabs = document.querySelectorAll(".flow-tab[data-flow]");
+    var flowPanels = document.querySelectorAll(".flow-panel[data-flow]");
+
+    function selectFlow(next) {
+      flowTabs.forEach(function (tab) {
+        tab.setAttribute("aria-selected", tab.getAttribute("data-flow") === next ? "true" : "false");
+      });
+      flowPanels.forEach(function (panel) {
+        panel.hidden = panel.getAttribute("data-flow") !== next;
+      });
+    }
+
+    flowTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        selectFlow(tab.getAttribute("data-flow"));
+      });
+    });
   }
 
   // ---- Email signup form (prelaunch mode) ----
