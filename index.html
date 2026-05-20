@@ -33,10 +33,15 @@
   <meta name="twitter:image" content="https://rebuy.dk/assets/logos/og-image.png">
 
   <!-- Structured Data
-       @graph bundles Organization, WebSite, WebApplication and FAQPage so
+       @graph bundles Organization, WebSite, MobileApplication and FAQPage so
        crawlers and AI search agents see a coherent entity description.
        FAQ answers MUST stay in sync with the visible FAQ section inside
-       #launched-content in <main>. -->
+       #launched-content in <main>.
+       NOTE: aggregateRating is intentionally omitted until the App Store /
+       Play Store have ≥5 genuine ratings — placeholder ratings violate
+       Google's policy and fail the Rich Results Test. Add it (with real
+       ratingValue/ratingCount) to the MobileApplication node once the
+       reviews exist. See issue #47. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,18 +77,45 @@
         "publisher": { "@id": "https://rebuy.dk/#organization" }
       },
       {
-        "@type": "WebApplication",
+        "@type": "MobileApplication",
+        "@id": "https://rebuy.dk/#app",
         "name": "Rebuy",
         "url": "https://rebuy.dk/",
         "description": "Hent Rebuy gratis — appen hvor danske børnefamilier køber og sælger brugt børnetøj, babyudstyr og legetøj lokalt i dit nærområde.",
         "applicationCategory": "ShoppingApplication",
+        "applicationSubCategory": "Marketplace",
         "operatingSystem": "iOS, Android",
+        "availableOnDevice": ["iPhone", "iPad", "Android"],
         "inLanguage": ["da", "en"],
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "DKK"
         },
+        "audience": {
+          "@type": "PeopleAudience",
+          "audienceType": "Parents",
+          "suggestedMinAge": 0,
+          "suggestedMaxAge": 14
+        },
+        "featureList": [
+          "Lokal markedsplads for brugt børnetøj og babyudstyr",
+          "Chat med sælger direkte i appen",
+          "Tag billede og opret annonce på sekunder",
+          "Find annoncer i dit nærområde",
+          "Favoritter og notifikationer"
+        ],
+        "screenshot": [
+          "https://rebuy.dk/assets/screenshots/ios/da/01-feed@2x.webp",
+          "https://rebuy.dk/assets/screenshots/ios/da/02-detail@2x.webp",
+          "https://rebuy.dk/assets/screenshots/ios/da/03-messages@2x.webp",
+          "https://rebuy.dk/assets/screenshots/ios/da/04-post@2x.webp",
+          "https://rebuy.dk/assets/screenshots/ios/da/05-profile@2x.webp"
+        ],
+        "installUrl": [
+          "https://apps.apple.com/us/app/rebuy-local-secondhand/id6762342818",
+          "https://play.google.com/store/apps/details?id=com.anchorit.rebuy"
+        ],
         "publisher": { "@id": "https://rebuy.dk/#organization" }
       },
       {
