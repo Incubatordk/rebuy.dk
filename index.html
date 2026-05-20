@@ -1191,6 +1191,28 @@ outline: none;
         </div>
       </div>
 
+      <!-- Accessibility — only features both iOS and Android actually ship (see #67). -->
+      <section class="a11y" aria-labelledby="a11y-title" data-animate>
+        <div class="container">
+          <h2 id="a11y-title" data-i18n="a11y.title">Tilgængelig for alle</h2>
+          <p class="a11y-intro" data-i18n="a11y.intro">Rebuy understøtter skærmlæser, stemmestyring og tydelig kontrast — på både iPhone og Android.</p>
+          <ul class="a11y-list">
+            <li class="a11y-pill">
+              <span class="a11y-pill-icon" aria-hidden="true">🔊</span>
+              <span data-i18n="a11y.screenreader">Skærmlæser</span>
+            </li>
+            <li class="a11y-pill">
+              <span class="a11y-pill-icon" aria-hidden="true">🎙️</span>
+              <span data-i18n="a11y.voice">Stemmestyring</span>
+            </li>
+            <li class="a11y-pill">
+              <span class="a11y-pill-icon" aria-hidden="true">👓</span>
+              <span data-i18n="a11y.contrast">Tydelig kontrast</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <!-- FAQ — answers must stay in sync with FAQPage JSON-LD in <head>. -->
       <section class="faq" aria-labelledby="faq-title" data-animate>
         <div class="container">
