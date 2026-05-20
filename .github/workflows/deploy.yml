@@ -31,15 +31,12 @@ jobs:
           VERSION="${GITHUB_SHA::7}"
           echo "Stamping assets with VERSION=$VERSION"
           grep -rl '__VERSION__' --include='*.html' . | xargs sed -i "s/__VERSION__/$VERSION/g"
-      # Build-mode stripping is intentionally DISABLED for the pre-launch
-       # window. The team needs to preview the launched section directly
-      # at https://rebuy.dk/?mode=launched while iterating on it, and is
-      # comfortable with the temporary SEO cost of having both sections
-      # in the deployed HTML for a few more days.
-      #
-      # Re-enable this step when SITE_MODE flips to "launched":
-      # - name: Strip inactive mode block from index.html
-      #   run: node scripts/build-modes.js
+      # Strips the inactive mode block (and writes index.preview.html with
+      # both sections + noindex) based on SITE_MODE in site.config.js. With
+      # SITE_MODE="launched" this removes #prelaunch-content so the deployed
+      # HTML has one <h1> and no "Kommer snart" signals for crawlers.
+      - name: Strip inactive mode block from index.html
+        run: node scripts/build-modes.js
       - name: Build blog RSS feed
         run: node scripts/build-feed.js
       - name: Build legal RSS feeds
