@@ -220,13 +220,13 @@ components:
     height: 48px
     width: 48px
   accessibility-chip:
-    backgroundColor: "{colors.bg-card}"
+    backgroundColor: "rgba(255, 255, 255, 0.7)"
     textColor: "{colors.ink}"
     typography: "{typography.badge}"
     rounded: "{rounded.full}"
     padding: "8px 16px"
-    border: "1px solid {colors.border}"
-    shadow: "0 1px 2px rgba(0, 0, 0, 0.04)"
+    border: "1px solid rgba(255, 255, 255, 0.4)"
+    shadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
   lang-toggle-hover:
     backgroundColor: "{colors.bg-warm}"
     textColor: "{colors.primary-dark}"
@@ -427,7 +427,7 @@ The hero logo and the pink-glow shadow visually round the silhouette of the page
 ### Segmented Tabs & Step Strip (launched mode)
 - **Segmented pill-tabs** — the showcase platform toggle (`.platform-tabs`, iPhone / Android) and the "Sådan virker det" flow toggle (`.flow-tabs`, Køb / Sælg) share one pattern: an inline-flex `{colors.bg-card}` track with a 1.5px `{colors.border}` outline and `{rounded.full}` radius, holding pill tabs that read `{colors.text-secondary}` at rest and flip to an ink fill with white text plus a soft ink shadow when `aria-selected="true"`. Both are real ARIA tablists driving `hidden` tabpanels.
 - **How-it-works step** — each step in the 3-up strip (`.step-card`) layers onto the shared `{components.card-glass}` surface: a head row pairs the gradient `{components.card-icon}` tile (emoji glyph) with a large pink decorative numeral (`.step-card-num`, `{typography.display-lg}`-scale in `{colors.primary}`), above a `{typography.title-sm}` headline and a `{typography.body-sm}` line. The `<ol>` stays a semantic ordered list — the visible numeral is `aria-hidden`. The grid is 3-column on desktop and collapses to one column ≤900px, mirroring the feature-card grid.
-- **Accessibility chips** (`{components.accessibility-chip}`) — the quiet trust band (`.a11y`) that sits between the feature cards and the FAQ in launched mode. A centered `{typography.title-lg}`-scale heading and a `{typography.body-md}` intro line sit above a centered, wrapping `<ul>` of static chips (`.a11y-pill`): white card fill, 1px `{colors.border}` hairline, `{rounded.full}` radius, `--shadow-sm`, each pairing an `aria-hidden` emoji glyph with a `{typography.badge}` label. Unlike the segmented tabs these are **non-interactive** — no hover, focus, or selected state — so they read as informational labels, not controls. The band lists only the accessibility features **both** the iOS and Android apps actually ship (screen reader, voice control, sufficient contrast); platform-asymmetric features (dark interface, reduced motion) are deliberately omitted to avoid overclaiming cross-platform parity.
+- **Accessibility chips** (`{components.accessibility-chip}`) — the quiet trust band (`.a11y`) that sits between the feature cards and the FAQ in launched mode. A centered `{typography.title-lg}`-scale heading and a `{typography.body-md}` intro line sit above a centered, wrapping `<ul>` of static chips (`.a11y-pill`), each pairing an `aria-hidden` emoji glyph with a `{typography.badge}` label. The chips borrow the **feature-card glass surface** — translucent white at 0.7 alpha, a 0.4-alpha white edge, `{rounded.full}` radius, and the default `--shadow` — so they read as the same tile family rather than as flat buttons. They are the one glass-family surface that **omits** the `backdrop-filter: blur()`: only flat canvas sits behind them, so the frosted look comes from the fill + edge alone and the two-blur rule (header + feature card) stays intact. Unlike the segmented tabs these are **non-interactive** — no hover, focus, or selected state — so they read as informational labels, not controls. The band lists only the accessibility features **both** the iOS and Android apps actually ship (screen reader, voice control, sufficient contrast); platform-asymmetric features (dark interface, reduced motion) are deliberately omitted to avoid overclaiming cross-platform parity.
 
 ### Animation
 - **Hero logo float** — 4s `float` keyframe (`translateY(0)` → `-10px` → `0`) on `.hero-logo`, infinite. Suppressed under reduced-motion.
