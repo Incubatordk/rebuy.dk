@@ -207,6 +207,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
+  <!-- Progressive enhancement flag, set before first paint. The scroll-reveal
+       styles (.js [data-animate]) only hide content when this class is present,
+       so visitors (and crawlers) without JS see every section fully rendered. -->
+  <script>document.documentElement.classList.add("js");</script>
+
   <!-- Styles (inlined for FCP) -->
   <style>
 :root {
@@ -592,12 +597,12 @@ margin: var(--space-3xl) 0;
 .cta h2 {
 font-size: var(--text-3xl);
 font-weight: 700;
-color: #FFFFFF;
+color: var(--color-text);
 margin-bottom: var(--space-sm);
 }
 .cta p {
 font-size: var(--text-lg);
-color: rgba(255, 255, 255, 0.85);
+color: #5C2222;
 margin-bottom: var(--space-xl);
 }
 .cta .store-btn {
@@ -675,12 +680,12 @@ opacity: 1;
 opacity: 0.7;
 }
 }
-[data-animate] {
+.js [data-animate] {
 opacity: 0;
 transform: translateY(20px);
 transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
-[data-animate].visible {
+.js [data-animate].visible {
 opacity: 1;
 transform: translateY(0);
 }
@@ -846,7 +851,7 @@ transition-duration: 0.01ms !important;
 html {
 scroll-behavior: auto;
 }
-[data-animate] {
+.js [data-animate] {
 opacity: 1;
 transform: none;
 }
@@ -1272,11 +1277,11 @@ outline: none;
     </div>
   </footer>
 
-  <!-- Contact modal -->
-  <div id="contact-modal" class="modal" hidden aria-hidden="true"
-       role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
-    <div class="modal-backdrop" data-modal-close></div>
-    <div class="modal-dialog" role="document">
+  <!-- Contact modal — native <dialog>: showModal() provides a focus trap, ESC
+       to close, the ::backdrop scrim and an inert background automatically, so
+       no role/aria-modal/aria-hidden bookkeeping is needed. -->
+  <dialog id="contact-modal" class="modal" aria-labelledby="contact-modal-title">
+    <div class="modal-dialog">
       <button type="button" class="modal-close" data-modal-close
               data-i18n-aria="contact.close" aria-label="Luk">&times;</button>
       <h2 id="contact-modal-title" data-i18n="contact.title">Kontakt os</h2>
@@ -1307,7 +1312,7 @@ outline: none;
       <div id="contact-error" class="contact-error" hidden
            data-i18n="contact.error">Noget gik galt. Prøv igen eller skriv til support@rebuy.dk.</div>
     </div>
-  </div>
+  </dialog>
 
   <script defer src="site.config.js?v=__VERSION__"></script>
   <script defer src="js/i18n.js?v=__VERSION__"></script>

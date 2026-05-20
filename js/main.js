@@ -209,13 +209,17 @@
   var contactForm = document.getElementById("contact-form");
   var contactSuccess = document.getElementById("contact-success");
   var contactError = document.getElementById("contact-error");
-  var lastFocused = null;
 
   function openContactModal() {
     if (!contactModal) return;
-    lastFocused = document.activeElement;
-    contactModal.hidden = false;
-    contactModal.setAttribute("aria-hidden", "false");
+    // showModal() puts the dialog in the top layer with a focus trap and an
+    // inert background. Fall back to the [open] attribute on the rare browser
+    // without the native API.
+    if (typeof contactModal.showModal === "function") {
+      contactModal.showModal();
+    } else {
+      contactModal.setAttribute("open", "");
+    }
     document.body.style.overflow = "hidden";
     var firstInput = contactModal.querySelector("input, textarea");
     if (firstInput) firstInput.focus();
@@ -223,21 +227,32 @@
 
   function closeContactModal() {
     if (!contactModal) return;
-    contactModal.hidden = true;
-    contactModal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    if (lastFocused && lastFocused.focus) lastFocused.focus();
+    if (typeof contactModal.close === "function") {
+      contactModal.close();
+    } else {
+      contactModal.removeAttribute("open");
+      document.body.style.overflow = "";
+    }
   }
 
-  if (contactOpen && contactModal) {
+  if (contactOpen) {
     contactOpen.addEventListener("click", openContactModal);
+  }
 
+  if (contactModal) {
+    // Dismiss on the close button or a click on the backdrop area — i.e. the
+    // dialog element itself, outside the .modal-dialog card.
     contactModal.addEventListener("click", function (e) {
-      if (e.target.hasAttribute("data-modal-close")) closeContactModal();
+      if (e.target === contactModal ||
+          (e.target.hasAttribute && e.target.hasAttribute("data-modal-close"))) {
+        closeContactModal();
+      }
     });
 
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !contactModal.hidden) closeContactModal();
+    // Native close (ESC, .close(), backdrop) restores the body scroll lock and
+    // returns focus to the opener for us.
+    contactModal.addEventListener("close", function () {
+      document.body.style.overflow = "";
     });
   }
 
