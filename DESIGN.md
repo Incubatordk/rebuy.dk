@@ -193,7 +193,8 @@ components:
     padding: "8px 16px"
   cta-banner:
     backgroundColor: "linear-gradient(135deg, {colors.primary-light} 0%, {colors.primary} 100%)"
-    textColor: "{colors.on-dark}"
+    textColor: "{colors.ink}"
+    bodyTextColor: "{colors.on-primary-light}"
     rounded: "{rounded.xl}"
     padding: "64px 32px"
   input-text:
@@ -405,7 +406,7 @@ The hero logo and the pink-glow shadow visually round the silhouette of the page
 ### Surfaces
 - **`{components.header-bar}`** — sticky top bar. `rgba(250, 250, 249, 0.8)` background behind a 20px `backdrop-filter: blur(20px)`. Border is transparent at rest, becomes `{colors.border}` once `.header--scrolled` is set on scroll. Holds the logo on the left, language toggle plus nav links on the right. Padding includes `env(safe-area-inset-left/right)` on notched devices.
 - **`{components.modal-dialog}`** — white fill, 16px radius, `--shadow-lg`, max-width 500px, max-height 90vh with internal scroll. The 36×36 close button is a pill at top-right that fills `{colors.bg-warm}` on hover. Backdrop is `{colors.scrim}` at 0.45 opacity, click-to-dismiss.
-- **`{components.cta-banner}`** — the bottom-of-page conversion surface in launched mode. Full pink gradient fill, 24px radius, 64/32 padding, white display headline and 0.85-alpha white body. The store buttons inside flip to `{components.store-button-on-cta}` (white fill, ink text) so they survive the pink backdrop.
+- **`{components.cta-banner}`** — the bottom-of-page conversion surface in launched mode. Full pink gradient fill, 24px radius, 64/32 padding, **ink** (`{colors.ink}`) display headline and a **deep-burgundy** (`{colors.on-primary-light}` — #5C2222) body line. White text (the original treatment) measured ~1.4–1.9:1 on the light gradient and failed WCAG AA, so the banner follows the same "ink on pink" rule as the primary button. The store buttons inside flip to `{components.store-button-on-cta}` (white fill, ink text) so they survive the pink backdrop.
 - **`{components.hero-badge}`** — pre-launch teaser pill above the hero h1. Pink-light fill, deep burgundy `{colors.on-primary-light}` text (#5C2222 — chosen specifically because ink at #1A1A1A on #FBCECE is too low-contrast).
 - **`{components.lang-toggle}`** — DA / EN pill in the header. White fill, 1.5px border, secondary text, 48×48 minimum hit area (despite being visually smaller). Hover swaps to warm peach fill, primary-dark text, primary border. Press scales to 0.96.
 
@@ -422,7 +423,7 @@ The hero logo and the pink-glow shadow visually round the silhouette of the page
 
 ### Colors
 - **Do** use the pink gradient (`linear-gradient(135deg, #FBCECE 0%, #F5A9A9 100%)`) for primary CTAs, the bottom CTA banner, and the feature card icon tile. These three surfaces are the brand's "pink moments." Don't add a fourth without owner approval.
-- **Do** put ink text (`#1A1A1A`) on the pink gradient — not white. The contrast tested better and it matches the iOS app.
+- **Do** put ink text (`#1A1A1A`) on the pink gradient — not white — on **both** the primary button and the CTA banner. White on the light pink gradient fails WCAG AA (~1.4–1.9:1); ink clears 9:1+. For a softer body line on the gradient, use the deep-burgundy `{colors.on-primary-light}` (#5C2222), which still clears AA.
 - **Do** use deep burgundy (`#5C2222`) for any text that sits on the lighter `{colors.primary-light}` (#FBCECE) background. Ink on pink-light is too low-contrast.
 - **Do** keep semantic colors (success / warning / error) in their iOS hex values exactly. The app and the marketing site share a banner vocabulary.
 - **Don't** introduce a secondary brand color — no blue accent, no green accent, no purple. The single-voltage system is the brand.

@@ -425,25 +425,32 @@ a:hover {
   outline: none;
 }
 
+/* Native <dialog>. The UA keeps it display:none until [open]; we fill the
+   viewport, center the card, and render the scrim via ::backdrop. The dialog
+   itself is transparent so a click anywhere outside .modal-dialog targets the
+   dialog (handled in main.js as a dismiss). */
 .modal {
   position: fixed;
   inset: 0;
-  z-index: 1000;
-  display: flex;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: var(--space-md);
+  border: none;
+  background: transparent;
   align-items: center;
   justify-content: center;
-  padding: var(--space-md);
+  z-index: 1000;
 }
 
-.modal[hidden] {
-  display: none;
+.modal[open] {
+  display: flex;
 }
 
-.modal-backdrop {
-  position: absolute;
-  inset: 0;
+.modal::backdrop {
   background: rgba(0, 0, 0, 0.45);
-  cursor: pointer;
 }
 
 .modal-dialog {
@@ -984,6 +991,26 @@ a:hover {
   display: none;
 }
 
+/* Desktop (≥1140px): all five screens fit inside the container, so drop the
+   horizontal scroll/snap and let the cards shrink to share one centered row.
+   Previously the 5th card overflowed behind a hidden scrollbar with no cue it
+   was there. Touch/tablet (<1140px) keep the swipe carousel defined above. */
+@media (min-width: 1140px) {
+  .phone-gallery {
+    max-width: 1140px;
+    margin-inline: auto;
+    overflow: visible;
+    justify-content: center;
+    scroll-snap-type: none;
+    padding-inline: var(--space-lg);
+    gap: var(--space-lg);
+  }
+
+  .phone-card {
+    flex: 0 1 216px;
+  }
+}
+
 /* ==========================================================================
    CTA Section (Launched)
    ========================================================================== */
@@ -999,13 +1026,15 @@ a:hover {
 .cta h2 {
   font-size: var(--text-3xl);
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text);
   margin-bottom: var(--space-sm);
 }
 
 .cta p {
   font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.85);
+  /* Ink headline + burgundy body on the pink gradient — DESIGN.md "ink on pink"
+     rule. White (the old value) measured ~1.4–1.9:1 and failed WCAG AA. */
+  color: #5C2222;
   margin-bottom: var(--space-xl);
 }
 
@@ -1305,13 +1334,16 @@ a:hover {
   }
 }
 
-[data-animate] {
+/* Scroll-reveal is gated on the `js` class (set inline in <head> before paint).
+   Without JS the class is never added, so [data-animate] sections stay fully
+   visible instead of being stuck at opacity:0. */
+.js [data-animate] {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
-[data-animate].visible {
+.js [data-animate].visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1618,7 +1650,7 @@ a:hover {
     scroll-behavior: auto;
   }
 
-  [data-animate] {
+  .js [data-animate] {
     opacity: 1;
     transform: none;
   }
