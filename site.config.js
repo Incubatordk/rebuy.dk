@@ -1,7 +1,7 @@
 const SITE_CONFIG = {
   // "prelaunch" = teaser page with email signup
   // "launched"  = app download page with store links
-  SITE_MODE: "prelaunch",
+  SITE_MODE: "launched",
 
   // Appwrite config for email signup (pre-launch mode only)
   APPWRITE_ENDPOINT: "https://base.anchorit.dk/v1",

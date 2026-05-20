@@ -13,8 +13,8 @@ var I18N = (function () {
   var translations = {
     da: {
       // Meta. Kept in sync with the static HEAD in index.html.
-      "meta.title": "Rebuy — Køb og sælg brugt børnetøj og babyudstyr lokalt | Kommer snart",
-      "meta.description": "Rebuy er den nye app for danske børnefamilier — køb og sælg brugt børnetøj, babyudstyr og legetøj lokalt. Kommer snart. Tilmeld dig ventelisten og vær først.",
+      "meta.title": "Rebuy app — Køb og sælg brugt børnetøj og babyudstyr lokalt i Danmark",
+      "meta.description": "Hent Rebuy gratis — appen hvor danske børnefamilier køber og sælger brugt børnetøj, babyudstyr og legetøj lokalt i dit nærområde.",
 
       // Hero logo alt (in sync with index.html data-i18n-alt)
       "hero.logoAlt": "Rebuy — mor med barnevogn der køber og sælger brugt børnetøj lokalt",
@@ -320,8 +320,8 @@ var I18N = (function () {
 
     en: {
       // Meta. Kept in sync with the static HEAD in index.html.
-      "meta.title": "Rebuy — Buy and sell used kids' clothes and baby gear locally | Coming soon",
-      "meta.description": "Rebuy is the new app for Danish families — buy and sell used kids' clothes, baby gear, and toys locally. Coming soon. Join the waitlist and be first.",
+      "meta.title": "Rebuy app — Buy and sell used kids' clothes and baby gear locally in Denmark",
+      "meta.description": "Download Rebuy for free — the app where Danish families buy and sell used kids' clothes, baby gear, and toys locally in their neighbourhood.",
 
       // Hero logo alt
       "hero.logoAlt": "Rebuy — mom with stroller buying and selling used kids' items locally",
