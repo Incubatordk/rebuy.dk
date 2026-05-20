@@ -162,16 +162,20 @@ components:
     textColor: "{colors.ink}"
     rounded: "{rounded.md}"
   store-button:
-    backgroundColor: "{colors.ink}"
+    backgroundColor: "linear-gradient(180deg, #2A2A2A 0%, #161616 100%)"
     textColor: "{colors.on-dark}"
     typography: "{typography.body-sm}"
     rounded: "{rounded.md}"
-    padding: "12px 24px"
-    height: 48px
+    padding: "10px 24px"
+    height: 52px
+    shadow: "0 4px 14px rgba(26, 26, 26, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.14)"
   store-button-hover:
-    backgroundColor: "#333333"
+    backgroundColor: "linear-gradient(180deg, #2A2A2A 0%, #161616 100%)"
     textColor: "{colors.on-dark}"
     rounded: "{rounded.md}"
+    filter: "brightness(1.12)"
+    transform: "translateY(-3px)"
+    shadow: "0 10px 26px rgba(26, 26, 26, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18)"
   store-button-on-cta:
     backgroundColor: "{colors.bg-card}"
     textColor: "{colors.ink}"
@@ -363,13 +367,15 @@ The system has **four shadow tiers plus the pink-glow signature**, but uses them
 |---|---|---|
 | `--shadow-sm` | `0 1px 2px rgba(0, 0, 0, 0.04)` | Reserved; not currently bound to a component. |
 | `--shadow` | `0 2px 8px rgba(0, 0, 0, 0.06)` | Default card lift — `{components.card-glass}`, `{components.blog-card}`, `{components.post-cta}`. |
-| `--shadow-md` | `0 4px 16px rgba(0, 0, 0, 0.08)` | Hover state on `{components.card-glass}` and `{components.store-button}`. |
+| `--shadow-md` | `0 4px 16px rgba(0, 0, 0, 0.08)` | Hover state on `{components.card-glass}`. |
 | `--shadow-lg` | `0 8px 32px rgba(0, 0, 0, 0.1)` | `{components.modal-dialog}` only — the only modal in the system. |
 | `--shadow-pink` | `0 8px 32px rgba(245, 169, 169, 0.3)` | The signature: `{components.button-primary}` at rest. Intensifies to `0 12px 40px rgba(245, 169, 169, 0.4)` on hover. |
 
 There is also a single **drop-shadow filter** (`drop-shadow(0 18px 32px rgba(26, 26, 26, 0.12))`) applied to phone screenshot images in the showcase — distinct from the box-shadow tiers because it must clip to the phone bezel silhouette, not its bounding rectangle.
 
-**Hover-lift pattern.** Cards and store buttons translate `translateY(-4px)` to `-6px` on hover with a `--transition-base` (250ms ease) ramp. Primary CTA lifts only `-1px` because the pink-glow does the work. **All lift effects are disabled** under `@media (hover: none)` for touch devices — both the `transform` and the increased `box-shadow` are reset, otherwise iOS Safari leaves a tap residue.
+**Store-button depth (sanctioned drop + hairline).** `{components.store-button}` is the one component that pairs a drop shadow with an `inset 0 1px 0` white hairline — `0 4px 14px rgba(26,26,26,0.18)` at rest, deepening to `0 10px 26px rgba(26,26,26,0.28)` on hover. This is **not** a violation of the "never two shadow tiers at once" rule: the inset line is an *edge highlight* (functioning like a 1px top border to give the dark gradient a lit edge on the warm canvas), not a second elevation tier. The rest/hover shadows live in `--store-rest-shadow` / `--store-hover-shadow` custom props scoped to `.store-btn`, which the touch (`@media hover:none`) and CTA-variant blocks re-point rather than re-declare.
+
+**Hover-lift pattern.** Cards translate `translateY(-4px)` to `-6px` on hover, store buttons `-3px` (settling to `-1px` on press), all on a `--transition-base` (250ms ease) ramp. Primary CTA lifts only `-1px` because the pink-glow does the work. **All lift effects are disabled** under `@media (hover: none)` for touch devices — both the `transform` and the increased `box-shadow` are reset, otherwise iOS Safari leaves a tap residue.
 
 **Reduced motion.** Under `@media (prefers-reduced-motion: reduce)`, all animation-duration and transition-duration values collapse to `0.01ms`, the hero logo float keyframe is suppressed, the smooth-scroll behavior is replaced with `auto`, and the `[data-animate]` fade-in-up on scroll is short-circuited (`opacity: 1; transform: none;`). This is a hard rule — every animation honors it.
 
@@ -392,7 +398,7 @@ The hero logo and the pink-glow shadow visually round the silhouette of the page
 ### Buttons
 - **`{components.button-primary}`** — the gradient pink CTA. 135° linear-gradient from `{colors.primary-light}` to `{colors.primary}`, ink text (not white — contrast ratio is friendlier on pink), 12px radius, 48px tall, padded 12/24, with the signature `--shadow-pink` glow. On hover, the gradient flips to a flat `{colors.primary-dark}` solid, the button lifts 1px, and the pink shadow intensifies. On press, the lift drops back to 0.
 - **`{components.button-secondary}`** — white card surface with a 1.5px `{colors.border}` outline, ink text. Border tone shifts to `{colors.primary}` on hover; no fill change. Used as a quieter neighbor to the primary CTA.
-- **`{components.store-button}`** — the iOS-style "Download on the App Store" / "Get it on Google Play" pill. Ink fill, white text, an inline 24×24 SVG icon, and a two-line label stack (caption + body-md). On the CTA banner, the variant `{components.store-button-on-cta}` flips to white fill with ink text so it survives the gradient backdrop.
+- **`{components.store-button}`** — the iOS-style "Download on the App Store" / "Get it on Google Play" pill. A near-black **vertical gradient** (`#2A2A2A` → `#161616` at 180°, *not* the brand pink gradient) fill with white text, an inline 26×26 SVG icon, and a two-line label stack (caption + body-md). At rest it carries a soft drop shadow plus a 1px white inset top-edge highlight (see Elevation) so the dark pill lifts off the warm canvas and reads as a lit, tactile surface rather than a flat rectangle. **Hover** lifts it 3px, brightens the fill (`filter: brightness(1.12)`), and deepens the drop shadow; **press** settles it to a 1px lift with a tighter shadow; **focus-visible** draws a 3px pink ring (`rgba(245, 169, 169, 0.55)`, 2px offset). On the CTA banner, the variant `{components.store-button-on-cta}` flips to white fill with ink text (and a white inset highlight) so it survives the gradient backdrop — there the brightness filter is suppressed so the ink label never washes out, darkening the fill on hover instead.
 
 ### Cards
 - **`{components.card-glass}`** — the three pre-launch feature cards. White at 0.7 alpha behind a 20px `backdrop-filter: blur(20px)`, a 1px white-at-0.4-alpha border, 16px radius, default `--shadow`. Hover lifts 4px and bumps to `--shadow-md`. Each card holds a 48×48 `{components.card-icon}` (gradient pink tile, 12px radius, centered emoji or icon glyph), a `{typography.title-sm}` headline, and a `{typography.body-sm}` body line.

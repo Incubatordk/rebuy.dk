@@ -637,30 +637,57 @@ a:hover {
 }
 
 .store-btn {
+  /* Resting/hover elevation are local vars so the touch + CTA-variant blocks
+     can re-point them without re-declaring the full stack. The inset 1px line
+     is an edge highlight (not an elevation tier) that gives the dark fill a
+     lit, tactile top edge against the warm canvas. */
+  --store-rest-shadow: 0 4px 14px rgba(26, 26, 26, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --store-hover-shadow: 0 10px 26px rgba(26, 26, 26, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-lg);
-  background: var(--color-text);
+  padding: 10px var(--space-lg);
+  /* Near-black vertical gradient (not the brand pink gradient) reads as a
+     premium, top-lit surface vs. the old flat ink fill. */
+  background: linear-gradient(180deg, #2A2A2A 0%, #161616 100%);
   color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.55);
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
   font-weight: 500;
-  transition: all var(--transition-fast);
+  box-shadow: var(--store-rest-shadow);
+  transition: transform var(--transition-base),
+    box-shadow var(--transition-base), filter var(--transition-base);
   text-decoration: none;
-  min-height: 48px;
+  min-height: 52px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .store-btn:hover {
-  background: #333;
-  color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+  box-shadow: var(--store-hover-shadow);
+}
+
+.store-btn:active {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow: 0 3px 10px rgba(26, 26, 26, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.store-btn:focus-visible {
+  outline: 3px solid rgba(245, 169, 169, 0.55);
+  outline-offset: 2px;
 }
 
 .store-btn svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   flex-shrink: 0;
 }
 
@@ -668,18 +695,19 @@ a:hover {
   display: flex;
   flex-direction: column;
   text-align: left;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .store-btn-label {
   font-size: var(--text-xs);
   font-weight: 400;
-  opacity: 0.8;
+  opacity: 0.72;
 }
 
 .store-btn-name {
   font-size: var(--text-base);
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 /* ==========================================================================
@@ -1039,13 +1067,27 @@ a:hover {
 }
 
 .cta .store-btn {
+  /* White-on-pink variant: lighter drop + a white inset highlight, and a
+     hairline ink border so the white pill stays crisp on the gradient. */
+  --store-rest-shadow: 0 4px 14px rgba(26, 26, 26, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  --store-hover-shadow: 0 10px 26px rgba(26, 26, 26, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
   background: #FFFFFF;
   color: var(--color-text);
+  border-color: rgba(26, 26, 26, 0.06);
 }
 
 .cta .store-btn:hover {
-  background: #F5F5F4;
+  /* No brightness filter here — it would lighten the ink label. Darken the
+     fill instead, keeping the shared lift + shadow from .store-btn:hover. */
+  background: #FAFAF9;
   color: var(--color-text);
+  filter: none;
+}
+
+.cta .store-btn:active {
+  filter: none;
 }
 
 /* ==========================================================================
@@ -1388,7 +1430,8 @@ a:hover {
 
   .store-btn:hover {
     transform: none;
-    box-shadow: none;
+    filter: none;
+    box-shadow: var(--store-rest-shadow);
   }
 
   .btn-primary:hover {
