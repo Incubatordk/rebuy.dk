@@ -44,6 +44,13 @@ var I18N = (function () {
       "card.sustainable.title": "Bæredygtigt",
       "card.sustainable.text": "Giv børneting et nyt liv. Godt for pengepungen, godt for miljøet — og godt for den næste familie.",
 
+      // Accessibility (launched). Only features both iOS and Android actually ship.
+      "a11y.title": "Tilgængelig for alle",
+      "a11y.intro": "Rebuy understøtter skærmlæser, stemmestyring og tydelig kontrast — på både iPhone og Android.",
+      "a11y.screenreader": "Skærmlæser",
+      "a11y.voice": "Stemmestyring",
+      "a11y.contrast": "Tydelig kontrast",
+
       // Signup
       "signup.title": "Bliv den første til at høre nyt",
       "signup.text": "Tilmeld dig og få besked, når Rebuy er klar til download.",
@@ -369,6 +376,13 @@ var I18N = (function () {
       "card.safe.text": "Direct contact with the seller. Chat in the app, arrange a meetup, and trade face to face.",
       "card.sustainable.title": "Sustainable",
       "card.sustainable.text": "Give kids' items a new life. Good for your wallet, good for the planet — and good for the next family.",
+
+      // Accessibility (launched). Only features both iOS and Android actually ship.
+      "a11y.title": "Accessible to everyone",
+      "a11y.intro": "Rebuy supports screen readers, voice control and sufficient contrast — on both iPhone and Android.",
+      "a11y.screenreader": "Screen reader",
+      "a11y.voice": "Voice control",
+      "a11y.contrast": "Sufficient contrast",
 
       // Signup
       "signup.title": "Be the first to know",
