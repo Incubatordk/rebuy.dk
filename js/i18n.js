@@ -72,8 +72,8 @@ var I18N = (function () {
       "faq.a7": "Rebuy er bygget specifikt til danske børnefamilier og lokal handel ansigt til ansigt. Ingen forsendelse, ingen tredjeparts betaling — bare et nemt værktøj til at finde og afhænde børneting i dit eget nabolag.",
 
       // Launched hero
-      "launched.title": "Køb og sælg børneting i dit nærområde",
-      "launched.subtitle": "Rebuy forbinder børnefamilier lokalt. Find gode tilbud på børnetøj, legetøj og udstyr — eller sælg det, dine børn er vokset fra.",
+      "launched.title": "Køb og sælg brugt børnetøj og babyudstyr lokalt",
+      "launched.subtitle": "Børnetøjet de er vokset fra fortjener et nyt hjem. Sparepengene fortjener du. Rebuy forbinder danske børnefamilier lokalt — fra tøj og legetøj til barnevogne og autostole.",
 
       // App Showcase
       "showcase.title": "Tag et kig i appen",
@@ -398,8 +398,8 @@ var I18N = (function () {
       "faq.a7": "Rebuy is built specifically for Danish families and local, face-to-face trading. No shipping, no third-party payments — just a simple tool for finding and passing on kids' items in your own neighbourhood.",
 
       // Launched hero
-      "launched.title": "Buy and sell kids' items in your neighbourhood",
-      "launched.subtitle": "Rebuy connects families locally. Find great deals on kids' clothes, toys and gear — or sell what your kids have outgrown.",
+      "launched.title": "Buy and sell used kids' clothes and baby gear locally",
+      "launched.subtitle": "The clothes they've outgrown deserve a new home — and you deserve the savings. Rebuy connects Danish families locally, from clothes and toys to prams and car seats.",
 
       // App Showcase
       "showcase.title": "Take a look inside",
