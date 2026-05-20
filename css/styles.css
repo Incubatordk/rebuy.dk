@@ -1532,11 +1532,13 @@ a:hover {
 
   .store-buttons {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
 
   .store-btn {
     justify-content: center;
+    width: 90%;
+    max-width: 360px;
   }
 
   .cta {
