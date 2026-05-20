@@ -11,6 +11,18 @@
   "lang": "da",
   "dir": "ltr",
   "categories": ["shopping", "lifestyle"],
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.anchorit.rebuy",
+      "url": "https://play.google.com/store/apps/details?id=com.anchorit.rebuy"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/us/app/rebuy-local-secondhand/id6762342818"
+    }
+  ],
+  "prefer_related_applications": true,
   "icons": [
     {
       "src": "/assets/logos/icon-192.png",
