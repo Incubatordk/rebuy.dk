@@ -40,7 +40,7 @@ var I18N = (function () {
       "card.local.title": "Lokalt og nemt",
       "card.local.text": "Find køb og salg i dit nærområde. Ingen forsendelse, ingen besvær — bare en hurtig udveksling med en anden familie.",
       "card.safe.title": "Trygt og sikkert",
-      "card.safe.text": "Direkte kontakt med andre forældre. Chat i appen, aftal et møde, og handel ansigt til ansigt.",
+      "card.safe.text": "Direkte kontakt med sælger. Chat i appen, aftal et møde, og handel ansigt til ansigt.",
       "card.sustainable.title": "Bæredygtigt",
       "card.sustainable.text": "Giv børneting et nyt liv. Godt for pengepungen, godt for miljøet — og godt for den næste familie.",
 
@@ -366,7 +366,7 @@ var I18N = (function () {
       "card.local.title": "Local and easy",
       "card.local.text": "Find buyers and sellers nearby. No shipping, no hassle — just a quick exchange with another family.",
       "card.safe.title": "Safe and secure",
-      "card.safe.text": "Direct contact with other parents. Chat in the app, arrange a meetup, and trade face to face.",
+      "card.safe.text": "Direct contact with the seller. Chat in the app, arrange a meetup, and trade face to face.",
       "card.sustainable.title": "Sustainable",
       "card.sustainable.text": "Give kids' items a new life. Good for your wallet, good for the planet — and good for the next family.",
 
