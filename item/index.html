@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Se vare — Rebuy</title>
+  <meta name="description" content="Åbn Rebuy for at se denne vare.">
+  <meta property="og:title" content="Se denne vare på Rebuy">
+  <meta property="og:description" content="Køb og sælg børneting lokalt med Rebuy.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="/assets/logos/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/logos/apple-touch-icon.png">
+  <meta name="theme-color" content="#FAFAF9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/site.config.js"></script>
+  <style>
+    .item { max-width: 520px; margin: 0 auto; padding: var(--space-3xl) var(--space-lg); text-align: center; }
+    .item h1 { font-size: var(--text-2xl); margin-bottom: var(--space-md); }
+    .item p { color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-md); }
+    .item-icon { font-size: 64px; margin-bottom: var(--space-lg); }
+    .store-btn { display: inline-block; margin-top: var(--space-md); }
+  </style>
+</head>
+<body>
+  <main class="item">
+    <div class="item-icon" aria-hidden="true">🧸</div>
+    <h1>Se denne vare på Rebuy</h1>
+    <p>Åbn Rebuy-appen for at se varen og skrive til sælgeren.</p>
+    <p><strong>Har du ikke appen?</strong></p>
+    <p><a class="store-btn" id="store-link" href="/">Hent Rebuy</a></p>
+    <p><a href="/">Tilbage til forsiden</a></p>
+  </main>
+  <script>
+    (function () {
+      var cfg = (typeof SITE_CONFIG !== 'undefined') ? SITE_CONFIG : (window.SITE_CONFIG || {});
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      var link = document.getElementById('store-link');
+      if (link) link.href = isIOS ? (cfg.APP_STORE_URL || '/') : (cfg.PLAY_STORE_URL || '/');
+    })();
+  </script>
+</body>
+</html>
