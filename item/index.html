@@ -22,7 +22,14 @@
     .item h1 { font-size: var(--text-2xl); margin-bottom: var(--space-md); }
     .item p { color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-md); }
     .item-icon { font-size: 64px; margin-bottom: var(--space-lg); }
-    .store-btn { display: inline-block; margin-top: var(--space-md); }
+    .store-btn { margin-top: var(--space-md); }
+    /* Keep the label white on hover/focus — this is a plain-text store button
+       (no inner spans), so the global `a:hover { color: var(--color-text) }` would
+       otherwise darken it to near-invisible on the dark fill. */
+    .store-btn,
+    .store-btn:hover,
+    .store-btn:focus,
+    .store-btn:active { color: #FFFFFF; }
   </style>
 </head>
 <body>
