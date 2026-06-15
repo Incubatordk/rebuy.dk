@@ -25,6 +25,7 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const STATIC_ROUTES = [
   { url: '/',                  file: 'index.html',                  changefreq: 'weekly',  priority: '1.0' },
   { url: '/blog/',             file: 'blog/index.html',             changefreq: 'weekly',  priority: '0.6' },
+  { url: '/avoid-fraud/',      file: 'avoid-fraud/index.html',      changefreq: 'monthly', priority: '0.3' },
   { url: '/privacy-policy/',   file: 'privacy-policy/index.html',   changefreq: 'monthly', priority: '0.3' },
   { url: '/terms-of-use/',     file: 'terms-of-use/index.html',     changefreq: 'monthly', priority: '0.3' },
   { url: '/account-deletion/', file: 'account-deletion/index.html', changefreq: 'monthly', priority: '0.3' },
