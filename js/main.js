@@ -239,6 +239,18 @@
     contactOpen.addEventListener("click", openContactModal);
   }
 
+  // Allow other pages (e.g. /avoid-fraud/) to deep-link into the contact form
+  // by navigating to /#kontakt — open the modal on load and on hash change.
+  function openContactModalFromHash() {
+    if (window.location.hash === "#kontakt") {
+      openContactModal();
+    }
+  }
+  if (contactModal) {
+    openContactModalFromHash();
+    window.addEventListener("hashchange", openContactModalFromHash);
+  }
+
   if (contactModal) {
     // Dismiss on the close button or a click on the backdrop area — i.e. the
     // dialog element itself, outside the .modal-dialog card.

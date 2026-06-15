@@ -25,6 +25,8 @@
     .legal ul li { margin-bottom: var(--space-xs); }
     .legal-updated { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-xl); }
     .legal a { color: var(--color-primary, #E88888); }
+    .fraud-contact-link { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .fraud-contact-link:hover { color: var(--color-primary-dark, #E88888); }
   </style>
 </head>
 <body>
@@ -36,6 +38,7 @@
       </a>
       <nav class="header-nav" aria-label="Primary navigation">
         <a href="/blog/">Blog</a>
+        <a href="/avoid-fraud/" aria-current="page" data-i18n="footer.fraud">Undgå svindel</a>
       </nav>
       <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">
         <span data-i18n="lang.toggle">EN</span>
@@ -103,7 +106,8 @@
     </ul>
 
     <h2 data-i18n="fraud.s8_title">Kontakt</h2>
-    <p data-i18n="fraud.s8_p">Er du i tvivl, eller vil du anmelde mistænkelig adfærd, kan du altid skrive til os på support@rebuy.dk. Vi hjælper gerne.</p>
+    <p data-i18n="fraud.s8_p">Er du i tvivl, eller vil du anmelde mistænkelig adfærd, kan du altid skrive til os. Vi hjælper gerne.</p>
+    <p><a href="/#kontakt" class="fraud-contact-link" data-i18n="fraud.s8_cta">Skriv til os via kontaktformularen</a></p>
   </main>
 
   <footer class="footer">

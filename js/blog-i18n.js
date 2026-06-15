@@ -49,6 +49,7 @@
     da: {
       "lang.toggle": "EN",
       "nav.blog": "Blog",
+      "nav.fraud": "Undgå svindel",
       "footer.privacy": "Privatlivspolitik",
       "footer.terms": "Vilkår og betingelser",
       "footer.copyright": "© 2026 Rebuy. Alle rettigheder forbeholdes.",
@@ -67,6 +68,7 @@
     en: {
       "lang.toggle": "DA",
       "nav.blog": "Blog",
+      "nav.fraud": "Avoid Fraud",
       "footer.privacy": "Privacy Policy",
       "footer.terms": "Terms & Conditions",
       "footer.copyright": "© 2026 Rebuy. All rights reserved.",
