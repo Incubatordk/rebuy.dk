@@ -246,7 +246,8 @@ var I18N = (function () {
       "fraud.s7_li2": "\"Mit digitale selvforsvar\" fra Forbrugerrådet Tænk — en app, der hjælper dig med at undgå svindel.",
       "fraud.s7_li3": "Din bank — kontakt dem altid med det samme ved mistanke om bedrageri.",
       "fraud.s8_title": "Kontakt",
-      "fraud.s8_p": "Er du i tvivl, eller vil du anmelde mistænkelig adfærd, kan du altid skrive til os på support@rebuy.dk. Vi hjælper gerne.",
+      "fraud.s8_p": "Er du i tvivl, eller vil du anmelde mistænkelig adfærd, kan du altid skrive til os. Vi hjælper gerne.",
+      "fraud.s8_cta": "Skriv til os via kontaktformularen",
 
       // Account deletion page
       "delete.title": "Sletning af konto",
@@ -628,7 +629,8 @@ var I18N = (function () {
       "fraud.s7_li2": "\"Mit digitale selvforsvar\" from Forbrugerrådet Tænk — an app that helps you avoid fraud.",
       "fraud.s7_li3": "Your bank — always contact them immediately if you suspect fraud.",
       "fraud.s8_title": "Contact",
-      "fraud.s8_p": "If you're in doubt, or want to report suspicious behaviour, you can always write to us at support@rebuy.dk. We're happy to help.",
+      "fraud.s8_p": "If you're in doubt, or want to report suspicious behaviour, you can always write to us. We're happy to help.",
+      "fraud.s8_cta": "Contact us via the form",
 
       // Account deletion page
       "delete.title": "Account deletion",
