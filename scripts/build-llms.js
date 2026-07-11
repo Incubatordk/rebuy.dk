@@ -149,7 +149,7 @@ function inlineToMarkdown(html, baseUrl) {
 // The <section class="post-cta"> block is dropped on purpose. It used to be
 // the pre-launch "join the waiting list" CTA; since #92 it is the app-download
 // CTA with the App Store / Google Play buttons. It is still dropped, but for
-// three reasons that have nothing to do with the old copy — don't "fix" this:
+// two reasons that have nothing to do with the old copy — don't "fix" this:
 //
 //   1. Nothing is lost. Both store URLs already appear in this file twice,
 //      independent of any post body: the "Where to get Rebuy" section and the
@@ -158,8 +158,6 @@ function inlineToMarkdown(html, baseUrl) {
 //      CTA block in every one of the 16 planned posts, in both language blocks
 //      — so including it would repeat the same two URLs 32 times and dilute the
 //      signal rather than add any.
-//   3. It converts to noise, not prose. The buttons are SVG <path> data plus
-//      store-btn-label / store-btn-name spans, which flatten into fragments.
 function htmlToMarkdown(html, baseUrl, headingOffset = 0) {
   let source = String(html)
     .replace(/<!--[\s\S]*?-->/g, '')
