@@ -8,7 +8,7 @@ Rebuy operates in Denmark. The marketing site is available in Danish (default) a
 
 ## Key pages
 
-- [Home](https://rebuy.dk/): What Rebuy is and how to join the waiting list before launch.
+- [Home](https://rebuy.dk/): What Rebuy is, how it works, and where to download the app (App Store and Google Play).
 - [Blog](https://rebuy.dk/blog/): Short essays and practical notes on local secondhand shopping and family life.
 - [Privacy Policy](https://rebuy.dk/privacy-policy): How Rebuy collects, uses, and deletes user data.
 - [Terms and Conditions](https://rebuy.dk/terms.html): Terms of use for the service.

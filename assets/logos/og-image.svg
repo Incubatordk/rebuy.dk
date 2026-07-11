@@ -35,8 +35,8 @@
   <text x="600" y="385" text-anchor="middle" font-family="'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" fill="#6B6B6B">En ny markedsplads for børnefamilier i Danmark</text>
 
   <!-- Badge pill -->
-  <rect x="510" y="420" width="180" height="40" rx="20" fill="#FBCECE"/>
-  <text x="600" y="446" text-anchor="middle" font-family="'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="600" fill="#E88888">Kommer snart</text>
+  <rect x="485" y="420" width="230" height="40" rx="20" fill="#FBCECE"/>
+  <text x="600" y="446" text-anchor="middle" font-family="'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="600" fill="#E88888">Hent appen gratis</text>
 
   <!-- Domain -->
   <text x="600" y="560" text-anchor="middle" font-family="'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="500" fill="#9A9A9A">rebuy.dk</text>

@@ -411,7 +411,7 @@ The hero logo and the pink-glow shadow visually round the silhouette of the page
 ### Cards
 - **`{components.card-glass}`** — the three pre-launch feature cards. White at 0.7 alpha behind a 20px `backdrop-filter: blur(20px)`, a 1px white-at-0.4-alpha border, 16px radius, default `--shadow`. Hover lifts 4px and bumps to `--shadow-md`. Each card holds a 48×48 `{components.card-icon}` (gradient pink tile, 12px radius, centered emoji or icon glyph), a `{typography.title-sm}` headline, and a `{typography.body-sm}` body line.
 - **`{components.blog-card}`** — flatter editorial surface. White fill, 1px `{colors.border}` outline, 8px radius, default `--shadow`. Two-column desktop layout (image + body), single-column on tablet.
-- **`{components.post-cta}`** — same fill / border / shadow as blog card; sits at the bottom of every blog post as a "read next / convert" surface.
+- **`{components.post-cta}`** — same fill / border / shadow as blog card; sits at the bottom of every blog post as a "read next / convert" surface. It closes with the app-download ask: a `.store-buttons` row of `{components.store-button}` pills pointing at the App Store and Google Play. Because the CTA card is left-aligned editorial copy (not a centered marketing banner), the row is re-pointed to `justify-content: flex-start` so the pills line up with the paragraph above them.
 
 ### Forms
 - **`{components.input-text}`** — used for both signup email and contact form fields. White fill, 1.5px `{colors.border}`, 12px radius, 16px font-size (anti-zoom), 48px tall. **Focus state** swaps the border to `{colors.primary}` and adds a 3px outer halo (`0 0 0 3px rgba(245, 169, 169, 0.2)`) — the only place a `box-shadow` is used for a focus ring rather than `outline`.
