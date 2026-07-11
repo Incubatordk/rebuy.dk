@@ -134,11 +134,7 @@ function inlineToMarkdown(html, baseUrl) {
     .replace(/<code\b[^>]*>([\s\S]*?)<\/code>/gi, (_m, inner) => `\`${inner.trim()}\``)
     .replace(
       /<a\b[^>]*href=(["'])([^"']*)\1[^>]*>([\s\S]*?)<\/a>/gi,
-      // Flatten the label: a store-button link wraps an <svg> icon and two
-      // <span>s, whose tags and indentation would otherwise land inside the
-      // brackets ("[ Download fra App Store ]"). A no-op for plain-text links.
-      (_m, _q, href, inner) =>
-        `[${inner.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()}](${absolutize(href, baseUrl)})`
+      (_m, _q, href, inner) => `[${inner.trim()}](${absolutize(href, baseUrl)})`
     )
     .replace(/<[^>]+>/g, '');
   return decodeEntities(text).replace(/\s+/g, ' ').trim();
@@ -150,22 +146,24 @@ function inlineToMarkdown(html, baseUrl) {
 // the document structure of llms-full.txt (an <h2> inside a post body becomes
 // "####", below the "## <post title>" heading it lives under).
 //
-// The <section class="post-cta"> block is kept: in launched mode it is the
-// app-download CTA, and the App Store / Google Play links inside it are
-// exactly what an AI assistant needs to answer "how do I get Rebuy?". Its
-// heading and paragraph are ordinary blocks, but the store links sit in a
-// <div class="store-buttons"> wrapper the block converter doesn't look at —
-// so rewrite that wrapper into a <ul> of links first, and they carry through.
+// The <section class="post-cta"> block is dropped on purpose. It used to be
+// the pre-launch "join the waiting list" CTA; since #92 it is the app-download
+// CTA with the App Store / Google Play buttons. It is still dropped, but for
+// three reasons that have nothing to do with the old copy — don't "fix" this:
+//
+//   1. Nothing is lost. Both store URLs already appear in this file twice,
+//      independent of any post body: the "Where to get Rebuy" section and the
+//      footer, both fed straight from site.config.js.
+//   2. It would be boilerplate. BLOG-CONTENT-CALENDAR.md mandates an identical
+//      CTA block in every one of the 16 planned posts, in both language blocks
+//      — so including it would repeat the same two URLs 32 times and dilute the
+//      signal rather than add any.
+//   3. It converts to noise, not prose. The buttons are SVG <path> data plus
+//      store-btn-label / store-btn-name spans, which flatten into fragments.
 function htmlToMarkdown(html, baseUrl, headingOffset = 0) {
   let source = String(html)
     .replace(/<!--[\s\S]*?-->/g, '')
-    .replace(
-      /<div\b[^>]*class=["'][^"']*store-buttons[^"']*["'][^>]*>([\s\S]*?)<\/div>/gi,
-      (_m, inner) => {
-        const links = [...inner.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/gi)].map(a => `<li>${a[0]}</li>`);
-        return links.length ? `<ul>${links.join('')}</ul>` : '';
-      }
-    );
+    .replace(/<section\b[^>]*class=["'][^"']*post-cta[^"']*["'][^>]*>[\s\S]*?<\/section>/gi, '');
 
   const blockRe = /<(h[1-6]|p|ul|ol|blockquote|figure)\b[^>]*>([\s\S]*?)<\/\1>/gi;
   const blocks = [];
