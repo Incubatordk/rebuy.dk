@@ -1347,6 +1347,13 @@ a:hover {
   font-size: var(--text-base);
 }
 
+/* The blog CTA is a left-aligned editorial surface, so the store buttons align
+   with the copy above them rather than centering like the homepage hero/CTA. */
+.post-cta .store-buttons {
+  justify-content: flex-start;
+  margin-top: var(--space-lg);
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
