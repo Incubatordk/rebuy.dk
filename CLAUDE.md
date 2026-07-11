@@ -172,6 +172,8 @@ Everything is derived from existing sources, so the files can't go stale the way
 
 The step runs **before** `build-modes.js` in `.github/workflows/deploy.yml`, because the FAQ lives inside the `#launched-content` block that `build-modes.js` strips in a prelaunch deploy.
 
+`.github/workflows/check-generated.yml` runs on every PR and **fails if the committed `llms.txt` / `llms-full.txt` differ from what `scripts/build-llms.js` produces** — the guard against the drift that caused #93. If it fails, run `make llms` and commit. It ignores the `Generated: <date>` line in `llms-full.txt`, which legitimately changes every day.
+
 ## Related Repos
 
 - `rebuy-core` — Design system, tokens, brand assets
