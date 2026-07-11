@@ -166,11 +166,13 @@ Everything is derived from existing sources, so the files can't go stale the way
 1. `site.config.js` → `SITE_MODE` (launched vs prelaunch narrative), `APP_STORE_URL`, `PLAY_STORE_URL`, `SUPPORT_EMAIL`. In launched mode the script **fails** if a store URL is missing.
 2. `index.html` → which `faq.q*` entries exist and in what order; `js/i18n.js` → the English question/answer text. The FAQ section therefore always matches the visible FAQ and the FAQPage JSON-LD.
 3. `js/i18n.js` → page titles (`fraud.title`, `privacy.title`, `tou.title`, `delete.title`) for the key-page list.
-4. `blog/*/index.html` (excluding `blog/en/`) → post title/description/date from the same meta tags the RSS feed uses, plus the `post-content` body converted to markdown. Each post's `<section class="post-cta">` is included — in launched mode it is the app-download CTA, so its App Store / Google Play links end up in `llms-full.txt` where an AI assistant can answer "how do I get Rebuy?". The `<div class="store-buttons">` wrapper is rewritten to a markdown list of those links.
+4. `blog/*/index.html` (excluding `blog/en/`) → post title/description/date from the same meta tags the RSS feed uses, plus the `post-content` body converted to markdown. Each post's `<section class="post-cta">` app-download CTA is **dropped** — not because it is stale copy (it isn't, since #92), but because both store URLs already appear twice in `llms-full.txt` (the "Where to get Rebuy" section and the footer), `BLOG-CONTENT-CALENDAR.md` mandates an identical CTA in all 16 planned posts so including it would be 32x duplicated boilerplate, and the button markup flattens to fragments rather than prose.
 
 **Never** add ratings, review counts, testimonials, or user numbers here — same rule as the FAQPage JSON-LD (issue #47).
 
 The step runs **before** `build-modes.js` in `.github/workflows/deploy.yml`, because the FAQ lives inside the `#launched-content` block that `build-modes.js` strips in a prelaunch deploy.
+
+`.github/workflows/check-generated.yml` runs on every PR and **fails if the committed `llms.txt` / `llms-full.txt` differ from what `scripts/build-llms.js` produces** — the guard against the drift that caused #93. If it fails, run `make llms` and commit. It ignores the `Generated: <date>` line in `llms-full.txt`, which legitimately changes every day.
 
 ## Related Repos
 
