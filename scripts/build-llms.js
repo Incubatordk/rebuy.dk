@@ -134,7 +134,11 @@ function inlineToMarkdown(html, baseUrl) {
     .replace(/<code\b[^>]*>([\s\S]*?)<\/code>/gi, (_m, inner) => `\`${inner.trim()}\``)
     .replace(
       /<a\b[^>]*href=(["'])([^"']*)\1[^>]*>([\s\S]*?)<\/a>/gi,
-      (_m, _q, href, inner) => `[${inner.trim()}](${absolutize(href, baseUrl)})`
+      // Flatten the label: a store-button link wraps an <svg> icon and two
+      // <span>s, whose tags and indentation would otherwise land inside the
+      // brackets ("[ Download fra App Store ]"). A no-op for plain-text links.
+      (_m, _q, href, inner) =>
+        `[${inner.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()}](${absolutize(href, baseUrl)})`
     )
     .replace(/<[^>]+>/g, '');
   return decodeEntities(text).replace(/\s+/g, ' ').trim();
@@ -146,14 +150,22 @@ function inlineToMarkdown(html, baseUrl) {
 // the document structure of llms-full.txt (an <h2> inside a post body becomes
 // "####", below the "## <post title>" heading it lives under).
 //
-// The <section class="post-cta"> block is dropped on purpose: it is a
-// site-navigation call to action ("join the waiting list"), not article
-// content, and re-injecting it would put pre-launch copy back into the file
-// this script exists to de-stale.
+// The <section class="post-cta"> block is kept: in launched mode it is the
+// app-download CTA, and the App Store / Google Play links inside it are
+// exactly what an AI assistant needs to answer "how do I get Rebuy?". Its
+// heading and paragraph are ordinary blocks, but the store links sit in a
+// <div class="store-buttons"> wrapper the block converter doesn't look at —
+// so rewrite that wrapper into a <ul> of links first, and they carry through.
 function htmlToMarkdown(html, baseUrl, headingOffset = 0) {
   let source = String(html)
     .replace(/<!--[\s\S]*?-->/g, '')
-    .replace(/<section\b[^>]*class=["'][^"']*post-cta[^"']*["'][^>]*>[\s\S]*?<\/section>/gi, '');
+    .replace(
+      /<div\b[^>]*class=["'][^"']*store-buttons[^"']*["'][^>]*>([\s\S]*?)<\/div>/gi,
+      (_m, inner) => {
+        const links = [...inner.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/gi)].map(a => `<li>${a[0]}</li>`);
+        return links.length ? `<ul>${links.join('')}</ul>` : '';
+      }
+    );
 
   const blockRe = /<(h[1-6]|p|ul|ol|blockquote|figure)\b[^>]*>([\s\S]*?)<\/\1>/gi;
   const blocks = [];
