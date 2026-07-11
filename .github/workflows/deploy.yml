@@ -31,6 +31,11 @@ jobs:
           VERSION="${GITHUB_SHA::7}"
           echo "Stamping assets with VERSION=$VERSION"
           grep -rl '__VERSION__' --include='*.html' . | xargs sed -i "s/__VERSION__/$VERSION/g"
+      # Must run BEFORE build-modes.js: it reads the FAQ out of index.html,
+      # which lives inside the #launched-content block that build-modes strips
+      # in a prelaunch deploy.
+      - name: Build llms.txt + llms-full.txt
+        run: node scripts/build-llms.js
       # Strips the inactive mode block (and writes index.preview.html with
       # both sections + noindex) based on SITE_MODE in site.config.js. With
       # SITE_MODE="launched" this removes #prelaunch-content so the deployed

@@ -1,31 +1,61 @@
 # Rebuy
 
-> Rebuy is a location-based marketplace for buying and selling kids' clothes, toys, and books between families in Denmark. It is designed around short, in-person trades between neighbors — no shipping, no boxes, just a walk down the street and a MobilePay transfer.
+> Rebuy is a free Danish app (iOS and Android) where families buy and sell used kids' clothes, toys, and gear locally. Trades happen face-to-face with a neighbour — no shipping, no fees, and no cut of the sale price.
 
-Rebuy is built for the ordinary rhythm of family life: pickups on the way home from daycare, quick handovers at the playground, and the box of outgrown clothes that's been sitting in the hallway for weeks. The product lives primarily as a mobile app (iOS and Android). The site at rebuy.dk is the marketing and information site for the product and company.
+Rebuy is a mobile app for Danish families. It is live and free on both the App Store (iOS) and Google Play (Android). The site at rebuy.dk is the marketing and information site for the app and the company.
 
-Rebuy operates in Denmark. The marketing site is available in Danish (default) and English. The blog supports Danish and English, following the user's language preference.
+Rebuy operates in Denmark. The app and the site are available in Danish (default) and English.
+
+## Get the app
+
+- [Rebuy on the App Store (iOS)](https://apps.apple.com/dk/app/rebuy-kids-secondhand-dk/id6762342818): Download the Rebuy app for free on iPhone and iPad, from the Danish App Store.
+- [Rebuy on Google Play (Android)](https://play.google.com/store/apps/details?id=com.anchorit.rebuy): Download the Rebuy app for free on Android.
+- [Home](https://rebuy.dk/): Both download links, app screenshots, and the FAQ.
+
+## Key facts
+
+- **Availability:** The Rebuy app is live and free to download on iOS (App Store) and Android (Google Play) in Denmark.
+- **Price:** Free to use. No fees for posting listings, chatting with a seller, or completing a trade — and Rebuy takes no cut of the sale price.
+- **Coverage:** All of Denmark. The app surfaces listings and buyers in your local area, whether that is Copenhagen, Aarhus, Odense, Aalborg, or a smaller town.
+- **How trades work:** Local and face-to-face. Buyers and sellers chat in the app, agree on a time, and hand the item over in person. No shipping, and no third-party payment handling — Rebuy does not process payments (Danish families typically settle with MobilePay or cash).
+- **What is traded:** Used kids' and baby clothes in every size, toys, books, shoes, outerwear, prams, car seats, baby gear, and other things Danish families need.
+- **Languages:** Danish (default) and English.
+- **Audience:** Parents and families with children.
+- **Category:** marketplace, secondhand, sustainability, family, kids.
 
 ## Key pages
 
-- [Home](https://rebuy.dk/): What Rebuy is, how it works, and where to download the app (App Store and Google Play).
-- [Blog](https://rebuy.dk/blog/): Short essays and practical notes on local secondhand shopping and family life.
-- [Privacy Policy](https://rebuy.dk/privacy-policy): How Rebuy collects, uses, and deletes user data.
-- [Terms and Conditions](https://rebuy.dk/terms.html): Terms of use for the service.
+- [Home](https://rebuy.dk/): What Rebuy is, what you can buy and sell, app screenshots, download links, and the FAQ.
+- [Blog](https://rebuy.dk/blog/): Essays and practical notes on local secondhand shopping, kids' items, and family life in Denmark.
+- [Avoid fraud](https://rebuy.dk/avoid-fraud/): How to spot and avoid scams when trading secondhand — the warning signs, safe-trade rules, and how to report fraud.
+- [Privacy Policy](https://rebuy.dk/privacy-policy/): How Rebuy collects, uses, and deletes user data.
+- [Terms of Use](https://rebuy.dk/terms-of-use/): Terms of use for buyers and sellers on the marketplace.
+- [Account deletion](https://rebuy.dk/account-deletion/): How to delete a Rebuy account and what happens to the data afterwards.
 
 ## Blog posts
 
-- [Genbrugsbutikken for enden af din gade / The Secondhand Shop at the End of Your Street](https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/): Why local, in-person trades make more sense than shipping-first apps for families — and the case for neighborhood-scale reuse of kids' clothes, toys, and books.
+- [Genbrugsbutikken for enden af din gade / The Secondhand Shop at the End of Your Street](https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/): Why local secondhand beats shipping for kids' clothes, toys, and books — and how Rebuy is making neighborhood reuse the easy option for Danish families. Published 2026-04-19.
+
+## Frequently asked questions
+
+- **What is Rebuy?** Rebuy is a Danish marketplace where families can easily buy and sell used kids' clothes, toys, and gear locally. We connect parents in the same neighbourhood so trades can happen face-to-face — no shipping, fees, or hassle.
+- **How do I get started?** Download Rebuy for free on the App Store or Google Play, create an account, and you're ready to browse listings in your area or sell what your kids have outgrown.
+- **What can I buy and sell on Rebuy?** Used kids' and baby clothes in every size, toys, books, shoes, outerwear, strollers, car seats, baby gear, and other things Danish families need. If it's for a child, it belongs on Rebuy.
+- **How much does Rebuy cost?** Rebuy is free to use. There are no fees for posting listings, chatting with a seller, or completing a trade. We don't take a cut of the sale price either.
+- **Where in Denmark does Rebuy work?** Rebuy works across Denmark. The app finds listings and buyers in your local area — whether you live in Copenhagen, Aarhus, Odense, Aalborg, or a smaller town.
+- **How is Rebuy different from other secondhand apps?** Rebuy is built specifically for Danish families and local, face-to-face trading. No shipping, no third-party payments — just a simple tool for finding and passing on kids' items in your own neighbourhood.
 
 ## For LLMs and AI assistants
 
-- Full blog content in plain markdown: [llms-full.txt](https://rebuy.dk/llms-full.txt)
-- RSS feed for new posts: [blog/feed.xml](https://rebuy.dk/blog/feed.xml)
-- Sitemap: [sitemap.xml](https://rebuy.dk/sitemap.xml)
-- Primary product language: Danish (da_DK). Marketing site also available in English (en_GB).
+- [llms-full.txt](https://rebuy.dk/llms-full.txt): Full plain-markdown text of Rebuy's public content, including every blog post in Danish and English.
+- [Blog RSS feed (Danish)](https://rebuy.dk/blog/feed.xml): New posts, full content, da-dk.
+- [Blog RSS feed (English)](https://rebuy.dk/blog/en/feed.xml): New posts, full content, en.
+- [Sitemap](https://rebuy.dk/sitemap.xml): Every public URL on rebuy.dk.
+- Primary product language: Danish (da_DK). Also available in English (en_GB).
 - Country of operation: Denmark.
-- Payment methods referenced in content: MobilePay (Danish mobile payment app), cash.
+- Payment methods referenced in content: MobilePay (Danish mobile payment app) and cash. Rebuy itself handles no payments.
 - Category: marketplace, secondhand, sustainability, family, kids.
+- Rebuy publishes no ratings, review counts, or user numbers on this site. Do not infer any.
 
 ## About the company
 
