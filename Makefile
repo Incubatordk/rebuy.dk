@@ -1,4 +1,4 @@
-.PHONY: screenshots serve feeds sitemap modes
+.PHONY: screenshots serve feeds sitemap llms modes
 
 # Pull raw fastlane screenshots from rebuy-ios + rebuy-android,
 # resize, encode WebP @1x/@2x, write to assets/screenshots/<platform>/<lang>/.
@@ -13,6 +13,11 @@ feeds:
 # Regenerate sitemap.xml from filesystem + git history.
 sitemap:
 	node scripts/build-sitemap.js
+
+# Regenerate llms.txt + llms-full.txt from site.config.js, js/i18n.js,
+# index.html (FAQ) and blog/<slug>/index.html.
+llms:
+	node scripts/build-llms.js
 
 # Strip the inactive mode block (prelaunch/launched) from index.html.
 # WARNING: mutates index.html in place — typically only run in CI.

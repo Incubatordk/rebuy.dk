@@ -1,6 +1,6 @@
 # Rebuy — full content for LLMs
 
-This file contains the full text of Rebuy's public content in plain markdown, for use by large language models and AI assistants. Last updated: 2026-04-19.
+This file contains the full text of Rebuy's public content in plain markdown, for use by large language models and AI assistants. It is generated from the site source on every deploy. Generated: 2026-07-11.
 
 For a shorter overview, see [llms.txt](https://rebuy.dk/llms.txt).
 
@@ -8,9 +8,62 @@ For a shorter overview, see [llms.txt](https://rebuy.dk/llms.txt).
 
 ## About Rebuy
 
-Rebuy is a location-based marketplace for buying and selling kids' clothes, toys, and books between families in Denmark. It is designed for short, in-person trades between neighbors — no shipping, no boxes, just a walk down the street and a MobilePay transfer.
+Rebuy is a free Danish app (iOS and Android) where families buy and sell used kids' clothes, toys, and gear locally. Trades happen face-to-face with a neighbour — no shipping, no fees, and no cut of the sale price.
 
-Rebuy is offered as a mobile app for iOS and Android. The site rebuy.dk is the marketing and information site for the product.
+Rebuy is offered as a mobile app for iOS and Android, and it is live today. The site rebuy.dk is the marketing and information site for the app.
+
+### Where to get Rebuy
+
+- App Store (iOS, free): https://apps.apple.com/dk/app/rebuy-kids-secondhand-dk/id6762342818
+- Google Play (Android, free): https://play.google.com/store/apps/details?id=com.anchorit.rebuy
+
+### Product facts
+
+- **Availability:** The Rebuy app is live and free to download on iOS (App Store) and Android (Google Play) in Denmark.
+- **Price:** Free to use. No fees for posting listings, chatting with a seller, or completing a trade — and Rebuy takes no cut of the sale price.
+- **Coverage:** All of Denmark. The app surfaces listings and buyers in your local area, whether that is Copenhagen, Aarhus, Odense, Aalborg, or a smaller town.
+- **How trades work:** Local and face-to-face. Buyers and sellers chat in the app, agree on a time, and hand the item over in person. No shipping, and no third-party payment handling — Rebuy does not process payments (Danish families typically settle with MobilePay or cash).
+- **What is traded:** Used kids' and baby clothes in every size, toys, books, shoes, outerwear, prams, car seats, baby gear, and other things Danish families need.
+- **Languages:** Danish (default) and English.
+- **Audience:** Parents and families with children.
+- **Category:** marketplace, secondhand, sustainability, family, kids.
+
+### Key pages
+
+- Home: https://rebuy.dk/ — What Rebuy is, what you can buy and sell, app screenshots, download links, and the FAQ.
+- Blog: https://rebuy.dk/blog/ — Essays and practical notes on local secondhand shopping, kids' items, and family life in Denmark.
+- Avoid fraud: https://rebuy.dk/avoid-fraud/ — How to spot and avoid scams when trading secondhand — the warning signs, safe-trade rules, and how to report fraud.
+- Privacy Policy: https://rebuy.dk/privacy-policy/ — How Rebuy collects, uses, and deletes user data.
+- Terms of Use: https://rebuy.dk/terms-of-use/ — Terms of use for buyers and sellers on the marketplace.
+- Account deletion: https://rebuy.dk/account-deletion/ — How to delete a Rebuy account and what happens to the data afterwards.
+
+---
+
+## Frequently asked questions
+
+### What is Rebuy?
+
+Rebuy is a Danish marketplace where families can easily buy and sell used kids' clothes, toys, and gear locally. We connect parents in the same neighbourhood so trades can happen face-to-face — no shipping, fees, or hassle.
+
+### How do I get started?
+
+Download Rebuy for free on the App Store or Google Play, create an account, and you're ready to browse listings in your area or sell what your kids have outgrown.
+
+### What can I buy and sell on Rebuy?
+
+Used kids' and baby clothes in every size, toys, books, shoes, outerwear, strollers, car seats, baby gear, and other things Danish families need. If it's for a child, it belongs on Rebuy.
+
+### How much does Rebuy cost?
+
+Rebuy is free to use. There are no fees for posting listings, chatting with a seller, or completing a trade. We don't take a cut of the sale price either.
+
+### Where in Denmark does Rebuy work?
+
+Rebuy works across Denmark. The app finds listings and buyers in your local area — whether you live in Copenhagen, Aarhus, Odense, Aalborg, or a smaller town.
+
+### How is Rebuy different from other secondhand apps?
+
+Rebuy is built specifically for Danish families and local, face-to-face trading. No shipping, no third-party payments — just a simple tool for finding and passing on kids' items in your own neighbourhood.
 
 ---
 
@@ -23,9 +76,9 @@ Rebuy is offered as a mobile app for iOS and Android. The site rebuy.dk is the m
 - Author: Rebuy
 - Languages: Danish and English
 
-**Danish dek:** Hvorfor lokale handler ansigt til ansigt giver mere mening for børnefamilier end apps, der starter med fragt.
+**Danish summary:** Hvorfor lokalt genbrug ofte giver mere mening end fragt, når børnetøj, legetøj og bøger skal videre til næste familie.
 
-**English dek:** Why local, in-person trades make more sense for families than shipping-first apps — and how we're building something around that idea.
+**English summary:** Why local secondhand beats shipping for kids' clothes, toys, and books — and how Rebuy is making neighborhood reuse the easy option for Danish families.
 
 ---
 
@@ -39,7 +92,9 @@ Det lyder som en lille ting. Men det er også en ret anden måde at købe brugte
 
 Mange genbrugsapps er bygget op omkring forsendelse. Man finder noget, betaler, venter og håber, at pakken svarer til billederne. Det fungerer ofte fint, men med børneting kan ventetiden og fragten hurtigt gøre en god handel mindre god.
 
-Børn mangler sjældent regnbukser "på et tidspunkt". De mangler dem på fredag. En brugt løbecykel kan se perfekt ud på billeder, men det er rart at kunne se højden, dækkene og ridserne, før man tager den med hjem.
+Børn mangler sjældent regnbukser "på et tidspunkt". De mangler dem på fredag. En brugt løbecykel kan se perfekt ud på billeder, men det er rart at kunne se højden, dækkene og ridserne, før man tager den med hjem. Og hvis en bog mangler sider, eller støvlerne ikke passer, er det meget lettere at opdage det, når varen står lige foran dig.
+
+Der er også noget lidt skævt i, at brugte børneting skal køres tværs gennem landet for at få et nyt liv. En flyverdragt, en bunke bøger eller et trætog behøver sjældent 200 kilometer på landevejen. Ofte skal det bare videre til den næste familie i nærheden.
 
 #### Hvad der ændrer sig, når varen er tæt på
 
@@ -47,11 +102,13 @@ Når noget ligger tre gader væk, bliver handlen mere enkel. Du kan kigge på va
 
 Det lokale gør også handlen mere afslappet. Ingen pakkelabels, ingen tracking, ingen returproces. Bare en kort besked, en hurtig overlevering og måske et lille hej til en nabo, du ikke kendte endnu.
 
+For børnefamilier passer det godt til hverdagen. De fleste har allerede nok logistik. Det hjælper, når genbrug kan ske på vej hjem fra daginstitution, på vej til bageren eller mellem lur og aftensmad.
+
 #### Hvorfor børneting passer særligt godt til lokalt genbrug
 
-Børn vokser hurtigt. Pludselig ligger der en hel bunke tøj, som kun blev brugt i få måneder. Et puslespil, der var et hit sidste vinter, er blevet for nemt. Bøgerne, du kan udenad, er stadig nye for barnet i opgangen ved siden af.
+Børn vokser hurtigt. Pludselig ligger der en hel bunke tøj i størrelse 86, som kun blev brugt i få måneder. Et puslespil, der var et hit sidste vinter, er blevet for nemt. Bøgerne, du kan udenad, er stadig nye for barnet i opgangen ved siden af.
 
-Det er en af de mest naturlige former for genbrug: den ene families "vi er færdige med det" er den næste families "det mangler vi lige nu".
+Det er en af de mest naturlige former for genbrug: den ene families "vi er færdige med det" er den næste families "det mangler vi lige nu". Det sker allerede mellem venner, kusiner, naboer og forældre fra samme institution. Det, der mangler, er en enkel måde at finde de familier i nærheden, man ikke allerede kender.
 
 - Flyverdragten fra sidste sæson kan blive en anden families løsning til november.
 - Trætoget, der ikke længere bliver brugt, kan blive dagens store fund to gader væk.
@@ -63,7 +120,13 @@ Rebuy er en lokal markedsplads for børnetøj, legetøj og bøger. Tanken er at 
 
 Du lægger flyverdragten op. En forælder i nærheden ser den. I aftaler et tidspunkt, mødes kort, og tøjet får en ny vinter. Hurtigt, praktisk og uden unødvendig afstand.
 
-Rebuy handler om at lukke den lille løkke mellem familien, der har noget til overs, og familien i nærheden, der lige står og mangler det.
+Det handler ikke om, at alle skal være perfekte genbrugsforkæmpere. Det handler om, at lokalt ofte bare er nemmere: billigere, hurtigere og mere konkret. Man kan se varen, hente den, betale og komme videre med dagen.
+
+#### Den oplagte lille løkke
+
+Et sted i dit nabolag står der en kasse med godt børnetøj, som ingen helt har fået gjort noget ved. Lidt længere væk er der en familie, der godt kunne bruge det. Måske går I allerede forbi hinanden på vej til bageren.
+
+Rebuy handler om at lukke den lille løkke. Mindre afstand. Mindre emballage. Flere ting, der får et nyt liv tæt på. Og på en god dag: et trætog, der når hjem, før barnet vågner fra lur.
 
 ---
 
@@ -73,7 +136,7 @@ You're pushing the stroller home from the playground. Your three-year-old just p
 
 That's a small thing. It's also a really different thing from how most secondhand shopping works today.
 
-### The shipping detour
+#### The shipping detour
 
 Most of the popular secondhand apps were built around shipping. You scroll, you tap, you pay, and then you wait. Three days. Maybe a week. The box arrives. The sweater is a bit different from the photos. The puzzle is missing two pieces. It's not bad, exactly, but it's not quite right either. You think about returning it, calculate the effort, and let it go.
 
@@ -81,7 +144,7 @@ For adult clothes, that trade-off is often fine. For kids' stuff, it adds up fas
 
 There's also a quieter cost. Every box of used clothes zigzagging across the country on a delivery truck slightly undercuts the point of buying secondhand in the first place. Local secondhand kids' clothes should not need a lorry to change hands.
 
-### What changes when the shop is three streets away
+#### What changes when the shop is three streets away
 
 When the item is a short walk from your door, almost everything about the transaction gets better.
 
@@ -91,7 +154,7 @@ Local also means you get to be a little more casual. You message someone: "I'll 
 
 It turns out "meeting up locally" is not a step backward from e-commerce. For certain things — especially things for children — it's just better.
 
-### Why kids' stuff in particular
+#### Why kids' stuff in particular
 
 Kids grow. You know this. But you don't really feel it until you're standing in front of a closet full of size-86 everything and realizing it all fits your child for about eleven weeks before becoming a sentimental drawer of almost-new clothing.
 
@@ -107,7 +170,7 @@ A few concrete examples, because this is the texture of it:
 
 None of these items needs to travel 200 kilometers to find its next home. They just need to cross the street.
 
-### What we're building with Rebuy
+#### What we're building with Rebuy
 
 Rebuy is a local marketplace for kids' clothes, toys, and books, built around the way parents actually live — short walks, pickups on the way to daycare, quick MobilePay handoffs, neighbors you maybe smile at in the elevator but have never really spoken to.
 
@@ -117,7 +180,7 @@ The idea is to make it feel less like running an online shop and more like the g
 
 We're not trying to turn every parent into a sustainability campaigner. Plenty of people already care about reuse and reducing transport, and that's lovely. But the reason this works isn't moral — it's practical. Local is faster. Local is cheaper. Local lets you actually see what you're buying. Local means a balance bike can change hands without anyone printing a label.
 
-### The quietly obvious part
+#### The quietly obvious part
 
 Somewhere in your neighborhood right now, there is a box of perfectly good kids' clothes sitting in a hallway because nobody has figured out what to do with it. A little further away, there's a parent who would love to buy them. You probably walk past each other on the way to the bakery.
 
@@ -125,4 +188,4 @@ The idea behind Rebuy is to close that tiny loop — between the stroller you're
 
 ---
 
-*Rebuy is launching soon in Denmark. Waiting list: https://rebuy.dk/ · Contact: support@rebuy.dk*
+*Rebuy is free for Danish families. App Store: https://apps.apple.com/dk/app/rebuy-kids-secondhand-dk/id6762342818 · Google Play: https://play.google.com/store/apps/details?id=com.anchorit.rebuy · Contact: support@rebuy.dk*
