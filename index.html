@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Security headers via meta (GitHub Pages sends no response headers). CSP
+       allow-list = Google Fonts, Umami analytics, Appwrite (form POSTs). Note:
+       X-Content-Type-Options and frame-ancestors need real response headers —
+       out of scope for a meta-only fix. See issue #108. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://umami.robert-jensen.dk; connect-src 'self' https://base.anchorit.dk https://umami.robert-jensen.dk; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Rebuy app — Køb og sælg brugt børnetøj og babyudstyr lokalt i Danmark</title>
   <meta name="description" content="Hent Rebuy gratis — appen hvor danske børnefamilier køber og sælger brugt børnetøj, babyudstyr og legetøj lokalt i dit nærområde.">
   <link rel="canonical" href="https://rebuy.dk/">
@@ -172,6 +178,28 @@
               "text": "Rebuy er bygget specifikt til danske børnefamilier og lokal handel ansigt til ansigt. Ingen forsendelse, ingen tredjeparts betaling — bare et nemt værktøj til at finde og afhænde børneting i dit eget nabolag."
             }
           }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://rebuy.dk/#howto-buy",
+        "name": "Sådan køber du på Rebuy",
+        "description": "Find brugt børnetøj og babyudstyr i dit nærområde i tre trin.",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Find", "text": "Browse annoncer i dit nærområde." },
+          { "@type": "HowToStep", "position": 2, "name": "Chat", "text": "Aftal pris og afhentning med sælger." },
+          { "@type": "HowToStep", "position": 3, "name": "Mød op", "text": "Handl ansigt til ansigt med en anden familie." }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://rebuy.dk/#howto-sell",
+        "name": "Sådan sælger du på Rebuy",
+        "description": "Sælg det, dine børn er vokset fra, i tre trin.",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Tag billede", "text": "Snap et foto af det, dine børn er vokset fra." },
+          { "@type": "HowToStep", "position": 2, "name": "Sæt pris", "text": "Vælg en fair pris, og din annonce er online." },
+          { "@type": "HowToStep", "position": 3, "name": "Aftal afhentning", "text": "Chat med køberen og aftal et lokalt møde." }
         ]
       }
     ]

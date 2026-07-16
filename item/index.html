@@ -3,19 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Security headers via meta (GitHub Pages sends no response headers). CSP
+       allow-list = Google Fonts, Umami analytics, Appwrite (form POSTs). Note:
+       X-Content-Type-Options and frame-ancestors need real response headers —
+       out of scope for a meta-only fix. See issue #108. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://umami.robert-jensen.dk; connect-src 'self' https://base.anchorit.dk https://umami.robert-jensen.dk; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Se vare — Rebuy</title>
-  <meta name="description" content="Åbn Rebuy for at se denne vare.">
+  <meta name="description" content="Åbn Rebuy for at se denne vare — billeder, pris og en direkte chat med sælgeren.">
   <!-- Thin app deep-link stub: every shared listing resolves to this one static
        page, so keep it out of the index (like /auth/magic/). "follow" lets the
        store/home links still pass equity. See issue #104. -->
   <meta name="robots" content="noindex, follow">
+
+  <!-- Open Graph — this page is what parents paste into Messenger/WhatsApp/
+       Facebook groups, so it must unfurl with an image (see #100). -->
   <meta property="og:title" content="Se denne vare på Rebuy">
-  <meta property="og:description" content="Køb og sælg børneting lokalt med Rebuy.">
+  <meta property="og:description" content="Nogen i nærheden sælger den her. Åbn Rebuy for at se billeder, pris og skrive til sælgeren.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:url" content="https://rebuy.dk/item/">
+  <meta property="og:site_name" content="Rebuy">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:image" content="https://rebuy.dk/assets/logos/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rebuy — køb og sælg brugt børnetøj og babyudstyr lokalt">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Se denne vare på Rebuy">
+  <meta name="twitter:description" content="Nogen i nærheden sælger den her. Åbn Rebuy for at se billeder, pris og skrive til sælgeren.">
+  <meta name="twitter:image" content="https://rebuy.dk/assets/logos/og-image.png">
+
+  <!-- Smart App Banner (iOS Safari). app-argument lets the app deep-link to the
+       item route post-install once iOS handles /item/* universal links (#94). -->
+  <meta name="apple-itunes-app" content="app-id=6762342818, app-argument=https://rebuy.dk/item/">
+
   <link rel="icon" type="image/svg+xml" href="/assets/logos/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/logos/apple-touch-icon.png">
   <meta name="theme-color" content="#FAFAF9">
+
+  <!-- Analytics — shared-listing traffic was 100% invisible before this (#100/#95). -->
+  <link rel="preconnect" href="https://umami.robert-jensen.dk">
+  <script defer src="https://umami.robert-jensen.dk/script.js" data-website-id="ab067f06-e505-4511-97f9-28536a14614b"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,31 +57,56 @@
     .item h1 { font-size: var(--text-2xl); margin-bottom: var(--space-md); }
     .item p { color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-md); }
     .item-icon { font-size: 64px; margin-bottom: var(--space-lg); }
-    .store-btn { margin-top: var(--space-md); }
-    /* Keep the label white on hover/focus — this is a plain-text store button
-       (no inner spans), so the global `a:hover { color: var(--color-text) }` would
-       otherwise darken it to near-invisible on the dark fill. */
-    .store-btn,
-    .store-btn:hover,
-    .store-btn:focus,
-    .store-btn:active { color: #FFFFFF; }
+    .item .store-buttons { margin: var(--space-lg) 0; }
+    .item-back { display: inline-block; margin-top: var(--space-sm); }
   </style>
 </head>
 <body>
   <main class="item">
     <div class="item-icon" aria-hidden="true">🧸</div>
-    <h1>Se denne vare på Rebuy</h1>
-    <p>Åbn Rebuy-appen for at se varen og skrive til sælgeren.</p>
-    <p><strong>Har du ikke appen?</strong></p>
-    <p><a class="store-btn" id="store-link" href="/">Hent Rebuy</a></p>
-    <p><a href="/">Tilbage til forsiden</a></p>
+    <h1>Se varen i Rebuy-appen</h1>
+    <p>Nogen i dit nærområde sælger den her. Åbn Rebuy for at se billeder, pris og stand — og skriv direkte til sælgeren om afhentning.</p>
+    <p><strong>Har du ikke Rebuy endnu?</strong> Hent appen gratis:</p>
+
+    <div class="store-buttons">
+      <a id="app-store-btn" href="#" class="store-btn" aria-label="Download Rebuy fra App Store">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <span class="store-btn-text">
+          <span class="store-btn-label">Download fra</span>
+          <span class="store-btn-name">App Store</span>
+        </span>
+      </a>
+      <a id="play-store-btn" href="#" class="store-btn" aria-label="Download Rebuy fra Google Play">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3.18 23.75c-.36-.17-.68-.52-.82-1.03L13.2 12 2.36 1.28c.14-.51.46-.86.82-1.03L15.97 12 3.18 23.75zm1.06.2L16.62 13.2l2.98 2.53-13.44 7.7c-.6.34-1.32.5-1.92.52zm0-23.9c.6.02 1.32.18 1.92.52l13.44 7.7-2.98 2.53L4.24.05zM20.68 13.65l-3.17-2.69 3.17-2.69c.88.5 1.56 1.17 1.56 2.69s-.68 2.19-1.56 2.69z"/>
+        </svg>
+        <span class="store-btn-text">
+          <span class="store-btn-label">Download fra</span>
+          <span class="store-btn-name">Google Play</span>
+        </span>
+      </a>
+    </div>
+
+    <p><a href="/" class="item-back">Tilbage til forsiden</a></p>
   </main>
+
   <script>
     (function () {
       var cfg = (typeof SITE_CONFIG !== 'undefined') ? SITE_CONFIG : (window.SITE_CONFIG || {});
+      var appStore = document.getElementById('app-store-btn');
+      var playStore = document.getElementById('play-store-btn');
+      // Read store URLs from site.config.js rather than hardcoding, so a store
+      // URL change (see #90/#102) propagates here automatically.
+      if (appStore) appStore.href = cfg.APP_STORE_URL || '/';
+      if (playStore) playStore.href = cfg.PLAY_STORE_URL || '/';
+      // Put the visitor's native store first (App Store leads in the markup for
+      // iOS; move Google Play ahead on Android).
       var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      var link = document.getElementById('store-link');
-      if (link) link.href = isIOS ? (cfg.APP_STORE_URL || '/') : (cfg.PLAY_STORE_URL || '/');
+      if (!isIOS && appStore && playStore && playStore.parentNode) {
+        playStore.parentNode.insertBefore(playStore, appStore);
+      }
     })();
   </script>
 </body>
