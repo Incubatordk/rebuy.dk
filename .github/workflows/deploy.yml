@@ -42,6 +42,10 @@ jobs:
       # HTML has one <h1> and no "Kommer snart" signals for crawlers.
       - name: Strip inactive mode block from index.html
         run: node scripts/build-modes.js
+      # Sync blog CTA store URLs with site.config.js BEFORE the feed is built,
+      # so the RSS <content:encoded> carries the canonical URLs. See issue #102.
+      - name: Sync blog CTA store URLs
+        run: node scripts/build-blog-cta.js
       - name: Build blog RSS feed
         run: node scripts/build-feed.js
       - name: Build legal RSS feeds

@@ -1,4 +1,4 @@
-.PHONY: screenshots serve feeds sitemap llms modes
+.PHONY: screenshots serve feeds sitemap llms modes blog-cta
 
 # Pull raw fastlane screenshots from rebuy-ios + rebuy-android,
 # resize, encode WebP @1x/@2x, write to assets/screenshots/<platform>/<lang>/.
@@ -24,6 +24,10 @@ llms:
 # Locally, use ?mode=launched / ?mode=prelaunch URL params to preview instead.
 modes:
 	node scripts/build-modes.js
+
+# Sync the app-download CTA store URLs in every blog post with site.config.js.
+blog-cta:
+	node scripts/build-blog-cta.js
 
 # Local dev server on http://localhost:8000
 serve:

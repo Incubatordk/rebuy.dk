@@ -39,3 +39,17 @@ jobs:
             exit 1
           fi
           echo "llms.txt and llms-full.txt match the generator."
+      # Blog post CTA store URLs are hand-authored static HTML but must stay in
+      # sync with site.config.js — the drift class of issue #102. Regenerate and
+      # fail if the committed posts differ.
+      - name: Regenerate blog CTA store URLs
+        run: node scripts/build-blog-cta.js
+      - name: Fail if blog post CTAs have drifted from site.config.js
+        run: |
+          if ! git diff --exit-code -- blog; then
+            echo ""
+            echo "::error::Blog post CTA store URLs are out of date with site.config.js."
+            echo "Run 'make blog-cta' and commit the result."
+            exit 1
+          fi
+          echo "Blog post CTAs match site.config.js."

@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Security headers via meta (GitHub Pages sends no response headers). CSP
+       allow-list = Google Fonts, Umami analytics, Appwrite (form POSTs). Note:
+       X-Content-Type-Options and frame-ancestors need real response headers —
+       out of scope for a meta-only fix. See issue #108. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://umami.robert-jensen.dk; connect-src 'self' https://base.anchorit.dk https://umami.robert-jensen.dk; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Genbrugsbutikken for enden af din gade — Rebuy</title>
   <meta name="description" content="Hvorfor lokalt genbrug ofte giver mere mening end fragt, når børnetøj, legetøj og bøger skal videre til næste familie.">
   <link rel="canonical" href="https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/">
@@ -63,7 +69,6 @@
     },
     "mainEntityOfPage": "https://rebuy.dk/blog/the-secondhand-shop-at-the-end-of-your-street/",
     "inLanguage": ["da", "en"],
-    "wordCount": 1600,
     "keywords": "genbrug, børnetøj, lokal markedsplads, Danmark, børnefamilier, MobilePay, nabolag, legetøj, børnebøger, secondhand",
     "articleSection": "Blog",
     "isAccessibleForFree": true,

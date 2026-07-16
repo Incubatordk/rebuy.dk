@@ -110,6 +110,10 @@ The generator scans every `blog/*/index.html` (excluding `blog/en/`), extracts m
 - `<meta name="rebuy:image:alt:en" content="…">`
 - Sibling body wrapped in `<div class="post-content" data-blog-lang="en">…</div>`
 
+### Blog CTA store URLs
+
+Each post carries an app-download CTA (`<section class="post-cta">`) with App Store / Google Play links. These stay **static HTML on purpose** (so they're crawlable and land in the RSS `<content:encoded>`), but that means the store URLs can drift from `site.config.js` — the class of bug in issue #102 (#90/PR #91 moved the App Store link to the DK storefront). `scripts/build-blog-cta.js` rewrites every `apps.apple.com` / `play.google.com` href **inside `post-cta` blocks** to `APP_STORE_URL` / `PLAY_STORE_URL` from `site.config.js`. Run with `make blog-cta`. It runs in `deploy.yml` before `build-feed.js`, and `check-generated.yml` fails a PR whose committed posts have drifted. Editing store URLs anywhere but `site.config.js` is therefore pointless — change them there and run `make blog-cta`.
+
 ## Legal RSS feeds
 
 The privacy policy and terms of use are also published as single-item RSS feeds so the iOS and Android apps can fetch and render the text directly. Feeds are **generated** by `scripts/build-legal-feeds.js` during deploy — do not hand-edit them:
