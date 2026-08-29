@@ -13,7 +13,7 @@ var I18N = (function () {
   var translations = {
     da: {
       // Meta. Kept in sync with the static HEAD in index.html.
-      "meta.title": "Rebuy app — Køb og sælg brugt børnetøj og babyudstyr lokalt i Danmark",
+      "meta.title": "Rebuy — Køb og sælg brugt børnetøj lokalt",
       "meta.description": "Hent Rebuy gratis — appen hvor danske børnefamilier køber og sælger brugt børnetøj, babyudstyr og legetøj lokalt i dit nærområde.",
 
       // Hero logo alt (in sync with index.html data-i18n-alt)
@@ -396,7 +396,7 @@ var I18N = (function () {
 
     en: {
       // Meta. Kept in sync with the static HEAD in index.html.
-      "meta.title": "Rebuy app — Buy and sell used kids' clothes and baby gear locally in Denmark",
+      "meta.title": "Rebuy — Buy and sell used kids' clothes locally",
       "meta.description": "Download Rebuy for free — the app where Danish families buy and sell used kids' clothes, baby gear, and toys locally in their neighbourhood.",
 
       // Hero logo alt

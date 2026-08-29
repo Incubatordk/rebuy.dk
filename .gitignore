@@ -7,3 +7,9 @@
 # Generated fresh on every deploy by scripts/build-modes.js (both mode
 # sections + noindex). Never committed — see CLAUDE.md.
 index.preview.html
+
+# Local SEO/GEO/AEO audit deliverables (issue #112). The repo root IS the
+# deployed site, so committing these would publish the audit at
+# https://rebuy.dk/seo-audit-*.pdf. Keep them local.
+seo-audit-*.docx
+seo-audit-*.pdf
