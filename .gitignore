@@ -13,3 +13,8 @@ index.preview.html
 # https://rebuy.dk/seo-audit-*.pdf. Keep them local.
 seo-audit-*.docx
 seo-audit-*.pdf
+
+# Generated fresh on every deploy by scripts/build-en.js from the MODE-STRIPPED
+# index.html + the `en` dictionary in js/i18n.js. Never committed, because it
+# can only be built correctly after build-modes.js has run (issue #97).
+en/index.html

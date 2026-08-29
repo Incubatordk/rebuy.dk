@@ -1,6 +1,6 @@
 # Rebuy — full content for LLMs
 
-This file contains the full text of Rebuy's public content in plain markdown, for use by large language models and AI assistants. It is generated from the site source on every deploy. Generated: 2026-07-11.
+This file contains the full text of Rebuy's public content in plain markdown, for use by large language models and AI assistants. It is generated from the site source on every deploy. Generated: 2026-08-29.
 
 For a shorter overview, see [llms.txt](https://rebuy.dk/llms.txt).
 
@@ -31,6 +31,7 @@ Rebuy is offered as a mobile app for iOS and Android, and it is live today. The 
 ### Key pages
 
 - Home: https://rebuy.dk/ — What Rebuy is, what you can buy and sell, app screenshots, download links, and the FAQ.
+- Home (English): https://rebuy.dk/en/ — The same homepage in English — what Rebuy is, what you can buy and sell, app screenshots, download links, and the FAQ.
 - Blog: https://rebuy.dk/blog/ — Essays and practical notes on local secondhand shopping, kids' items, and family life in Denmark.
 - Avoid fraud: https://rebuy.dk/avoid-fraud/ — How to spot and avoid scams when trading secondhand — the warning signs, safe-trade rules, and how to report fraud.
 - Privacy Policy: https://rebuy.dk/privacy-policy/ — How Rebuy collects, uses, and deletes user data.

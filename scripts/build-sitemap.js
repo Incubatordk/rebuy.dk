@@ -24,6 +24,11 @@ const TODAY = new Date().toISOString().slice(0, 10);
 // Static routes: { public URL → source file driving lastmod, plus crawl hints }.
 const STATIC_ROUTES = [
   { url: '/',                  file: 'index.html',                  changefreq: 'weekly',  priority: '1.0' },
+  // The English homepage is generated at deploy time by scripts/build-en.js and
+  // is not committed, so its existence and lastmod are tracked against the
+  // sources it is derived from rather than against en/index.html itself (#97).
+  { url: '/en/',               file: 'index.html',                  changefreq: 'weekly',  priority: '0.9',
+    lastmodFiles: ['index.html', 'js/i18n.js'] },
   { url: '/blog/',             file: 'blog/index.html',             changefreq: 'weekly',  priority: '0.6' },
   { url: '/avoid-fraud/',      file: 'avoid-fraud/index.html',      changefreq: 'monthly', priority: '0.3' },
   { url: '/privacy-policy/',   file: 'privacy-policy/index.html',   changefreq: 'monthly', priority: '0.3' },
@@ -67,7 +72,9 @@ function buildSitemap() {
       console.warn(`build-sitemap: skipping ${route.url} — ${route.file} not found`);
       return null;
     }
-    const lastmod = gitLastmod(route.file) || TODAY;
+    const sources = route.lastmodFiles || [route.file];
+    const dates = sources.map(gitLastmod).filter(Boolean).sort();
+    const lastmod = dates.length ? dates[dates.length - 1] : TODAY;
     return `  <url>
     <loc>${SITE_URL}${route.url}</loc>
     <lastmod>${lastmod}</lastmod>

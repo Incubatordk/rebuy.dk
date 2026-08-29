@@ -30,7 +30,9 @@
       if (!gallery) return;
       var platform = gallery.getAttribute("data-platform");
       var slug = img.getAttribute("data-img");
-      var base = "assets/screenshots/" + platform + "/" + currentLang + "/" + slug;
+      // Root-absolute: this runs on / and on /en/, and a relative path would
+      // resolve to /en/assets/… and 404 on the English page (#97).
+      var base = "/assets/screenshots/" + platform + "/" + currentLang + "/" + slug;
       img.src = base + ".webp";
       img.srcset = base + ".webp 1x, " + base + "@2x.webp 2x";
     });
@@ -41,6 +43,29 @@
   var langBtn = document.getElementById("lang-toggle");
   if (langBtn) {
     langBtn.addEventListener("click", function () {
+      var current = document.documentElement.lang || "da";
+      var next = current === "da" ? "en" : "da";
+
+      // If this page declares a real sibling URL for the target language,
+      // navigate to it rather than swapping in place — that is the whole point
+      // of having an indexable /en/ (#97). The :not([type]) guard matters: the
+      // legal and blog pages also carry rel="alternate" hreflang links, but
+      // those point at RSS feeds and must never be treated as page siblings.
+      var alt = document.querySelector(
+        'link[rel="alternate"][hreflang="' + next + '"]:not([type])'
+      );
+      if (alt && alt.getAttribute("href")) {
+        I18N.remember(next);
+        // hreflang hrefs are absolute (https://rebuy.dk/…) because that is what
+        // the annotation requires. Navigate by path only so the toggle stays on
+        // the current origin — otherwise localhost and preview deploys bounce
+        // the visitor to production.
+        var target = new URL(alt.getAttribute("href"), window.location.href);
+        window.location.href = target.pathname + target.search + target.hash;
+        return;
+      }
+
+      // No sibling URL (legal pages, blog) — swap in place as before.
       I18N.toggle();
       updateScreenshotSources();
     });

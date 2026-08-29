@@ -26,6 +26,7 @@ Rebuy operates in Denmark. The app and the site are available in Danish (default
 ## Key pages
 
 - [Home](https://rebuy.dk/): What Rebuy is, what you can buy and sell, app screenshots, download links, and the FAQ.
+- [Home (English)](https://rebuy.dk/en/): The same homepage in English — what Rebuy is, what you can buy and sell, app screenshots, download links, and the FAQ.
 - [Blog](https://rebuy.dk/blog/): Essays and practical notes on local secondhand shopping, kids' items, and family life in Denmark.
 - [Avoid fraud](https://rebuy.dk/avoid-fraud/): How to spot and avoid scams when trading secondhand — the warning signs, safe-trade rules, and how to report fraud.
 - [Privacy Policy](https://rebuy.dk/privacy-policy/): How Rebuy collects, uses, and deletes user data.

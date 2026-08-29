@@ -226,12 +226,15 @@
   <link rel="manifest" href="/manifest.webmanifest">
 
   <!-- i18n hreflang.
-       English is served from the same URL via in-page language toggle (js/i18n.js).
-       We intentionally do NOT declare a separate hreflang="en" alternate
-       until a dedicated /en/ URL exists — declaring two languages on the
-       same canonical URL is invalid hreflang and worse than omitting it.
-       See https://github.com/Incubatordk/rebuy.dk/issues/34 -->
+       /en/ is a real, indexable English page generated at deploy time by
+       scripts/build-en.js from this file + the `en` dictionary in js/i18n.js
+       (issue #97). That satisfies the precondition #34 was waiting on, so the
+       hreflang="en" alternate it deferred is now valid and declared here.
+       Both pages must list this identical, reciprocal set — if one side is
+       missing or points elsewhere, Google discards the annotation entirely.
+       build-en.js rewrites this block for the English page. -->
   <link rel="alternate" hreflang="da" href="https://rebuy.dk/">
+  <link rel="alternate" hreflang="en" href="https://rebuy.dk/en/">
   <link rel="alternate" hreflang="x-default" href="https://rebuy.dk/">
 
   <!-- Fonts -->
