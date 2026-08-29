@@ -146,7 +146,10 @@ function renderBody(mainHtml, t, lang) {
   if (/\bdata-i18n=/.test(replaced)) {
     throw new Error(`Unresolved data-i18n attribute(s) after rendering (lang=${lang})`);
   }
-  return replaced;
+  // Drop Cloudflare's <!--email_off--> markers. They exist only to stop the
+  // edge rewriting support@rebuy.dk into "[email protected]" for crawlers
+  // (issue #112); inside a feed body they are meaningless noise.
+  return replaced.replace(/<!--\/?email_off-->/g, '');
 }
 
 function buildItem(page, lang, body, pubDate) {

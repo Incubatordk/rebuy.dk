@@ -67,4 +67,22 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+# Plain-text summaries written for LLMs and AI assistants.
+# llms.txt = overview + key facts; llms-full.txt = the full site body.
+# See https://llmstxt.org/ for the format.
+LLM-Content: https://rebuy.dk/llms.txt
+LLM-Full-Content: https://rebuy.dk/llms-full.txt
+
 Sitemap: https://rebuy.dk/sitemap.xml
