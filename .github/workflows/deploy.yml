@@ -42,6 +42,14 @@ jobs:
       # HTML has one <h1> and no "Kommer snart" signals for crawlers.
       - name: Strip inactive mode block from index.html
         run: node scripts/build-modes.js
+      # Must run AFTER build-modes.js: the English page is derived from
+      # index.html, so it has to be built from the already-stripped HTML or it
+      # inherits both mode blocks and ships two <h1>s. build-en.js asserts this
+      # and fails the deploy if it sees more than one. Also after the
+      # __VERSION__ stamp above, so the generated page inherits the cache-bust
+      # query strings rather than the literal placeholder. See issue #97.
+      - name: Build English homepage (/en/)
+        run: node scripts/build-en.js
       # Sync blog CTA store URLs with site.config.js BEFORE the feed is built,
       # so the RSS <content:encoded> carries the canonical URLs. See issue #102.
       - name: Sync blog CTA store URLs
